@@ -48,7 +48,7 @@ namespace SolutionEngine
 
 		public static int EquilibriumIndexOptimized (int[] nums)
 		{
-			int pivot, j;
+			int pivot;
 			int sumRight = nums.Sum();
 			int sumLeft = 0;
 

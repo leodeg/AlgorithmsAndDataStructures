@@ -14,7 +14,7 @@ namespace SolutionEngine.UnitTests
 		[TestCase (new int[] { 5, 5, 3, 5, 5 }, 2)]
 		[TestCase (new int[] { 1, 7, 3, 6, 5, 6 }, 3)]
 		[TestCase (new int[] { -1, -1, -1, 0, 1, 1 }, 0)]
-		public void EquilibriumIndex_ArrayHasPivotValue_ReturnPivotIndex (int[] n, int expectedIndex)
+		public void EquilibriumIndex_ArrayHasEquilibriumIndex_ReturnPivotIndex (int[] n, int expectedIndex)
 		{
 			int result = FindPivotIndex.EquilibriumIndex (n);
 			Assert.That (result, Is.EqualTo (expectedIndex));
@@ -24,7 +24,7 @@ namespace SolutionEngine.UnitTests
 		[TestCase (new int[] { 1, 2, 3 }, -1)]
 		[TestCase (new int[] { 1, 7, 3 }, -1)]
 		[TestCase (new int[] { 1, 7, 3, 5, 10, 15, 20 }, -1)]
-		public void EquilibriumIndex_ArrayHasNotPivotValue_ReturnMinusOne (int[] n, int expectedIndex)
+		public void EquilibriumIndex_ArrayHasNotEquilibriumIndex_ReturnMinusOne (int[] n, int expectedIndex)
 		{
 			int result = FindPivotIndex.EquilibriumIndex (n);
 			Assert.That (result, Is.EqualTo (expectedIndex));
@@ -47,7 +47,7 @@ namespace SolutionEngine.UnitTests
 		[TestCase (new int[] { 5, 5, 3, 5, 5 }, 2)]
 		[TestCase (new int[] { 1, 7, 3, 6, 5, 6 }, 3)]
 		[TestCase (new int[] { -1, -1, -1, 0, 1, 1 }, 0)]
-		public void EquilibriumIndexOptimized_ArrayHasPivotValue_ReturnPivotIndex (int[] n, int expectedIndex)
+		public void EquilibriumIndexOptimized_ArrayHasEquilibriumIndex_ReturnPivotIndex (int[] n, int expectedIndex)
 		{
 			int result = FindPivotIndex.EquilibriumIndexOptimized (n);
 			Assert.That (result, Is.EqualTo (expectedIndex));
@@ -57,7 +57,7 @@ namespace SolutionEngine.UnitTests
 		[TestCase (new int[] { 1, 2, 3 }, -1)]
 		[TestCase (new int[] { 1, 7, 3 }, -1)]
 		[TestCase (new int[] { 1, 7, 3, 5, 10, 15, 20 }, -1)]
-		public void EquilibriumIndexOptimized_ArrayHasNotPivotValue_ReturnMinusOne (int[] n, int expectedIndex)
+		public void EquilibriumIndexOptimized_ArrayHasNotEquilibriumIndex_ReturnMinusOne (int[] n, int expectedIndex)
 		{
 			int result = FindPivotIndex.EquilibriumIndexOptimized (n);
 			Assert.That (result, Is.EqualTo (expectedIndex));
