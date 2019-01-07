@@ -119,6 +119,8 @@
     <ClInclude Include="LinkedList.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DoubleLinkedList.cpp" />
+    <ClCompile Include="DoubleLinkedList.h" />
     <ClCompile Include="LinkedList.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

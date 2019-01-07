@@ -1,15 +1,17 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
+struct Node { int data; Node* next; };
+
 class LinkedList
 {
 private:
 
-    struct Node { int data; Node* next; };
     int length;
     Node* head;
 
-    void StartRecursionPrint (Node* head);
+    void StartPrintRecursion (Node* head);
+    void StartReverseRecursion (Node* head);
 
 public:
 
@@ -21,7 +23,7 @@ public:
     void InsertAt (int data, int index);
     void Delete (int index);
     void Reverse ();
-
+    void ReverseRecursion ();
     void PrintRecursion ();
     void Print ();
     int GetLength ();

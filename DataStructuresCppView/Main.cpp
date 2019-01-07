@@ -5,6 +5,7 @@ void LinkedList_InsertFrontTest ();
 void LinkedList_InsertAtPositionTest ();
 void LinkedList_DeleteTest ();
 void LinkedList_ReverseTest ();
+void LinkedList_ReverseRecursionTest ();
 void LinkedList_PrintRecursionTest ();
 
 int main ()
@@ -13,6 +14,7 @@ int main ()
     //LinkedList_InsertAtPositionTest ();
     //LinkedList_DeleteTest ();
     //LinkedList_ReverseTest ();
+    LinkedList_ReverseRecursionTest ();
     //LinkedList_PrintRecursionTest ();
 
     system ("pause");
@@ -70,6 +72,25 @@ void LinkedList_ReverseTest ()
 
     list.Reverse ();
     list.Print ();
+    std::cout << "\n";
+}
+
+void LinkedList_ReverseRecursionTest ()
+{
+    LinkedList list;
+    list.InsertBack (1);
+    list.InsertBack (2);
+    list.InsertBack (3);
+    list.InsertBack (4);
+
+    list.Print ();
+    std::cout << "\n\n";
+
+    list.ReverseRecursion ();
+    
+    std::cout << "\n\n";
+    list.Print ();
+    std::cout << "\n\n";
 }
 
 void LinkedList_PrintRecursionTest ()

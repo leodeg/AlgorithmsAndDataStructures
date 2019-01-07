@@ -1,5 +1,7 @@
 #include "LinkedList.h"
+
 #include <iostream>
+#include <string>
 
 LinkedList::LinkedList ()
 {
@@ -111,17 +113,49 @@ void LinkedList::Reverse ()
     this->head = previous;
 }
 
+void LinkedList::ReverseRecursion ()
+{
+    if (head == nullptr)
+    {
+        return;
+    }
+
+    Node* current = this->head;
+    StartReverseRecursion (current);
+}
+
+void LinkedList::StartReverseRecursion (Node* head)
+{
+    // Mark last node as head
+    if (head->next == nullptr)
+    {
+        this->head = head;
+        //std::cout << head->data << std::endl;
+        return;
+    }
+    StartReverseRecursion (head->next);
+
+    Node* current = head->next;
+    //std::cout << current->data << std::endl;
+
+    current->next = head;
+    //std::cout << current->data << std::endl;
+
+    head->next = nullptr;
+    //std::cout << head->data << std::endl;
+}
+
 void LinkedList::PrintRecursion ()
 {
     Node* current = this->head;
-    StartRecursionPrint (current);
+    StartPrintRecursion (current);
 }
 
-void LinkedList::StartRecursionPrint (Node* head)
+void LinkedList::StartPrintRecursion (Node* head)
 {
     if (head == nullptr) return;
     std::cout << head->data << " ";
-    StartRecursionPrint (head->next);
+    StartPrintRecursion (head->next);
 }
 
 void LinkedList::Print ()
