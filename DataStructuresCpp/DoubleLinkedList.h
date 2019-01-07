@@ -10,7 +10,7 @@ private:
     Node* head;
 
     Node* CreateNewNode (int data);
-
+    
 public:
 
     DoubleLinkedList ();
@@ -20,6 +20,8 @@ public:
     void PrintReverse ();
     void InsertFront (int data);
     void InsertBack (int data);
+    int GetLength ();
+    bool IsEmpty ();
 };
 
 #endif //DOUBLE_LINKED_LIST_H

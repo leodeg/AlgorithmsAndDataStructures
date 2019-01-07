@@ -115,13 +115,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Libs.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="StackArray.h" />
+    <ClInclude Include="StackLinkedList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="DoubleLinkedList.h" />
     <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="StackArray.cpp" />
+    <ClCompile Include="StackLinkedList.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

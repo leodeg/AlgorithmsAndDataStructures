@@ -172,3 +172,8 @@ int LinkedList::GetLength ()
 {
     return this->length;
 }
+
+bool LinkedList::IsEmpty ()
+{
+    return head == nullptr;
+}

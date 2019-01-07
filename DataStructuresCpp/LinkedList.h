@@ -27,6 +27,7 @@ public:
     void PrintRecursion ();
     void Print ();
     int GetLength ();
+    bool IsEmpty ();
 };
 
 #endif // LINKED_LIST_H

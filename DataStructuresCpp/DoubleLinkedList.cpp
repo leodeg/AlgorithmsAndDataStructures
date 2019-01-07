@@ -60,6 +60,7 @@ void DoubleLinkedList::InsertFront (int data)
     head->prev = node;
     node->next = head;
     head = node;
+    this->length++;
 }
 
 void DoubleLinkedList::InsertBack (int data)
@@ -75,5 +76,16 @@ void DoubleLinkedList::InsertBack (int data)
     while (current != nullptr) current->next;
     current->next = node;
     node->prev = current;
+    this->length++;
+}
+
+int DoubleLinkedList::GetLength ()
+{
+    return this->length;
+}
+
+bool DoubleLinkedList::IsEmpty ()
+{
+    return head == nullptr;
 }
 
