@@ -12,6 +12,7 @@ private:
 
     void StartPrintRecursion (Node* head);
     void StartReverseRecursion (Node* head);
+    int StartSearchRecursion (Node* node, int value);
 
 public:
 
@@ -26,6 +27,7 @@ public:
     void ReverseRecursion ();
     void PrintRecursion ();
     void Print ();
+    int SearchRecursion (int value);
     int GetLength ();
     bool IsEmpty ();
 };

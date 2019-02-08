@@ -145,6 +145,8 @@ void LinkedList::StartReverseRecursion (Node* head)
     //std::cout << head->data << std::endl;
 }
 
+
+
 void LinkedList::PrintRecursion ()
 {
     Node* current = this->head;
@@ -166,6 +168,18 @@ void LinkedList::Print ()
         std::cout << current->data << ' ';
         current = current->next;
     }
+}
+
+int LinkedList::SearchRecursion (int value)
+{
+    Node* current = head;
+    return StartSearchRecursion (current->next, value);
+}
+
+int LinkedList::StartSearchRecursion (Node * node, int value)
+{
+    if (node == nullptr) return;
+    if (node->data == value) return node->data;
 }
 
 int LinkedList::GetLength ()

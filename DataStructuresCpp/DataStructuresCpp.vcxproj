@@ -116,6 +116,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="QueueArray.h" />
+    <ClInclude Include="QueueList.h" />
     <ClInclude Include="StackArray.h" />
     <ClInclude Include="StackLinkedList.h" />
   </ItemGroup>
@@ -123,6 +125,8 @@
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="DoubleLinkedList.h" />
     <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="QueueArray.cpp" />
+    <ClCompile Include="QueueList.cpp" />
     <ClCompile Include="StackArray.cpp" />
     <ClCompile Include="StackLinkedList.cpp" />
   </ItemGroup>

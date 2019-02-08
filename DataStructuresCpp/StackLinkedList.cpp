@@ -5,8 +5,8 @@ void StackLinkedList::Push (int data)
 {
     Node* node = new Node ();
     node->data = data;
-    node->link = top;
-    top = node;
+    node->link = this->top;
+    this->top = node;
     this->length++;
 }
 
@@ -19,8 +19,8 @@ void StackLinkedList::Pop ()
         return;
     }
 
-    current = top;
-    top = top->link;
+    current = this->top;
+    this->top = this->top->link;
     delete current;
     this->length--;
 }
@@ -33,7 +33,7 @@ int StackLinkedList::Peek ()
         return;
     }
 
-    return top->data;
+    return this->top->data;
 }
 
 void StackLinkedList::Print ()
@@ -44,9 +44,9 @@ void StackLinkedList::Print ()
         return;
     }
 
-    Node* current = top;
+    Node* current = this->top;
     std::cout << "Stack: ";
-    while (top != nullptr)
+    while (this->top != nullptr)
     {
         std::cout << current->data << ' ';
         current = current->link;
