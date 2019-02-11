@@ -28,10 +28,24 @@ namespace DataStructures
 			Right = right;
 			Value = value;
 		}
+
+		public void PrintValue ()
+		{
+			System.Console.Write ("[{0}]", Value.ToString ());
+		}
+
+		public string GetValue ()
+		{
+			return String.Format ("[{0}]", Value.ToString ());
+		}
 	}
 
 	public class BinaryTree
 	{
+		public enum TraversalType { Preorder, Inorder, Postorder }
+
+		private delegate BinaryNode TraversalScheme (BinaryNode node);
+
 		/// <summary>
 		/// The most base node of tree.
 		/// </summary>
@@ -104,13 +118,75 @@ namespace DataStructures
 
 		/// <summary>
 		/// Calculate height of tree.
-		/// <para>Time Complexity - BigO(n) where n is amount of nodes</para>
+		/// <para>Time Complexity - BigO(n)</para>
 		/// </summary>
 		/// <param name="node">first node of tree</param>
 		public static int TreeHeight (BinaryNode node)
 		{
 			if (node == null) return 0;
 			return 1 + Math.Max (TreeHeight (node.Left), TreeHeight (node.Right));
+		}
+
+		/// <summary>
+		/// Traverse through the tree and print values of each node.
+		/// <para>Time Complexity - BigO(n)</para>
+		/// </summary>
+		/// <param name="type">type of traversal method</param>
+		public void Traversal (TraversalType type)
+		{
+			switch (type)
+			{
+				case TraversalType.Preorder:
+					PreorderTraversal (Root);
+					break;
+				case TraversalType.Inorder:
+					InorderTraversal (Root);
+					break;
+				case TraversalType.Postorder:
+					PostorderTraversal (Root);
+					break;
+				default:
+					throw new ArgumentOutOfRangeException ();
+			}
+		}
+
+		/// <summary>
+		/// Traverse through the tree in preorder way and print all values.
+		/// <para>Time Complexity - BigO(n)</para>
+		/// </summary>
+		/// <param name="node">root of tree</param>
+		public void PreorderTraversal (BinaryNode node)
+		{
+			if (node == null) return;
+			node.PrintValue ();
+			PreorderTraversal (node.Left);
+			PreorderTraversal (node.Right);
+		}
+
+		/// <summary>
+		/// Traverse through the tree in inorder way and print all values.
+		/// <para>Time Complexity - BigO(n)</para>
+		/// </summary>
+		/// <param name="node">root of tree</param>
+		public void InorderTraversal (BinaryNode node)
+		{
+			if (node == null) return;
+			InorderTraversal (node.Left);
+			node.PrintValue ();
+			InorderTraversal (node.Right);
+		}
+
+		/// <summary>
+		/// Traverse through the tree in postorder way and print all values.
+		/// <para>Time Complexity - BigO(n)</para>
+		/// </summary>
+		/// <param name="node">root of tree</param>
+		public void PostorderTraversal (BinaryNode node)
+		{
+			if (node == null) return;
+			InorderTraversal (node.Left);
+			InorderTraversal (node.Right);
+			node.PrintValue ();
 		}
 	}
 }
