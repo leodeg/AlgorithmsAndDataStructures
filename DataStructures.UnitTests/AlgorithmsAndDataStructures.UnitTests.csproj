@@ -61,9 +61,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataStructures\DataStructures.csproj">
+    <ProjectReference Include="..\DataStructures\AlgorithmsAndDataStructures.csproj">
       <Project>{20e52f93-6c4f-4bef-87f0-a94efe497003}</Project>
-      <Name>DataStructures</Name>
+      <Name>AlgorithmsAndDataStructures</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

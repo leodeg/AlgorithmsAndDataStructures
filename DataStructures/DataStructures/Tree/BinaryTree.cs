@@ -188,5 +188,24 @@ namespace DataStructures
 			InorderTraversal (node.Right);
 			node.PrintValue ();
 		}
+
+		public static BinaryNode RotateRight (BinaryNode oldRoot)
+		{
+			BinaryNode newRoot = oldRoot.Left;
+			oldRoot.Left = newRoot.Right;
+			newRoot.Right = oldRoot;
+			return newRoot;
+		}
+
+		/// <summary>
+		/// <para>Time Complexity - BigO(n)</para>
+		/// </summary>
+		public BinaryNode RotateRight ()
+		{
+			BinaryNode node = Root.Left;
+			Root.Left = node.Right;
+			node.Right = Root;
+			return node;
+		}
 	}
 }
