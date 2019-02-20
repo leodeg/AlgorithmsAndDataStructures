@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,72 +7,194 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Queue
 {
-	internal class Queue_Array<T>
+	public class Queue_Array<T> : IEnumerable<T>
 	{
 		private T[] queue;
+		private int frontIndex;
+		private int backIndex;
+		private int size;
 
 		public Queue_Array ()
 		{
-			Count = 0;
-			LastIndex = 0;
-			queue = new T[0];
+			frontIndex = 0;
+			backIndex = 0;
+			size = 4;
+			queue = new T[size];
+		}
+
+		public Queue_Array (int size)
+		{
+			frontIndex = 0;
+			backIndex = 0;
+			this.size = size;
+			queue = new T[size];
 		}
 
 		#region Properties
 
-		public int Count { get; private set; }
-		public int LastIndex { get; private set; }
+		/// <summary>
+		/// Return size of the queue.
+		/// </summary>
+		public int Length => size;
+
+		/// <summary>
+		/// Return total amount of elements in the queue.
+		/// </summary>
+		public int Count => backIndex;
 
 		#endregion
 
-		#region Queue Methods
+		#region Base Methods
 
-		public void Enqueue (T value)
+		/// <summary>
+		/// Insert data at back of queue.
+		/// </summary>
+		public void Enqueue (T data)
 		{
-			++Count;
-			T[] newQueue = new T[Count];
+			// 1. Check if back is equal to size of the queue
+			// 2. If it's true then resize queue
+			// 3. Else insert element to back of the queue
+			// 4. Increment back index
 
-			newQueue[0] = value;
-			for (int i = 1; i < queue.Length; i++)
+			if (backIndex == size)
 			{
-				newQueue[i] = queue[i];
-				LastIndex = i;
+				Resize ();
 			}
 
+			queue[backIndex] = data;
+			backIndex++;
+		}
+
+		/// <summary>
+		/// Return fronted element and delete it from queue.
+		/// </summary>
+		public T Dequeue ()
+		{
+			// 1. Check if front index is equal to back index
+			// 2. If it's true throw new exception
+			// 3. Else save first element and shift queue's elements at left
+			// 4. Decrement back index.
+			// 5. Return the saved first element.
+
+			if (frontIndex == backIndex)
+			{
+				throw new ArgumentOutOfRangeException ();
+			}
+
+			T firstElement = queue[frontIndex];
+
+			for (int i = 0; i < backIndex - 1; i++)
+			{
+				queue[i] = queue[i + 1];
+			}
+
+			if (backIndex < size)
+			{
+				queue[backIndex] = default (T);
+			}
+
+			backIndex--;
+			return firstElement;
+		}
+
+		/// <summary>
+		/// Return fronted element.
+		/// </summary>
+		/// <returns></returns>
+		public T Peek ()
+		{
+			if (frontIndex == backIndex)
+			{
+				throw new ArgumentOutOfRangeException ();
+			}
+			return queue[frontIndex];
+		}
+
+		/// <summary>
+		/// Delete all elements from queue.
+		/// </summary>
+		public void Clear ()
+		{
+			size = 4;
+			backIndex = 0;
+			frontIndex = 0;
+			queue = new T[size];
+		}
+
+		#endregion
+
+		#region Helper Methods
+
+		/// <summary>	
+		/// Resize array formula:
+		/// size = (size == 0) ? 4 : size * 2
+		/// </summary>
+		public void Resize ()
+		{
+			// 1. Calculate a new size for the queue
+			// 2. Create a new array
+			// 3. Copy all elements from the queue in the new created array
+			// 4. Assign the new array with copied elements to the queue
+
+			int oldSize = size;
+			size *= 2;
+
+			T[] newQueue = new T[size];
+			for (int i = 0; i < oldSize; i++)
+			{
+				newQueue[i] = queue[i];
+			}
 			queue = newQueue;
 		}
 
-		public T Dequeue ()
+		public void Print ()
 		{
-			--Count;
-			T temp = queue[LastIndex];
-			T[] newQueue = new T[Count];
-
-			for (int i = 0; i < queue.Length - 1; i++)
+			if (frontIndex == backIndex)
 			{
-				newQueue[i] = queue[i];
-				LastIndex = i;
+				throw new ArgumentOutOfRangeException ();
 			}
 
-			return temp;
+			Console.WriteLine ("[");
+			foreach (T item in queue)
+			{
+				Console.WriteLine (item + " ");
+			}
+			Console.WriteLine ("]");
 		}
 
-		public void Resize (int wantedSize)
+		public override string ToString ()
 		{
-			T[] arr = new T[wantedSize];
-
-			for (int i = 0; i < queue.Length; i++)
+			if (frontIndex == backIndex)
 			{
-				arr[i] = queue[i];
+				throw new ArgumentOutOfRangeException ();
 			}
 
-			queue = arr;
+			StringBuilder queueString = new StringBuilder ();
+			queueString.Append ("[");
+			for (int i = 0; i < Length; i++)
+			{
+				queueString.Append (i);
+				if (i < Length - 2)
+				{
+					queueString.Append (", ");
+				}
+			}
+			queueString.Append ("]");
+			return queueString.ToString();
 		}
 
-		public void Clear ()
+		#endregion
+
+		#region Enumerators
+
+		public IEnumerator<T> GetEnumerator ()
 		{
-			queue = new T[0];
-			Count = 0;
+			return queue.Take(Length).GetEnumerator ();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator ()
+		{
+			return queue.Take(Length).GetEnumerator ();
 		}
 
 		#endregion
