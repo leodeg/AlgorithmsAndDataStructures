@@ -1,14 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataStructures.List;
-
-namespace DataStructures.Stack
+﻿namespace DataStructures.Stack
 {
 	internal class Stack_LinkedList<T>
 	{
+		private class Node<T>
+		{
+			public Node<T> Next { get; set; }
+			public T Value { get; set; }
+
+			public Node (T value, Node<T> next)
+			{
+				Value = value;
+				Next = next;
+			}
+
+			public Node (T value)
+			{
+				Value = value;
+				Next = null;
+			}
+
+			public Node () : this (default (T)) { }
+		}
+
 		private Node<T> Top { get; set; }
 
 		public Stack_LinkedList ()
@@ -18,17 +31,17 @@ namespace DataStructures.Stack
 		}
 
 		/// <summary>
-		/// Total number of an elements in the stack.
+		/// Total number of elements in stack.
 		/// </summary>
 		public int Count { get; private set; }
 
 		/// <summary>
-		/// Return true if stack is empty, otherwise return false.
+		/// Return true if stack is empty. Otherwise return false.
 		/// </summary>
 		public bool IsEmpty { get { return Count == 0; } }
 
 		/// <summary>
-		/// Insert element at the top of the stack.
+		/// Insert element at the top of stack.
 		/// </summary>
 		public void Push (T value)
 		{
@@ -54,7 +67,7 @@ namespace DataStructures.Stack
 		{
 			if (Top == null)
 			{
-				return default (T);
+				throw new System.IndexOutOfRangeException ();
 			}
 
 			T temp = Top.Value;

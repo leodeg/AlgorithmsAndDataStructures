@@ -116,6 +116,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Array.h" />
+    <ClInclude Include="ArrayDeque.h" />
+    <ClInclude Include="ArrayQueue.h" />
+    <ClInclude Include="ArrayStack.h" />
+    <ClInclude Include="FastArrayStack.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="QueueArray.h" />
     <ClInclude Include="QueueList.h" />
@@ -123,8 +128,13 @@
     <ClInclude Include="StackLinkedList.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Array.cpp" />
+    <ClCompile Include="ArrayDeque.cpp" />
+    <ClCompile Include="ArrayQueue.cpp" />
+    <ClCompile Include="ArrayStack.cpp" />
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="DoubleLinkedList.h" />
+    <ClCompile Include="FastArrayStack.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="QueueArray.cpp" />
     <ClCompile Include="QueueList.cpp" />

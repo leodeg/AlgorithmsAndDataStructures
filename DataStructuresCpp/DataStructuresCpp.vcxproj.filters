@@ -28,6 +28,15 @@
     <Filter Include="Header Files\Queue">
       <UniqueIdentifier>{09775cf7-86ea-4531-9142-4bf491bb4418}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Queue">
+      <UniqueIdentifier>{d840118b-2b59-41a1-af31-ab48cc99d025}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Array">
+      <UniqueIdentifier>{62db5b9c-b04d-4b4c-8c5d-ca8e5771dc38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Array">
+      <UniqueIdentifier>{e7769ed3-2909-419c-9c6f-7ffd05f4b368}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StackLinkedList.h">
@@ -43,7 +52,22 @@
       <Filter>Header Files\Queue</Filter>
     </ClInclude>
     <ClInclude Include="QueueList.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="Array.h">
+      <Filter>Header Files\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayStack.h">
+      <Filter>Header Files\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="FastArrayStack.h">
+      <Filter>Header Files\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayQueue.h">
+      <Filter>Header Files\Array</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayDeque.h">
+      <Filter>Header Files\Array</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -63,10 +87,25 @@
       <Filter>Source Files\Stack</Filter>
     </ClCompile>
     <ClCompile Include="QueueArray.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Queue</Filter>
     </ClCompile>
     <ClCompile Include="QueueList.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Queue</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayQueue.cpp">
+      <Filter>Source Files\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayDeque.cpp">
+      <Filter>Source Files\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayStack.cpp">
+      <Filter>Source Files\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="FastArrayStack.cpp">
+      <Filter>Source Files\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="Array.cpp">
+      <Filter>Source Files\Array</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
