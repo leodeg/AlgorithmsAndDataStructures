@@ -19,17 +19,17 @@ public:
     LinkedList ();
     ~LinkedList ();
 
-    void InsertFront (int data);
-    void InsertBack (int data);
-    void InsertAt (int data, int index);
-    void Delete (int index);
-    void Reverse ();
-    void ReverseRecursion ();
-    void PrintRecursion ();
     void Print ();
-    int SearchRecursion (int value);
-    int GetLength ();
     bool IsEmpty ();
+    void Reverse ();
+    int GetLength ();
+    void PrintRecursion ();
+    void Delete (int index);
+    void ReverseRecursion ();
+    void InsertBack (int data);
+    void InsertFront (int data);
+    int SearchRecursion (int value);
+    void InsertAt (int data, int index);
 };
 
 #endif // LINKED_LIST_H

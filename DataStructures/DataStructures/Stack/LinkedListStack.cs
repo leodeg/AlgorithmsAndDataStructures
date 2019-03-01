@@ -1,6 +1,6 @@
 ﻿namespace DataStructures.Stack
 {
-	internal class Stack_LinkedList<T>
+	public class LinkedListStack<T>
 	{
 		private class Node<T>
 		{
@@ -24,7 +24,7 @@
 
 		private Node<T> Top { get; set; }
 
-		public Stack_LinkedList ()
+		public LinkedListStack ()
 		{
 			Top = new Node<T> ();
 			Count = 0;

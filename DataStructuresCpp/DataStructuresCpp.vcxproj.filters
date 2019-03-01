@@ -37,6 +37,9 @@
     <Filter Include="Source Files\Array">
       <UniqueIdentifier>{e7769ed3-2909-419c-9c6f-7ffd05f4b368}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\HashTable">
+      <UniqueIdentifier>{353c493c-cca6-4dff-b84a-17fcf57f0e7e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StackLinkedList.h">
@@ -74,6 +77,12 @@
     </ClInclude>
     <ClInclude Include="DLList.h">
       <Filter>Header Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="SkiplistSSet.h">
+      <Filter>Header Files\List</Filter>
+    </ClInclude>
+    <ClInclude Include="ChainedHashTable.h">
+      <Filter>Header Files\HashTable</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +127,9 @@
     </ClCompile>
     <ClCompile Include="DLList.cpp">
       <Filter>Source Files\List</Filter>
+    </ClCompile>
+    <ClCompile Include="ChainedHashTable.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

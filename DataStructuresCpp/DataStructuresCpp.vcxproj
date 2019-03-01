@@ -120,11 +120,13 @@
     <ClInclude Include="ArrayDeque.h" />
     <ClInclude Include="ArrayQueue.h" />
     <ClInclude Include="ArrayStack.h" />
+    <ClInclude Include="ChainedHashTable.h" />
     <ClInclude Include="DLList.h" />
     <ClInclude Include="FastArrayStack.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="QueueArray.h" />
     <ClInclude Include="QueueList.h" />
+    <ClInclude Include="SkiplistSSet.h" />
     <ClInclude Include="SLList.h" />
     <ClInclude Include="StackArray.h" />
     <ClInclude Include="StackLinkedList.h" />
@@ -134,6 +136,7 @@
     <ClCompile Include="ArrayDeque.cpp" />
     <ClCompile Include="ArrayQueue.cpp" />
     <ClCompile Include="ArrayStack.cpp" />
+    <ClCompile Include="ChainedHashTable.cpp" />
     <ClCompile Include="DLList.cpp" />
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="DoubleLinkedList.h" />
