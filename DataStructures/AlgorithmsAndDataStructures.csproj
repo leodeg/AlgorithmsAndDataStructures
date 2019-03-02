@@ -41,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms\BubbleSort.cs" />
+    <Compile Include="Algorithms\Sorting\BubbleSort.cs" />
+    <Compile Include="Algorithms\StackProblem\BalancedParanthesis.cs" />
     <Compile Include="DataStructures\List\DoublyCircularLinkedList.cs" />
     <Compile Include="DataStructures\Queue\Queue_Array.cs" />
     <Compile Include="DataStructures\Queue\Queue_DoublyLinkedList.cs" />
     <Compile Include="DataStructures\Queue\Queue_LinkedList.cs" />
     <Compile Include="DataStructures\Stack\ArrayStack.cs" />
+    <Compile Include="DataStructures\Stack\DoubleStack.cs" />
     <Compile Include="DataStructures\Stack\DynamicArrayStack.cs" />
     <Compile Include="DataStructures\Tree\BinaryTree.cs" />
     <Compile Include="DataStructures\List\CircularLinkedList.cs" />

@@ -1,4 +1,5 @@
-﻿namespace DataStructures.Stack
+﻿using System;
+namespace DataStructures.Stack
 {
 	public class LinkedListStack<T>
 	{
@@ -45,18 +46,7 @@
 		/// </summary>
 		public void Push (T value)
 		{
-			Node<T> node = new Node<T> (value);
-
-			if (Top == null)
-			{
-				Top = node;
-			}
-			else
-			{
-				node.Next = Top;
-				Top = node;
-			}
-
+			Top = new Node<T> (value, Top);
 			Count++;
 		}
 
@@ -65,9 +55,9 @@
 		/// </summary>
 		public T Pop ()
 		{
-			if (Top == null)
+			if (this.IsEmpty)
 			{
-				throw new System.IndexOutOfRangeException ();
+				throw new System.InvalidOperationException ("LinkedListStack:: stack is empty");
 			}
 
 			T temp = Top.Value;
@@ -81,7 +71,24 @@
 		/// </summary>
 		public T Peek ()
 		{
+			if (this.IsEmpty)
+			{
+				throw new System.InvalidOperationException ("LinkedListStack:: stack is empty");
+			}
+
 			return Top.Value;
+		}
+
+		public void Print ()
+		{
+			Node<T> head = Top;
+
+			Console.Write ("[");
+			while (head != null)
+			{
+				Console.Write (head.Value + " ");
+			}
+			Console.Write ("]");
 		}
 
 		/// <summary>
