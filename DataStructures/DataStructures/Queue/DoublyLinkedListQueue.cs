@@ -2,7 +2,7 @@
 
 namespace DataStructures.Queue
 {
-	public class Queue_DoublyLinkedList<T>
+	public class DoublyLinkedListQueue<T> : IQueue<T>
 	{
 		/* First node used as last element in queue. 
 		 * Last node used as first element in queue. */
@@ -19,7 +19,7 @@ namespace DataStructures.Queue
 			}
 		}
 
-		public Queue_DoublyLinkedList ()
+		public DoublyLinkedListQueue ()
 		{
 			Clear ();
 		}
@@ -37,36 +37,31 @@ namespace DataStructures.Queue
 		/// <summary>
 		/// Total amount of elements in queue.
 		/// </summary>
-		public int Count { get; private set; }
+		public int Size { get; private set; }
+
+		/// <summary>
+		/// Return true if queue is empty, otherwise return false.
+		/// </summary>
+		public bool IsEmpty => Size <= 0;
 
 		/// <summary>
 		/// Insert element at end of queue.
 		/// </summary>
 		public void Enqueue (T data)
 		{
-			// 1. Create a new node
-			// 2. If head == null
-			//		1. Save link to the tail
-			//		2. Assign the new node to Head
-			//		3. Increment count
-			// 3. Else
-			//		1. Save Head
-			//		2. Assign the new node to Head
-			//		3. Increment count
-
 			Node<T> node = new Node<T> (data);
 
 			if (Head == null)
 			{
 				node.Next = Head.Next;
 				Head = node;
-				++Count;
+				++Size;
 				return;
 			}
 
 			node.Next = Head;
 			Head = node;
-			++Count;
+			++Size;
 		}
 
 		/// <summary>
@@ -74,17 +69,11 @@ namespace DataStructures.Queue
 		/// </summary>
 		public T Dequeue ()
 		{
-			// 1. Save last element to temp variable
-			// 2. Save previous element before last element
-			// 3. Delete last element
-			// 4. Decrement count
-			// 5. Return saved last element
-
 			Node<T> temp = Tail;
 			Node<T> prev = Tail.Prev;
 
 			prev.Next = null;
-			--Count;
+			--Size;
 			return temp.Value;
 		}
 
@@ -99,7 +88,7 @@ namespace DataStructures.Queue
 			Tail = null;
 			Head.Next = Tail;
 			Tail.Prev = Head;
-			Count = 0;
+			Size = 0;
 		}
 	}
 }
