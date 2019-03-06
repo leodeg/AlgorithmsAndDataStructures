@@ -49,7 +49,6 @@ namespace DataStructures
 		public BinaryTree ()
 		{
 			Root = null;
-			Count = 0;
 		}
 
 		/// <summary>
@@ -58,7 +57,6 @@ namespace DataStructures
 		public BinaryTree (int value)
 		{
 			Root = new BNode (value);
-			Count++;
 		}
 
 		#endregion
@@ -466,6 +464,25 @@ namespace DataStructures
 			if (current == null) return 0;
 			if (current.Left == null && current.Right == null) return 1;
 			return CountLeafs (current.Left) + CountLeafs (current.Right);
+		}
+
+		#endregion
+
+		#region Equal
+
+		public bool IsEqual (BinaryTree other)
+		{
+			return IsEqual (Root, other.Root);
+		}
+
+		private bool IsEqual (BNode current, BNode other)
+		{
+			if (current == null && other == null) return true;
+			if (current == null || other == null) return false;
+
+			return current.Value == other.Value
+				&& IsEqual (current.Left, other.Left)
+				&& IsEqual (current.Right, other.Right);
 		}
 
 		#endregion

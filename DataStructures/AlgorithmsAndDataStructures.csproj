@@ -53,10 +53,10 @@
     <Compile Include="DataStructures\Stack\ArrayStack.cs" />
     <Compile Include="DataStructures\Stack\DoubleStack.cs" />
     <Compile Include="DataStructures\Stack\DynamicArrayStack.cs" />
-    <Compile Include="DataStructures\Tree\BinaryTree.cs" />
     <Compile Include="DataStructures\List\CircularLinkedList.cs" />
     <Compile Include="DataStructures\List\DoublyLinkedList.cs" />
     <Compile Include="DataStructures\List\LinkedList.cs" />
+    <Compile Include="DataStructures\Tree\BinaryTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataStructures\Stack\LinkedListStack.cs" />
   </ItemGroup>
