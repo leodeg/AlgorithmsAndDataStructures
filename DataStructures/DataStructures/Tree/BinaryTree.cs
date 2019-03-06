@@ -33,13 +33,32 @@ namespace DataStructures
 
 	public class BinaryTree
 	{
-		public enum TraversalType { Preorder, Inorder, Postorder }
-		public enum PrintType { Preorder, Inorder, Postorder, BreadthFirst, DepthFirst }
-		public enum GetType { Preorder, Postorder, Inorder }
+		#region Enumerators
 
-		private delegate BNode TraversalScheme (BNode node);
+		public enum TraversalType
+		{
+			Preorder,
+			Inorder,
+			Postorder
+		}
 
-		private BNode Root { get; set; }
+		public enum PrintType
+		{
+			Preorder,
+			Inorder,
+			Postorder,
+			BreadthFirst,
+			DepthFirst
+		}
+
+		public enum PrintAtType
+		{
+			Preorder,
+			Postorder,
+			Inorder
+		}
+
+		#endregion
 
 		#region Constructors
 
@@ -62,6 +81,8 @@ namespace DataStructures
 		#endregion
 
 		#region Properties
+
+		private BNode Root { get; set; }
 
 		/// <summary>
 		/// Return first node.
@@ -107,6 +128,169 @@ namespace DataStructures
 			if (current.Equals (value)) return root;
 			if (current < value) return FindNode (root.Right, value);
 			else return FindNode (root.Left, value);
+		}
+
+		#endregion
+
+		#region Search
+
+		public bool Search (int value)
+		{
+			if (Root == null)
+			{
+				throw new System.InvalidOperationException ("BinaryTree: is empty.");
+			}
+
+			return Search (Root, value);
+		}
+
+		private bool Search (BNode root, int value)
+		{
+			int max;
+			bool left;
+			bool right;
+
+			if (root == null) return false;
+			if (root.Value == value) return true;
+
+			left = Search (root.Left, value);
+			if (left) return true;
+
+			right = Search (root.Right, value);
+			if (right) return true;
+
+			return false;
+		}
+
+		#endregion
+
+		#region Find Max
+
+		public int FindMax ()
+		{
+			if (Root == null)
+			{
+				throw new System.InvalidOperationException ("BinaryTree: is empty.");
+			}
+
+			return FindMax (Root);
+		}
+
+		private int FindMax (BNode current)
+		{
+			int left;
+			int right;
+
+			if (current == null) return int.MinValue;
+			int max = current.Value;
+
+			left = FindMax (current.Left);
+			right = FindMax (current.Right);
+
+			if (left > max) max = left;
+			if (right > max) max = right;
+			return max;
+		}
+
+		public int MaxPath ()
+		{
+			return MaxPath (Root);
+		}
+
+		private int MaxPath (BNode current)
+		{
+			int max;
+			int leftPath, rightPath;
+			int leftMax, rightMax;
+
+			if (current == null) return 0;
+
+			leftPath = TreeDepth (current.Left);
+			rightPath = TreeDepth (current.Right);
+
+			max = leftPath + rightPath + 1;
+
+			leftMax = MaxPath (current.Left);
+			rightMax = MaxPath (current.Right);
+
+			if (leftMax > max) return leftMax;
+			if (rightMax > max) return rightMax;
+			return max;
+		}
+
+		#endregion
+
+		#region Least Common Ancestor
+
+		public int LeastCommonAcestor (int first, int second)
+		{
+			BNode ancestor = LeastCommonAcestor (Root, first, second);
+
+			if (ancestor != null)
+				return ancestor.Value;
+
+			return int.MinValue;
+		}
+
+		private BNode LeastCommonAcestor (BNode current, int first, int second)
+		{
+			BNode left;
+			BNode right;
+
+			if (current == null)
+			{
+				return null;
+			}
+
+			if (current.Value == first || current.Value == second)
+			{
+				return current;
+			}
+
+			left = LeastCommonAcestor (current.Left, first, second);
+			right = LeastCommonAcestor (current.Right, first, second);
+
+			if (left != null && right != null)
+			{
+				return current;
+			}
+			else if (left != null)
+			{
+				return left;
+			}
+			else
+			{
+				return right;
+			}
+		}
+
+		#endregion
+
+		#region Add
+
+		public void LevelOrderBinaryTree (int[] arr)
+		{
+			Root = LevelOrderBinaryTree (arr, 0);
+		}
+
+		private BNode LevelOrderBinaryTree (int[] dataArray, int start)
+		{
+			int size = dataArray.Length;
+			BNode currentNode = new BNode (dataArray[start]);
+
+			int leftIndex = 2 * start + 1;
+			int rightIndex = 2 * start + 2;
+
+			if (leftIndex < size)
+			{
+				currentNode.Left = LevelOrderBinaryTree (dataArray, leftIndex);
+			}
+			if (rightIndex < size)
+			{
+				currentNode.Right = LevelOrderBinaryTree (dataArray, rightIndex);
+			}
+
+			return currentNode;
 		}
 
 		#endregion
@@ -191,6 +375,28 @@ namespace DataStructures
 
 		#endregion
 
+		#region Tree Depth
+
+		public int TreeDepth ()
+		{
+			return TreeDepth (Root);
+		}
+
+		private int TreeDepth (BNode root)
+		{
+			if (root == null)
+			{
+				return 0;
+			}
+
+			int leftDepth = TreeDepth (root.Left);
+			int rightDepth = TreeDepth (root.Right);
+
+			return ( leftDepth > rightDepth ) ? leftDepth + 1 : rightDepth + 1;
+		}
+
+		#endregion
+
 		#region Print Tree
 
 		public void Print (PrintType type)
@@ -222,33 +428,33 @@ namespace DataStructures
 			}
 		}
 
-		private void PrintPreorder (BNode node)
+		private void PrintPreorder (BNode root)
 		{
-			if (node == null) return;
-			Console.Write (" " + node.Value);
-			PrintPreorder (node.Left);
-			PrintPreorder (node.Right);
+			if (root == null) return;
+			Console.Write (" " + root.Value);
+			PrintPreorder (root.Left);
+			PrintPreorder (root.Right);
 		}
 
-		private void PrintInorder (BNode node)
+		private void PrintInorder (BNode root)
 		{
-			if (node == null) return;
-			PrintInorder (node.Left);
-			Console.Write (" " + node.Value);
-			PrintInorder (node.Right);
+			if (root == null) return;
+			PrintInorder (root.Left);
+			Console.Write (" " + root.Value);
+			PrintInorder (root.Right);
 		}
 
-		private void PrintPostorder (BNode node)
+		private void PrintPostorder (BNode root)
 		{
-			if (node == null) return;
-			PrintPostorder (node.Left);
-			PrintPostorder (node.Right);
-			Console.Write (" " + node.Value);
+			if (root == null) return;
+			PrintPostorder (root.Left);
+			PrintPostorder (root.Right);
+			Console.Write (" " + root.Value);
 		}
 
-		private void PrintBreadthFirst (BNode node)
+		private void PrintBreadthFirst (BNode root)
 		{
-			if (node == null)
+			if (root == null)
 			{
 				throw new System.InvalidOperationException ("BinaryTree: is empty");
 			}
@@ -256,9 +462,9 @@ namespace DataStructures
 			Queue<BNode> queue = new Queue<BNode> ();
 			BNode temp;
 
-			if (node != null)
+			if (root != null)
 			{
-				queue.Enqueue (node);
+				queue.Enqueue (root);
 			}
 
 			while (queue.Count != 0)
@@ -277,9 +483,9 @@ namespace DataStructures
 			}
 		}
 
-		private void PrintDepthFirst (BNode node)
+		private void PrintDepthFirst (BNode root)
 		{
-			if (node == null)
+			if (root == null)
 			{
 				throw new System.InvalidOperationException ("BinaryTree: is empty");
 			}
@@ -287,9 +493,9 @@ namespace DataStructures
 			Stack<BNode> stack = new Stack<BNode> ();
 			BNode temp;
 
-			if (node != null)
+			if (root != null)
 			{
-				stack.Push (node);
+				stack.Push (root);
 			}
 
 			while (stack.Count != 0)
@@ -310,9 +516,9 @@ namespace DataStructures
 
 		#endregion
 
-		#region Print Element At index
+		#region Print element at index
 
-		public void PrintAt (int index, GetType type)
+		public void PrintAt (int index, PrintAtType type)
 		{
 			if (Root == null)
 			{
@@ -322,15 +528,15 @@ namespace DataStructures
 			int[] counter = { 0 };
 			switch (type)
 			{
-				case GetType.Preorder:
+				case PrintAtType.Preorder:
 					PrintAtIndexPreOrder (index, Root, counter);
 					break;
 
-				case GetType.Postorder:
+				case PrintAtType.Postorder:
 					PrintAtIndexPostOrder (index, Root, counter);
 					break;
 
-				case GetType.Inorder:
+				case PrintAtType.Inorder:
 					PrintAtIndexInOrder (index, Root, counter);
 					break;
 
@@ -379,24 +585,29 @@ namespace DataStructures
 
 		#endregion
 
-		#region Tree Depth
+		#region Print path
 
-		public int TreeDepth ()
+		public void PrintPath ()
 		{
-			return TreeDepth (Root);
+			Stack<int> stack = new Stack<int> ();
+			PrintPath (Root, stack);
 		}
 
-		private int TreeDepth (BNode node)
+		private void PrintPath (BNode current, Stack<int> stack)
 		{
-			if (node == null)
+			if (current == null) return;
+
+			stack.Push (current.Value);
+			if (current.Left == null && current.Right == null)
 			{
-				return 0;
+				Console.WriteLine (stack.ToString());
+				stack.Pop ();
+				return;
 			}
 
-			int leftDepth = TreeDepth (node.Left);
-			int rightDepth = TreeDepth (node.Right);
-
-			return ( leftDepth > rightDepth ) ? leftDepth + 1 : rightDepth + 1;
+			PrintPath (current.Left, stack);
+			PrintPath (current.Right, stack);
+			stack.Pop ();
 		}
 
 		#endregion
@@ -441,7 +652,7 @@ namespace DataStructures
 
 		#endregion
 
-		#region Number of elements
+		#region Count elements
 
 		public int CountElements ()
 		{
@@ -452,6 +663,27 @@ namespace DataStructures
 		{
 			if (current == null) return 0;
 			return 1 + CountElements (current.Left) + CountElements (current.Right);
+		}
+
+		public int CountFullNodes ()
+		{
+			return CountFullNodes (Root);
+		}
+
+		private int CountFullNodes (BNode current)
+		{
+			int count;
+			if (current == null) return 0;
+
+			count = CountFullNodes (current.Left);
+			count += CountFullNodes (current.Right);
+
+			if (current.Left != null && current.Right != null)
+			{
+				count++;
+			}
+
+			return count;
 		}
 
 		public int CountLeafs ()
@@ -510,31 +742,17 @@ namespace DataStructures
 
 		#endregion
 
-		#region Add Methods
+		#region Convert
 
-		public void LevelOrderBinaryTree (int[] arr)
+		//TODO: add converter method from tree to list 
+
+		#endregion
+
+		#region Clear
+
+		public void Clear ()
 		{
-			Root = LevelOrderBinaryTree (arr, 0);
-		}
-
-		private BNode LevelOrderBinaryTree (int[] dataArray, int start)
-		{
-			int size = dataArray.Length;
-			BNode currentNode = new BNode (dataArray[start]);
-
-			int leftIndex = 2 * start + 1;
-			int rightIndex = 2 * start + 2;
-
-			if (leftIndex < size)
-			{
-				currentNode.Left = LevelOrderBinaryTree (dataArray, leftIndex);
-			}
-			if (rightIndex < size)
-			{
-				currentNode.Right = LevelOrderBinaryTree (dataArray, rightIndex);
-			}
-
-			return currentNode;
+			Root = null;
 		}
 
 		#endregion
