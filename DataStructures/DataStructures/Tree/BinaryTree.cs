@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DataStructures
 {
@@ -8,21 +9,11 @@ namespace DataStructures
 		public BinaryNode Right { get; set; }
 		public int Value { get; set; }
 
-		public BinaryNode (int value)
-		{
-			Left = null;
-			Right = null;
-			Value = value;
-		}
+		public BinaryNode (int value) : this (value, null, null) { }
 
-		public BinaryNode (BinaryNode left, BinaryNode right)
-		{
-			Left = left;
-			Right = right;
-			Value = default (int);
-		}
+		public BinaryNode (BinaryNode left, BinaryNode right) : this (default (int), left, right) { }
 
-		public BinaryNode (BinaryNode left, BinaryNode right, int value)
+		public BinaryNode (int value, BinaryNode left, BinaryNode right)
 		{
 			Left = left;
 			Right = right;
@@ -34,7 +25,7 @@ namespace DataStructures
 			System.Console.Write ("[{0}]", Value.ToString ());
 		}
 
-		public string GetValue ()
+		public override string ToString ()
 		{
 			return String.Format ("[{0}]", Value.ToString ());
 		}
@@ -42,7 +33,8 @@ namespace DataStructures
 
 	public class BinaryTree
 	{
-		public enum TraversalType { Preorder, Inorder, Postorder }
+		public enum TraversalType { Preorder, Inorder, Postorder, BreadthFirst }
+		public enum PrintType { Preorder, Inorder, Postorder, BreadthFirst, DepthFirst }
 
 		private delegate BinaryNode TraversalScheme (BinaryNode node);
 
@@ -50,6 +42,8 @@ namespace DataStructures
 		/// The most base node of tree.
 		/// </summary>
 		private BinaryNode Root { get; set; }
+
+		#region Constructors
 
 		/// <summary>
 		/// Create empty tree with one empty node.
@@ -69,6 +63,10 @@ namespace DataStructures
 			Count++;
 		}
 
+		#endregion
+
+		#region Properties
+
 		/// <summary>
 		/// Length of the binary tree.
 		/// </summary>
@@ -83,6 +81,10 @@ namespace DataStructures
 		/// Return value of the first node.
 		/// </summary>
 		public int FirstValue => Root.Value;
+
+		#endregion
+
+		#region Find Node
 
 		/// <summary>
 		/// Find node by value.
@@ -116,6 +118,10 @@ namespace DataStructures
 			else return FindNode (root.Left, value);
 		}
 
+		#endregion
+
+		#region Traversal
+
 		/// <summary>
 		/// Calculate height of tree.
 		/// <para>Time Complexity - BigO(n)</para>
@@ -139,14 +145,17 @@ namespace DataStructures
 				case TraversalType.Preorder:
 					PreorderTraversal (Root);
 					break;
+
 				case TraversalType.Inorder:
 					InorderTraversal (Root);
 					break;
+
 				case TraversalType.Postorder:
 					PostorderTraversal (Root);
 					break;
+
 				default:
-					throw new ArgumentOutOfRangeException ();
+					throw new System.ArgumentOutOfRangeException ();
 			}
 		}
 
@@ -189,6 +198,151 @@ namespace DataStructures
 			node.PrintValue ();
 		}
 
+		#endregion
+
+		#region Print Methods
+
+		public void Print (PrintType type)
+		{
+			switch (type)
+			{
+				case PrintType.Preorder:
+					PrintPreorder (Root);
+					break;
+
+				case PrintType.Inorder:
+					PrintInorder (Root);
+					break;
+
+				case PrintType.Postorder:
+					PrintPostorder (Root);
+					break;
+
+				case PrintType.BreadthFirst:
+					PrintBreadthFirst (Root);
+					break;
+
+				case PrintType.DepthFirst:
+					PrintDepthFirst (Root);
+					break;
+
+				default:
+					throw new System.ArgumentOutOfRangeException ();
+			}
+		}
+
+		private void PrintPreorder (BinaryNode node)
+		{
+			if (node == null) return;
+			Console.Write (" " + node.Value);
+			PrintPreorder (node.Left);
+			PrintPreorder (node.Right);
+		}
+
+		private void PrintInorder (BinaryNode node)
+		{
+			if (node == null) return;
+			PrintInorder (node.Left);
+			Console.Write (" " + node.Value);
+			PrintInorder (node.Right);
+		}
+
+		private void PrintPostorder (BinaryNode node)
+		{
+			if (node == null) return;
+			PrintPostorder (node.Left);
+			PrintPostorder (node.Right);
+			Console.Write (" " + node.Value);
+		}
+
+		private void PrintBreadthFirst (BinaryNode node)
+		{
+			if (node == null)
+			{
+				throw new System.InvalidOperationException ("BinaryTree: is empty");
+			}
+
+			Queue<BinaryNode> queue = new Queue<BinaryNode> ();
+			BinaryNode temp;
+
+			if (node != null)
+			{
+				queue.Enqueue (node);
+			}
+
+			while (queue.Count != 0)
+			{
+				temp = queue.Dequeue ();
+				Console.Write (" " + temp.Value);
+
+				if (temp.Left != null)
+				{
+					queue.Enqueue (temp.Left);
+				}
+				if (temp.Right != null)
+				{
+					queue.Enqueue (temp.Right);
+				}
+			}
+		}
+
+		private void PrintDepthFirst (BinaryNode node)
+		{
+			if (node == null)
+			{
+				throw new System.InvalidOperationException ("BinaryTree: is empty");
+			}
+
+			Stack<BinaryNode> stack = new Stack<BinaryNode> ();
+			BinaryNode temp;
+
+			if (node != null)
+			{
+				stack.Push (node);
+			}
+
+			while (stack.Count != 0)
+			{
+				temp = stack.Pop ();
+				Console.Write (" " + temp.Value);
+
+				if (temp.Left != null)
+				{
+					stack.Push (temp.Left);
+				}
+				if (temp.Right != null)
+				{
+					stack.Push (temp.Right);
+				}
+			}
+		}
+
+		#endregion
+
+		#region Tree Depth
+
+		public int TreeDepth ()
+		{
+			return TreeDepth (Root);
+		}
+
+		private int TreeDepth (BinaryNode node)
+		{
+			if (node == null)
+			{
+				return 0;
+			}
+
+			int leftDepth = TreeDepth (node.Left);
+			int rightDepth = TreeDepth (node.Right);
+
+			return (leftDepth > rightDepth) ? leftDepth + 1 : rightDepth + 1;
+		}
+
+		#endregion
+
+		#region Rotate
+
 		public static BinaryNode RotateRight (BinaryNode oldRoot)
 		{
 			BinaryNode newRoot = oldRoot.Left;
@@ -207,5 +361,36 @@ namespace DataStructures
 			node.Right = Root;
 			return node;
 		}
+
+		#endregion
+
+		#region Add Methods
+
+		public void LevelOrderBinaryTree (int[] arr)
+		{
+			Root = LevelOrderBinaryTree (arr, 0);
+		}
+
+		private BinaryNode LevelOrderBinaryTree (int[] dataArray, int start)
+		{
+			int size = dataArray.Length;
+			BinaryNode currentNode = new BinaryNode (dataArray[start]);
+
+			int leftIndex = 2 * start + 1;
+			int rightIndex = 2 * start + 2;
+
+			if (leftIndex < size)
+			{
+				currentNode.Left = LevelOrderBinaryTree (dataArray, leftIndex);
+			}
+			if (rightIndex < size)
+			{
+				currentNode.Right = LevelOrderBinaryTree (dataArray, rightIndex);
+			}
+
+			return currentNode;
+		}
+
+		#endregion
 	}
 }
