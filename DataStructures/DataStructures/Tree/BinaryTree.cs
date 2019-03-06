@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace DataStructures
 {
-	public class BinaryNode
+	public class BNode
 	{
-		public BinaryNode Left { get; set; }
-		public BinaryNode Right { get; set; }
+		public BNode Left { get; set; }
+		public BNode Right { get; set; }
 		public int Value { get; set; }
 
-		public BinaryNode (int value) : this (value, null, null) { }
+		public BNode (int value) : this (value, null, null) { }
 
-		public BinaryNode (BinaryNode left, BinaryNode right) : this (default (int), left, right) { }
+		public BNode (BNode left, BNode right) : this (default (int), left, right) { }
 
-		public BinaryNode (int value, BinaryNode left, BinaryNode right)
+		public BNode (int value, BNode left, BNode right)
 		{
 			Left = left;
 			Right = right;
@@ -33,15 +33,13 @@ namespace DataStructures
 
 	public class BinaryTree
 	{
-		public enum TraversalType { Preorder, Inorder, Postorder, BreadthFirst }
+		public enum TraversalType { Preorder, Inorder, Postorder }
 		public enum PrintType { Preorder, Inorder, Postorder, BreadthFirst, DepthFirst }
+		public enum GetType { Preorder, Postorder, Inorder }
 
-		private delegate BinaryNode TraversalScheme (BinaryNode node);
+		private delegate BNode TraversalScheme (BNode node);
 
-		/// <summary>
-		/// The most base node of tree.
-		/// </summary>
-		private BinaryNode Root { get; set; }
+		private BNode Root { get; set; }
 
 		#region Constructors
 
@@ -59,7 +57,7 @@ namespace DataStructures
 		/// </summary>
 		public BinaryTree (int value)
 		{
-			Root = new BinaryNode (value);
+			Root = new BNode (value);
 			Count++;
 		}
 
@@ -68,14 +66,9 @@ namespace DataStructures
 		#region Properties
 
 		/// <summary>
-		/// Length of the binary tree.
-		/// </summary>
-		public int Count { get; private set; }
-
-		/// <summary>
 		/// Return first node.
 		/// </summary>
-		public BinaryNode First => Root;
+		public BNode First => Root;
 
 		/// <summary>
 		/// Return value of the first node.
@@ -90,9 +83,9 @@ namespace DataStructures
 		/// Find node by value.
 		/// </summary>
 		/// <param name="value">value that need to find</param>
-		public BinaryNode FindNode (int value)
+		public BNode FindNode (int value)
 		{
-			BinaryNode root = Root;
+			BNode root = Root;
 			while (root != null)
 			{
 				int current = root.Value;
@@ -108,7 +101,7 @@ namespace DataStructures
 		/// </summary>
 		/// <param name="root">first node of the current tree</param>
 		/// <param name="value">value that need to find</param>
-		public BinaryNode FindNode (BinaryNode root, int value)
+		public BNode FindNode (BNode root, int value)
 		{
 			if (root == null) return null;
 
@@ -127,7 +120,7 @@ namespace DataStructures
 		/// <para>Time Complexity - BigO(n)</para>
 		/// </summary>
 		/// <param name="node">first node of tree</param>
-		public static int TreeHeight (BinaryNode node)
+		public static int TreeHeight (BNode node)
 		{
 			if (node == null) return 0;
 			return 1 + Math.Max (TreeHeight (node.Left), TreeHeight (node.Right));
@@ -164,7 +157,7 @@ namespace DataStructures
 		/// <para>Time Complexity - BigO(n)</para>
 		/// </summary>
 		/// <param name="node">root of tree</param>
-		public void PreorderTraversal (BinaryNode node)
+		public void PreorderTraversal (BNode node)
 		{
 			if (node == null) return;
 			node.PrintValue ();
@@ -177,7 +170,7 @@ namespace DataStructures
 		/// <para>Time Complexity - BigO(n)</para>
 		/// </summary>
 		/// <param name="node">root of tree</param>
-		public void InorderTraversal (BinaryNode node)
+		public void InorderTraversal (BNode node)
 		{
 			if (node == null) return;
 			InorderTraversal (node.Left);
@@ -190,7 +183,7 @@ namespace DataStructures
 		/// <para>Time Complexity - BigO(n)</para>
 		/// </summary>
 		/// <param name="node">root of tree</param>
-		public void PostorderTraversal (BinaryNode node)
+		public void PostorderTraversal (BNode node)
 		{
 			if (node == null) return;
 			InorderTraversal (node.Left);
@@ -200,7 +193,7 @@ namespace DataStructures
 
 		#endregion
 
-		#region Print Methods
+		#region Print Tree
 
 		public void Print (PrintType type)
 		{
@@ -231,7 +224,7 @@ namespace DataStructures
 			}
 		}
 
-		private void PrintPreorder (BinaryNode node)
+		private void PrintPreorder (BNode node)
 		{
 			if (node == null) return;
 			Console.Write (" " + node.Value);
@@ -239,7 +232,7 @@ namespace DataStructures
 			PrintPreorder (node.Right);
 		}
 
-		private void PrintInorder (BinaryNode node)
+		private void PrintInorder (BNode node)
 		{
 			if (node == null) return;
 			PrintInorder (node.Left);
@@ -247,7 +240,7 @@ namespace DataStructures
 			PrintInorder (node.Right);
 		}
 
-		private void PrintPostorder (BinaryNode node)
+		private void PrintPostorder (BNode node)
 		{
 			if (node == null) return;
 			PrintPostorder (node.Left);
@@ -255,15 +248,15 @@ namespace DataStructures
 			Console.Write (" " + node.Value);
 		}
 
-		private void PrintBreadthFirst (BinaryNode node)
+		private void PrintBreadthFirst (BNode node)
 		{
 			if (node == null)
 			{
 				throw new System.InvalidOperationException ("BinaryTree: is empty");
 			}
 
-			Queue<BinaryNode> queue = new Queue<BinaryNode> ();
-			BinaryNode temp;
+			Queue<BNode> queue = new Queue<BNode> ();
+			BNode temp;
 
 			if (node != null)
 			{
@@ -286,15 +279,15 @@ namespace DataStructures
 			}
 		}
 
-		private void PrintDepthFirst (BinaryNode node)
+		private void PrintDepthFirst (BNode node)
 		{
 			if (node == null)
 			{
 				throw new System.InvalidOperationException ("BinaryTree: is empty");
 			}
 
-			Stack<BinaryNode> stack = new Stack<BinaryNode> ();
-			BinaryNode temp;
+			Stack<BNode> stack = new Stack<BNode> ();
+			BNode temp;
 
 			if (node != null)
 			{
@@ -319,6 +312,75 @@ namespace DataStructures
 
 		#endregion
 
+		#region Print Element At index
+
+		public void PrintAt (int index, GetType type)
+		{
+			if (Root == null)
+			{
+				throw new System.InvalidOperationException ("BinaryTree: is empty.");
+			}
+
+			int[] counter = { 0 };
+			switch (type)
+			{
+				case GetType.Preorder:
+					PrintAtIndexPreOrder (index, Root, counter);
+					break;
+
+				case GetType.Postorder:
+					PrintAtIndexPostOrder (index, Root, counter);
+					break;
+
+				case GetType.Inorder:
+					PrintAtIndexInOrder (index, Root, counter);
+					break;
+
+				default: throw new System.ArgumentOutOfRangeException ();
+			}
+		}
+
+		private void PrintAtIndexPreOrder (int index, BNode node, int[] counter)
+		{
+			if (node == null) return;
+
+			counter[0]++;
+			if (counter[0] == index)
+			{
+				Console.Write (" " + node.Value);
+			}
+
+			PrintAtIndexPreOrder (index, node.Left, counter);
+			PrintAtIndexPreOrder (index, node.Right, counter);
+		}
+
+		private void PrintAtIndexPostOrder (int index, BNode node, int[] counter)
+		{
+			if (node == null) return;
+			PrintAtIndexPostOrder (index, node.Left, counter);
+			PrintAtIndexPostOrder (index, node.Right, counter);
+
+			counter[0]++;
+			if (counter[0] == index)
+			{
+				Console.Write (" " + node.Value);
+			}
+		}
+
+		private void PrintAtIndexInOrder (int index, BNode node, int[] counter)
+		{
+			if (node == null) return;
+			PrintAtIndexInOrder (index, node.Left, counter);
+			counter[0]++;
+			if (counter[0] == index)
+			{
+				Console.Write (" " + node.Value);
+			}
+			PrintAtIndexInOrder (index, node.Right, counter);
+		}
+
+		#endregion
+
 		#region Tree Depth
 
 		public int TreeDepth ()
@@ -326,7 +388,7 @@ namespace DataStructures
 			return TreeDepth (Root);
 		}
 
-		private int TreeDepth (BinaryNode node)
+		private int TreeDepth (BNode node)
 		{
 			if (node == null)
 			{
@@ -336,16 +398,83 @@ namespace DataStructures
 			int leftDepth = TreeDepth (node.Left);
 			int rightDepth = TreeDepth (node.Right);
 
-			return (leftDepth > rightDepth) ? leftDepth + 1 : rightDepth + 1;
+			return ( leftDepth > rightDepth ) ? leftDepth + 1 : rightDepth + 1;
+		}
+
+		#endregion
+
+		#region Copy
+
+		public BinaryTree Copy ()
+		{
+			BinaryTree tree = new BinaryTree ();
+			tree.Root = Copy (Root);
+			return tree;
+		}
+
+		private BNode Copy (BNode current)
+		{
+			if (current == null) return null;
+
+			BNode temp = new BNode (current.Value);
+			temp.Left = Copy (current.Left);
+			temp.Right = Copy (current.Right);
+			return temp;
+
+		}
+
+		public BinaryTree CopyMirror ()
+		{
+			BinaryTree tree = new BinaryTree ();
+			tree.Root = CopyMirror (Root);
+			return tree;
+		}
+
+		private BNode CopyMirror (BNode current)
+		{
+			if (current == null) return null;
+
+			BNode temp = new BNode (current.Value);
+			temp.Right = CopyMirror (current.Left);
+			temp.Left = CopyMirror (current.Right);
+			return temp;
+
+		}
+
+		#endregion
+
+		#region Number of elements
+
+		public int CountElements ()
+		{
+			return CountElements (Root);
+		}
+
+		private int CountElements (BNode current)
+		{
+			if (current == null) return 0;
+			return 1 + CountElements (current.Left) + CountElements (current.Right);
+		}
+
+		public int CountLeafs ()
+		{
+			return CountLeafs (Root);
+		}
+
+		private int CountLeafs (BNode current)
+		{
+			if (current == null) return 0;
+			if (current.Left == null && current.Right == null) return 1;
+			return CountLeafs (current.Left) + CountLeafs (current.Right);
 		}
 
 		#endregion
 
 		#region Rotate
 
-		public static BinaryNode RotateRight (BinaryNode oldRoot)
+		public static BNode RotateRight (BNode oldRoot)
 		{
-			BinaryNode newRoot = oldRoot.Left;
+			BNode newRoot = oldRoot.Left;
 			oldRoot.Left = newRoot.Right;
 			newRoot.Right = oldRoot;
 			return newRoot;
@@ -354,9 +483,9 @@ namespace DataStructures
 		/// <summary>
 		/// <para>Time Complexity - BigO(n)</para>
 		/// </summary>
-		public BinaryNode RotateRight ()
+		public BNode RotateRight ()
 		{
-			BinaryNode node = Root.Left;
+			BNode node = Root.Left;
 			Root.Left = node.Right;
 			node.Right = Root;
 			return node;
@@ -371,10 +500,10 @@ namespace DataStructures
 			Root = LevelOrderBinaryTree (arr, 0);
 		}
 
-		private BinaryNode LevelOrderBinaryTree (int[] dataArray, int start)
+		private BNode LevelOrderBinaryTree (int[] dataArray, int start)
 		{
 			int size = dataArray.Length;
-			BinaryNode currentNode = new BinaryNode (dataArray[start]);
+			BNode currentNode = new BNode (dataArray[start]);
 
 			int leftIndex = 2 * start + 1;
 			int rightIndex = 2 * start + 2;
