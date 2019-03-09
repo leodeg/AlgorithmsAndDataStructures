@@ -1,36 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataStructures
+namespace DataStructures.Tree
 {
-	public class BNode
-	{
-		public BNode Left { get; set; }
-		public BNode Right { get; set; }
-		public int Value { get; set; }
-
-		public BNode (int value) : this (value, null, null) { }
-
-		public BNode (BNode left, BNode right) : this (default (int), left, right) { }
-
-		public BNode (int value, BNode left, BNode right)
-		{
-			Left = left;
-			Right = right;
-			Value = value;
-		}
-
-		public void PrintValue ()
-		{
-			System.Console.Write ("[{0}]", Value.ToString ());
-		}
-
-		public override string ToString ()
-		{
-			return String.Format ("[{0}]", Value.ToString ());
-		}
-	}
-
 	public class BinaryTree
 	{
 		#region Enumerators
@@ -164,7 +136,7 @@ namespace DataStructures
 
 		#endregion
 
-		#region Find Max
+		#region Find max value and total sum of BT
 
 		public int FindMax ()
 		{
@@ -216,6 +188,25 @@ namespace DataStructures
 			if (leftMax > max) return leftMax;
 			if (rightMax > max) return rightMax;
 			return max;
+		}
+
+		public int TotalSum ()
+		{
+			return TotalSum (Root);
+		}
+
+		private int TotalSum (BNode current)
+		{
+			int sum;
+			int leftSum;
+			int rightSum;
+
+			if (current == null) return 0;
+			leftSum = TotalSum (current.Left);
+			rightSum = TotalSum (current.Right);
+
+			sum = rightSum + leftSum + current.Value;
+			return sum;
 		}
 
 		#endregion
