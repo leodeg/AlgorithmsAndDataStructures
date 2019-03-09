@@ -5,8 +5,19 @@ namespace DataStructures.Tree
 {
 	public class BNode
 	{
+		/// <summary>
+		/// Left child of the current node.
+		/// </summary>
 		public BNode Left { get; set; }
+
+		/// <summary>
+		/// Right child of the current node.
+		/// </summary>
 		public BNode Right { get; set; }
+
+		/// <summary>
+		/// Current value.
+		/// </summary>
 		public int Value { get; set; }
 
 		public BNode (int value) 

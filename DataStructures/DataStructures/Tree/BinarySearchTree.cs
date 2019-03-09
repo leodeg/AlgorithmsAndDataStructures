@@ -30,7 +30,7 @@ namespace DataStructures.Tree
 
 		#region Properties
 
-		public int Max { get { return FindMax(); } }
+		public int Max { get { return FindMax (); } }
 		public int Min { get { return FindMin (); } }
 		public bool IsBST { get { return IsBinarySearchTreeUtil (); } }
 
@@ -70,7 +70,7 @@ namespace DataStructures.Tree
 			}
 			else
 			{
-				if (node.Value > value)
+				if (node.Value.CompareTo (value) > 0)
 				{
 					node.Left = Insert (value, node.Left);
 				}
@@ -86,7 +86,60 @@ namespace DataStructures.Tree
 
 		#region Delete
 
+		public void Delete (int value)
+		{
+			Root = Delete (Root, value);
+		}
 
+		private BNode Delete (BNode node, int value)
+		{
+			BNode temp = null;
+
+			if (node != null)
+			{
+				if (node.Value.Equals (value))
+				{
+					if (node.Left.Equals (null)
+						&& node.Right.Equals (null))
+					{
+						return null;
+					}
+					else
+					{
+						if (node.Left.Equals (null))
+						{
+							temp = node.Right;
+							return temp;
+						}
+
+						if (node.Right.Equals (null))
+						{
+							temp = node.Left;
+							return temp;
+						}
+
+						BNode maxNode = FindMax (node.Left);
+						int maxValue = maxNode.Value;
+
+						node.Value = maxValue;
+						node.Left = Delete (node.Left, maxValue);
+					}
+				}
+				else
+				{
+					if (node.Value.CompareTo (value) > 0)
+					{
+						node.Left = Delete (node.Left, value);
+					}
+					else
+					{
+						node.Right = Delete (node.Right, value);
+					}
+				}
+			}
+
+			return node;
+		}
 
 		#endregion
 
@@ -103,12 +156,12 @@ namespace DataStructures.Tree
 
 			while (current != null)
 			{
-				if (current.Value == value)
+				if (current.Value.Equals (value))
 				{
 					return true;
 				}
 
-				if (current.Value > value)
+				if (current.Value.CompareTo (value) > 0)
 				{
 					current = current.Left;
 				}
@@ -130,15 +183,15 @@ namespace DataStructures.Tree
 			BNode current = Root;
 
 
-			while (current != null)
+			while (!current.Equals (null))
 			{
-				if (current.Value == value)
+				if (current.Value.Equals (value))
 				{
 					container = current.Value;
 					return true;
 				}
 
-				if (current.Value > value)
+				if (current.Value.CompareTo (value) > 0)
 				{
 					current = current.Left;
 				}
@@ -154,13 +207,13 @@ namespace DataStructures.Tree
 
 		public int FindMin ()
 		{
-			if (Root == null)
+			if (Root.Equals (null))
 			{
 				throw new System.InvalidOperationException ("Tree: is empty");
 			}
 
 			BNode node = Root;
-			while (node.Left != null)
+			while (!node.Left.Equals (null))
 			{
 				node = node.Left;
 			}
@@ -175,7 +228,7 @@ namespace DataStructures.Tree
 			}
 
 			BNode node = Root;
-			while (node.Right != null)
+			while (!node.Right.Equals (null))
 			{
 				node = node.Right;
 			}
@@ -184,13 +237,13 @@ namespace DataStructures.Tree
 
 		private BNode FindMax (BNode root)
 		{
-			if (Root == null)
+			if (Root.Equals (null))
 			{
 				throw new System.InvalidOperationException ("Tree: is empty");
 			}
 
 			BNode node = root;
-			while (node.Right != null)
+			while (!node.Right.Equals (null))
 			{
 				node = node.Right;
 			}
@@ -205,7 +258,7 @@ namespace DataStructures.Tree
 			}
 
 			BNode node = root;
-			while (node.Left != null)
+			while (!node.Left.Equals (null))
 			{
 				node = node.Left;
 			}
@@ -223,17 +276,20 @@ namespace DataStructures.Tree
 				return true;
 			}
 
-			if (root.Left != null && FindMax(root.Left).Value > root.Value)
+			if (!root.Left.Equals (null)
+				&& FindMax (root.Left).Value.CompareTo (root.Value) > 0)
 			{
 				return false;
 			}
 
-			if (root.Right != null && FindMin(root.Right).Value <= root.Value)
+			if (root.Right != null
+				&& FindMin (root.Right).Value.CompareTo (root.Value) <= 0)
 			{
 				return false;
 			}
 
-			return ( IsBinarySearchTree (root.Left) && IsBinarySearchTree (root.Right) );
+			return ( IsBinarySearchTree (root.Left)
+				&& IsBinarySearchTree (root.Right) );
 		}
 
 		private bool IsBinarySearchTreeUtil ()
@@ -248,12 +304,45 @@ namespace DataStructures.Tree
 				return true;
 			}
 
-			if (current.Value < min || current.Value > max)
+			if (current.Value.CompareTo (min) < 0
+				|| current.Value.CompareTo (max) > 0)
 			{
 				return false;
 			}
 
-			return ( IsBinarySearchTreeUtil (current.Left, min, current.Value) && IsBinarySearchTreeUtil (current.Right, current.Value, max) );
+			return ( IsBinarySearchTreeUtil (current.Left, min, current.Value)
+				&& IsBinarySearchTreeUtil (current.Right, current.Value, max) );
+		}
+
+		#endregion
+
+		#region Least Common Ancestor
+
+		public int LeastCommonAcenstor (int first, int second)
+		{
+			return LeastCommonAcenstor (Root, first, second);
+		}
+
+		private int LeastCommonAcenstor (BNode current, int first, int second)
+		{
+			if (current.Equals (null))
+			{
+				return int.MaxValue;
+			}
+
+			if (current.Value.CompareTo (first) > 0
+				&& current.Value.CompareTo (second) > 0)
+			{
+				return LeastCommonAcenstor (current.Left, first, second);
+			}
+
+			if (current.Value.CompareTo (first) < 0
+				&& current.Value.CompareTo (second) < 0)
+			{
+				return LeastCommonAcenstor (current.Right, first, second);
+			}
+
+			return current.Value;
 		}
 
 		#endregion
