@@ -143,7 +143,7 @@ namespace DataStructures.Tree
 
 		#endregion
 
-		#region Find
+		#region Find Value
 
 		public bool Find (int value)
 		{
@@ -205,6 +205,10 @@ namespace DataStructures.Tree
 			return false;
 		}
 
+		#endregion
+
+		#region Find Min and Max
+
 		public int FindMin ()
 		{
 			if (Root.Equals (null))
@@ -263,6 +267,64 @@ namespace DataStructures.Tree
 				node = node.Left;
 			}
 			return node;
+		}
+
+		#endregion
+
+		#region Find Floor and Ceil value
+
+		private int FindFloorValue (int value)
+		{
+			BNode current = Root;
+			int floor = int.MaxValue;
+
+			while (!current.Equals(null))
+			{
+				if (current.Value == value)
+				{
+					floor = current.Value;
+					break;
+				}
+
+				if (current.Value > value)
+				{
+					current = current.Left;
+				}
+				else
+				{
+					floor = current.Value;
+					current = current.Right;
+				}
+			}
+
+			return floor;
+		}
+
+		private int FindCeilValue (int value)
+		{
+			BNode current = Root;
+			int ceil = int.MinValue;
+
+			while (!current.Equals (null))
+			{
+				if (current.Value == value)
+				{
+					ceil = current.Value;
+					break;
+				}
+
+				if (current.Value > value)
+				{
+					ceil = current.Value;
+					current = current.Left;
+				}
+				else
+				{
+					current = current.Right;
+				}
+			}
+
+			return ceil;
 		}
 
 		#endregion
@@ -343,6 +405,61 @@ namespace DataStructures.Tree
 			}
 
 			return current.Value;
+		}
+
+		#endregion
+
+		#region Trim Tree
+
+		public void TrimOutsideRange (int min, int max)
+		{
+			TrimOutsideRange (Root, min, max);
+		}
+
+		private BNode TrimOutsideRange (BNode current, int min, int max)
+		{
+			if (current == null)
+			{
+				return null;
+			}
+
+			current.Left = TrimOutsideRange (current.Left, min, max);
+			current.Right = TrimOutsideRange (current.Right, min, max);
+
+			if (current.Value < min)
+			{
+				return current.Right;
+			}
+			if (current.Value > max)
+			{
+				return current.Left;
+			}
+
+			return current;
+		}
+
+
+		#endregion
+
+		#region Print
+
+		public void PrintInRange (int min, int max)
+		{
+			PrintInRange (Root, min, max);
+		}
+
+		private void PrintInRange (BNode root, int min, int max)
+		{
+			if (root == null) return;
+
+			PrintInRange (root.Left, min, max);
+
+			if (root.Value >= min && root.Value <= max)
+			{
+				root.PrintValue ();
+			}
+
+			PrintInRange (root.Right, min, max);
 		}
 
 		#endregion
