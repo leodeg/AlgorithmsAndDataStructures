@@ -59,6 +59,8 @@
     <Compile Include="DataStructures\Tree\BinarySearchTree.cs" />
     <Compile Include="DataStructures\Tree\BinaryTree.cs" />
     <Compile Include="DataStructures\Tree\BNode.cs" />
+    <Compile Include="DataStructures\Tree\Heap.cs" />
+    <Compile Include="DataStructures\Tree\PriorityQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataStructures\Stack\LinkedListStack.cs" />
   </ItemGroup>
