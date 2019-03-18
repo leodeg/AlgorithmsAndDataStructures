@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Algorithms\Sorting\BubbleSort.cs" />
     <Compile Include="Algorithms\StackProblem\BalancedParanthesis.cs" />
+    <Compile Include="DataStructures\Hash\HashTable.cs" />
+    <Compile Include="DataStructures\Hash\HashTableSeparateChaining.cs" />
     <Compile Include="DataStructures\List\DoublyCircularLinkedList.cs" />
     <Compile Include="DataStructures\Queue\ArrayQueue.cs" />
     <Compile Include="DataStructures\Queue\IQueue.cs" />
