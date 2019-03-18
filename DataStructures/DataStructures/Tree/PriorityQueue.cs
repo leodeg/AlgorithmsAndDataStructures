@@ -6,46 +6,46 @@ namespace DataStructures.DataStructures.Tree
 {
 	internal class PriorityQueue<T> : ICollection<T> where T : IComparable<T>
 	{
-		private const int CAPACITY = 16;
-		private int m_Size;
-		private T[] m_Data;
-		private bool m_IsMinHeap;
+		private const int Capacity = 16;
+		private int size;
+		private T[] data;
+		private bool isMinHeap;
 
 		private PriorityQueue (bool minHeap = true)
 		{
-			m_Data = new T[CAPACITY];
-			m_Size = 0;
-			m_IsMinHeap = minHeap;
+			data = new T[Capacity];
+			size = 0;
+			isMinHeap = minHeap;
 		}
 
 		private PriorityQueue (T[] arr, bool minHeap = true)
 		{
-			m_Data = new T[arr.Length + 1];
-			m_Size = arr.Length;
-			m_IsMinHeap = minHeap;
-			Array.Copy (arr, 1, m_Data, 1, arr.Length);
+			data = new T[arr.Length + 1];
+			size = arr.Length;
+			isMinHeap = minHeap;
+			Array.Copy (arr, 1, data, 1, arr.Length);
 
-			for (int i = ( m_Size / 2 ); i > 0; i--)
+			for (int i = ( size / 2 ); i > 0; i--)
 			{
 
 			}
 		}
 
-		public int Count => m_Size;
+		public int Count => size;
 
 		public bool IsReadOnly => false;
 
-		public bool IsEmpty => m_Size <= 0;
+		public bool IsEmpty => size <= 0;
 
 		private int Compare (int first, int second)
 		{
-			if (m_IsMinHeap)
+			if (isMinHeap)
 			{
-				return m_Data[first].CompareTo (m_Data[second]);
+				return data[first].CompareTo (data[second]);
 			}
 			else
 			{
-				return m_Data[second].CompareTo (m_Data[first]);
+				return data[second].CompareTo (data[first]);
 			}
 		}
 
@@ -56,21 +56,21 @@ namespace DataStructures.DataStructures.Tree
 			int small = -1;
 			T temp;
 
-			if (left <= m_Size)
+			if (left <= size)
 			{
 				small = left;
 			}
 
-			if (right <= m_Size && this.Compare (right, left) < 0)
+			if (right <= size && this.Compare (right, left) < 0)
 			{
 				small = right;
 			}
 
 			if (small != -1 && this.Compare (small, position) < 0)
 			{
-				temp = m_Data[position];
-				m_Data[position] = m_Data[small];
-				m_Data[small] = temp;
+				temp = data[position];
+				data[position] = data[small];
+				data[small] = temp;
 
 				PullDown (small);
 			}
@@ -85,9 +85,9 @@ namespace DataStructures.DataStructures.Tree
 
 			if (this.Compare (parent, position) > 0)
 			{
-				temp = m_Data[position];
-				m_Data[position] = m_Data[parent];
-				m_Data[parent] = temp;
+				temp = data[position];
+				data[position] = data[parent];
+				data[parent] = temp;
 
 				LiftUp (parent);
 			}
@@ -95,20 +95,20 @@ namespace DataStructures.DataStructures.Tree
 
 		private void ExtendSize ()
 		{
-			T[] old = m_Data;
-			m_Data = new T[m_Data.Length * 2];
-			Array.Copy (old, 1, m_Data, 1, m_Size);
+			T[] old = data;
+			data = new T[data.Length * 2];
+			Array.Copy (old, 1, data, 1, size);
 		}
 
 		public virtual void Enqueue (T value)
 		{
-			if (m_Size == m_Data.Length - 1)
+			if (size == data.Length - 1)
 			{
 				this.ExtendSize ();
 			}
 
-			m_Data[++m_Size] = value;
-			LiftUp (m_Size);
+			data[++size] = value;
+			LiftUp (size);
 		}
 
 		public virtual T Dequeue ()
@@ -118,9 +118,9 @@ namespace DataStructures.DataStructures.Tree
 				throw new System.InvalidOperationException ("Heap:: is empty.");
 			}
 
-			T value = m_Data[1];
-			m_Data[1] = m_Data[m_Size];
-			m_Size--;
+			T value = data[1];
+			data[1] = data[size];
+			size--;
 
 			PullDown (1);
 			return value;
@@ -137,17 +137,17 @@ namespace DataStructures.DataStructures.Tree
 
 		public T GetValueAt (int position)
 		{
-			return m_Data[position];
+			return data[position];
 		}
 
 		public T GetValue (T value)
 		{
-			for (int i = 1; i <= m_Size; i++)
+			for (int i = 1; i <= size; i++)
 			{
-				if (m_Data[i].Equals (value))
+				if (data[i].Equals (value))
 				{
 
-					return m_Data[i];
+					return data[i];
 				}
 			}
 
@@ -156,9 +156,9 @@ namespace DataStructures.DataStructures.Tree
 
 		public void Print ()
 		{
-			for (int i = 1; i <= m_Size + 1; i++)
+			for (int i = 1; i <= size + 1; i++)
 			{
-				Console.Write ("[0]", m_Data[i]);
+				Console.Write ("[0]", data[i]);
 			}
 		}
 
@@ -169,12 +169,12 @@ namespace DataStructures.DataStructures.Tree
 
 		public bool Remove (T item)
 		{
-			for (int i = 1; i <= m_Size; i++)
+			for (int i = 1; i <= size; i++)
 			{
-				if (m_Data[i].Equals (item))
+				if (data[i].Equals (item))
 				{
-					m_Data[i] = m_Data[m_Size];
-					m_Size--;
+					data[i] = data[size];
+					size--;
 
 					PullDown (i);
 					LiftUp (i);
@@ -188,14 +188,14 @@ namespace DataStructures.DataStructures.Tree
 
 		public void Clear ()
 		{
-			m_Size = 0;
+			size = 0;
 		}
 
 		public bool Contains (T item)
 		{
-			for (int i = 1; i <= m_Size; i++)
+			for (int i = 1; i <= size; i++)
 			{
-				if (m_Data[i].Equals (item))
+				if (data[i].Equals (item))
 				{
 					return true;
 				}
@@ -226,9 +226,9 @@ namespace DataStructures.DataStructures.Tree
 				throw new System.ArgumentOutOfRangeException ();
 			}
 
-			for (int i = arrayIndex, j = 1; i < m_Data.Length; i++, j++)
+			for (int i = arrayIndex, j = 1; i < data.Length; i++, j++)
 			{
-				array[i] = m_Data[j];
+				array[i] = data[j];
 			}
 		}
 

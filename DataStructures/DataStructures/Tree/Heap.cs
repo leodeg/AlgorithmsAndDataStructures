@@ -3,23 +3,23 @@ namespace DataStructures.Tree
 {
 	internal class Heap
 	{
-		private const int CAPACITY = 16;
-		private int m_Size;
-		private int[] m_Data;
+		private const int Capacity = 16;
+		private int size;
+		private int[] data;
 
 		public Heap ()
 		{
-			m_Data = new int[CAPACITY];
-			m_Size = 0;
+			data = new int[Capacity];
+			size = 0;
 		}
 
 		public Heap (int[] arr)
 		{
-			m_Size = arr.Length;
-			m_Data = new int[arr.Length + 1];
-			System.Array.Copy (arr, 0, m_Data, 1, arr.Length);
+			size = arr.Length;
+			data = new int[arr.Length + 1];
+			System.Array.Copy (arr, 0, data, 1, arr.Length);
 
-			for (int i = ( m_Size / 2 ); i > 0; i--)
+			for (int i = ( size / 2 ); i > 0; i--)
 			{
 				PullDown (i);
 			}
@@ -27,13 +27,13 @@ namespace DataStructures.Tree
 
 		public virtual void Add (int value)
 		{
-			if (m_Size == m_Data.Length)
+			if (size == data.Length)
 			{
 				ExtendHeapSize ();
 			}
 
-			m_Data[++m_Size] = value;
-			LiftUp (m_Size);
+			data[++size] = value;
+			LiftUp (size);
 		}
 
 		public virtual int Delete ()
@@ -43,9 +43,9 @@ namespace DataStructures.Tree
 				throw new System.InvalidOperationException ("Heap:: is empty.");
 			}
 
-			int value = m_Data[1];
-			m_Data[1] = m_Data[m_Size];
-			m_Size--;
+			int value = data[1];
+			data[1] = data[size];
+			size--;
 
 			PullDown (1);
 			return value;
@@ -58,21 +58,21 @@ namespace DataStructures.Tree
 			int small = -1;
 			int temp;
 
-			if (left <= m_Size)
+			if (left <= size)
 			{
 				small = left;
 			}
 
-			if (right <= m_Size && ( m_Data[right] - m_Data[left] < 0 ))
+			if (right <= size && ( data[right] - data[left] < 0 ))
 			{
 				small = right;
 			}
 
-			if (small != -1 && ( m_Data[small] - m_Data[position] < 0 ))
+			if (small != -1 && ( data[small] - data[position] < 0 ))
 			{
-				temp = m_Data[position];
-				m_Data[position] = m_Data[small];
-				m_Data[small] = temp;
+				temp = data[position];
+				data[position] = data[small];
+				data[small] = temp;
 
 				PullDown (small);
 			}
@@ -88,11 +88,11 @@ namespace DataStructures.Tree
 				return;
 			}
 
-			if ((m_Data[parent] - m_Data[position]) > 0)
+			if ((data[parent] - data[position]) > 0)
 			{
-				temp = m_Data[position];
-				m_Data[position] = m_Data[parent];
-				m_Data[parent] = temp;
+				temp = data[position];
+				data[position] = data[parent];
+				data[parent] = temp;
 
 				LiftUp (parent);
 			}
@@ -109,22 +109,60 @@ namespace DataStructures.Tree
 
 		private void ExtendHeapSize ()
 		{
-			int[] old = m_Data;
-			m_Data = new int[m_Data.Length * 2];
-			Array.Copy (old, 1, m_Data, 1, m_Size);
+			int[] oldData = data;
+			data = new int[data.Length * 2];
+			Array.Copy (oldData, 1, data, 1, size);
 		}
 
 		public virtual void Print ()
 		{
-			for (int i = 0; i <= m_Size; i++)
+			for (int i = 0; i <= size; i++)
 			{
-				System.Console.WriteLine ("value is: {0}", m_Data[i]);
+				System.Console.WriteLine ("value is: {0}", data[i]);
 			}
+		}
+
+		public static bool IsMinHeap (int[] array, int size)
+		{
+			for (int current = 0; current <= (size - 2) / 2; current++)
+			{
+				int leftIndex = 2 * current + 1;
+				if (leftIndex < size && array[current] > array[leftIndex])
+				{
+					return false;
+				}
+
+				int rightIndex = 2 * current + 2;
+				if (rightIndex < size && array[current] > array[rightIndex])
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+
+		public static bool IsMaxHeap (int[] array, int size)
+		{
+			for (int current = 0; current <= ( size - 2 ) / 2; current++)
+			{
+				int leftIndex = 2 * current + 1;
+				if (leftIndex < size && array[current] < array[leftIndex])
+				{
+					return false;
+				}
+
+				int rightIndex = 2 * current + 2;
+				if (rightIndex  < size && array[current] < array[rightIndex])
+				{
+					return false;
+				}
+			}
+			return true;
 		}
 
 		public virtual bool IsEmpty ()
 		{
-			return m_Size <= 0;
+			return size <= 0;
 		}
 
 		public virtual int Peek ()
@@ -134,7 +172,7 @@ namespace DataStructures.Tree
 				throw new System.InvalidOperationException ("Heap:: is empty.");
 			}
 
-			return m_Data[1];
+			return data[1];
 		}
 	}
 }
