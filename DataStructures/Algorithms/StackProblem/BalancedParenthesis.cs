@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Algorithms.StackProblem
 {
-	public static class BalancedParanthesis
+	public static class BalancedParenthesis
 	{
-		public static bool IsBalancedParanthesis (string expression)
+		public static bool IsBalancedParenthesis (string expression)
 		{
 			Stack<char> stackExpression = new Stack<char> ();
 
