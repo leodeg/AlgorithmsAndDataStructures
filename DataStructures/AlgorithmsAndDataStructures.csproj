@@ -45,8 +45,10 @@
     <Compile Include="Algorithms\HashProblem\PrintFirstRepeatingNumber.cs" />
     <Compile Include="Algorithms\HashProblem\PrintRepeatingInteger.cs" />
     <Compile Include="Algorithms\HashProblem\RemoveDuplicates.cs" />
+    <Compile Include="Algorithms\Searching\DepthFirstTraversal.cs" />
     <Compile Include="Algorithms\Sorting\BubbleSort.cs" />
     <Compile Include="Algorithms\StackProblem\BalancedParenthesis.cs" />
+    <Compile Include="DataStructures\Graph\AdjacencyList\Graph.cs" />
     <Compile Include="DataStructures\Hash\CountMap.cs" />
     <Compile Include="DataStructures\Hash\HashTable.cs" />
     <Compile Include="DataStructures\Hash\HashTableSeparateChaining.cs" />
