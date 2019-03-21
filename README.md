@@ -35,11 +35,15 @@
 #### Sorting
   * [BubbleSort](DataStructures/Algorithms/Sorting/BubbleSort.cs)
 #### Searching
+  * [Breadth First Traversal](DataStructures/Algorithms/Searching/BreadthFirstTraversal.cs)
+  * [Depth First Traversal](DataStructures/Algorithms/Searching/DepthFirstTraversal.cs)
 #### Problems:
   * [Remove Duplicates](DataStructures/Algorithms/HashProblem/RemoveDuplicates.cs)
   * [Find missing number](DataStructures/Algorithms/HashProblem/FindMissingNumber.cs)
   * [Balanced parenthesis](DataStructures/Algorithms/StackProblem/BalancedParenthesis.cs)
   * [Print repeating numbers](DataStructures/Algorithms/HashProblem/PrintRepeatingInteger.cs)
   * [Print first repeating numbers](DataStructures/Algorithms/HashProblem/PrintFirstRepeatingNumber.cs)
+  * [Determining path](DataStructures/Algorithms/GraphProblem/DeterminingPath.cs)
+  * [Is graph connected](DataStructures/Algorithms/GraphProblem/IsGraphConnected.cs)
 
   

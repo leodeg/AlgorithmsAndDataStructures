@@ -9,7 +9,7 @@ namespace DataStructures.Algorithms.Searching
 {
 	internal class DepthFirstTraversal
 	{
-		public void DFS_Stack (Graph.AdjacencyList.Graph graph)
+		public static void DFS_Stack (Graph.AdjacencyList.Graph graph)
 		{
 			int count = graph.Count;
 			int[] visited = new int[count];
@@ -41,7 +41,7 @@ namespace DataStructures.Algorithms.Searching
 			}
 		}
 
-		public void DFS_Recursion (Graph.AdjacencyList.Graph graph, int index, int[] visited)
+		public static void DFS_Recursion (Graph.AdjacencyList.Graph graph, int index, int[] visited)
 		{
 			Graph.AdjacencyList.Graph.ANode head = graph.GetNode (index);
 
