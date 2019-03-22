@@ -42,7 +42,6 @@
 					}
 				}
 
-				// If no two elements that can be swapped, it mean array is already sorted
 				if (!swapped) break;
 			}
 		}

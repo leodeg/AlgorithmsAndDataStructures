@@ -9,7 +9,7 @@ namespace DataStructures.Algorithms.GraphProblem
 {
 	static class DeterminingPath
 	{
-		public static int PathExist (Graph.AdjacencyList.Graph graph, int source, int destination)
+		public static int PathExist (Graphs.Graph graph, int source, int destination)
 		{
 			int count = graph.Count;
 			int[] visited = new int[count];

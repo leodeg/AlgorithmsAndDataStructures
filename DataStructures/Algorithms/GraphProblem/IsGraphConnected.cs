@@ -9,7 +9,7 @@ namespace DataStructures.Algorithms.GraphProblem
 {
 	static class IsGraphConnected
 	{
-		public static bool IsConnected (Graph.AdjacencyList.Graph graph)
+		public static bool IsConnected (Graphs.Graph graph)
 		{
 			int count = graph.Count;
 			int[] visited = new int[count];

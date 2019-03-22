@@ -1,5 +1,8 @@
-## Data Structures and Algorithms
+## Algorithms and Data Structures
+
+
 ### Data Structures
+
 #### Lists:
   * [Linked List](DataStructures/DataStructures/List/LinkedList.cs)
   * [Double-Linked List](DataStructures/DataStructures/List/DoublyLinkedList.cs)
@@ -32,18 +35,28 @@
 
 
 ### Algorithms
+
 #### Sorting
-  * [BubbleSort](DataStructures/Algorithms/Sorting/BubbleSort.cs)
+  * [BubbleSort](DataStructures/Algorithms/Sorting/BubbleSorting.cs)
+ 
 #### Searching
   * [Breadth First Traversal](DataStructures/Algorithms/Searching/BreadthFirstTraversal.cs)
   * [Depth First Traversal](DataStructures/Algorithms/Searching/DepthFirstTraversal.cs)
-#### Problems:
-  * [Remove Duplicates](DataStructures/Algorithms/HashProblem/RemoveDuplicates.cs)
-  * [Find missing number](DataStructures/Algorithms/HashProblem/FindMissingNumber.cs)
-  * [Balanced parenthesis](DataStructures/Algorithms/StackProblem/BalancedParenthesis.cs)
-  * [Print repeating numbers](DataStructures/Algorithms/HashProblem/PrintRepeatingInteger.cs)
-  * [Print first repeating numbers](DataStructures/Algorithms/HashProblem/PrintFirstRepeatingNumber.cs)
+
+#### Tree:
+  * [Find Shortest Path in graph](DataStructures/Algorithms/TreeAlgorithms/ShortestPath.cs)
+  * [Dijkstra Algorithm](DataStructures/Algorithms/TreeAlgorithms/DijkstraAlgorithm.cs)
+  * [Prims Algorithm](DataStructures/Algorithms/TreeAlgorithms/MinimumSpanningTree.cs)
+  * [Bellman Ford Shortest Path](DataStructures/Algorithms/TreeAlgorithms/BellmanFordShortestPath.cs)
   * [Determining path](DataStructures/Algorithms/GraphProblem/DeterminingPath.cs)
   * [Is graph connected](DataStructures/Algorithms/GraphProblem/IsGraphConnected.cs)
 
+#### Hash:
+  * [Find missing number](DataStructures/Algorithms/HashProblem/FindMissingNumber.cs)
+  * [Remove Duplicates](DataStructures/Algorithms/HashProblem/RemoveDuplicates.cs)
+  * [Print repeating numbers](DataStructures/Algorithms/HashProblem/PrintRepeatingInteger.cs)
+  * [Print first repeating numbers](DataStructures/Algorithms/HashProblem/PrintFirstRepeatingNumber.cs)
+
+#### Stack:
+  * [Balanced parenthesis](DataStructures/Algorithms/StackProblem/BalancedParenthesis.cs)
   

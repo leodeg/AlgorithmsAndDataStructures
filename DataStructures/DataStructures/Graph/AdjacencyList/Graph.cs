@@ -1,50 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DataStructures.Graph.AdjacencyList
+namespace DataStructures.Graphs
 {
-	class Graph
+	internal class Graph
 	{
-		public class ANode : IComparable<ANode>
+		public class Node : IComparable<Node>
 		{
 			internal int source;
 			internal int destination;
 			internal int cost;
 
-			internal ANode next;
+			internal Node next;
 
-			public ANode (int source, int destination, int cost)
+			public Node (int source, int destination, int cost)
 			{
 				this.source = source;
 				this.destination = destination;
 				this.cost = cost;
 			}
 
-			public int CompareTo (ANode other)
+			public int CompareTo (Node other)
 			{
 				return cost - other.cost;
 			}
 		}
 
-		private class AList
+		public class List
 		{
-			internal ANode head;
+			internal Node head;
 		}
 
 		private int count;
-		private AList[] nodes;
+		private List[] nodes;
 
 		public Graph (int count)
 		{
 			this.count = count;
-			nodes = new AList[count];
+			nodes = new List[count];
 
 			for (int i = 0; i < count; i++)
 			{
-				nodes[i] = new AList ();
+				nodes[i] = new List ();
 				nodes[i].head = null;
 			}
 		}
@@ -53,7 +49,7 @@ namespace DataStructures.Graph.AdjacencyList
 
 		public virtual void AddEdge (int source, int destination, int cost)
 		{
-			ANode node = new ANode (source, destination, cost);
+			Node node = new Node (source, destination, cost);
 			node.next = nodes[source].head;
 			nodes[source].head = node;
 		}
@@ -74,14 +70,19 @@ namespace DataStructures.Graph.AdjacencyList
 			AddEdge (source, destination, 1);
 		}
 
-		public ANode GetNode (int index)
+		public Node GetNode (int index)
 		{
 			return nodes[index].head;
-		} 
+		}
+
+		public List GetList (int index)
+		{
+			return nodes[index];
+		}
 
 		public virtual void Print ()
 		{
-			ANode node;
+			Node node;
 
 			for (int i = 0; i < count; i++)
 			{

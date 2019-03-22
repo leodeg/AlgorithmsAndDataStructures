@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using DataStructures.Graphs;
 
 namespace DataStructures.Algorithms.Searching
 {
 	internal class BreadthFirstTraversal
 	{
-		public void BFS_Queue (Graph.AdjacencyList.Graph graph, int index, int[] visited)
+		public void BFS_Queue (Graph graph, int index, int[] visited)
 		{
 			if (graph.Equals (null))
 			{
@@ -25,7 +26,7 @@ namespace DataStructures.Algorithms.Searching
 			while (queue.Count > 0)
 			{
 				current = queue.Dequeue ();
-				Graph.AdjacencyList.Graph.ANode head = graph.GetNode(current);
+				Graph.Node head = graph.GetNode(current);
 				while (head != null)
 				{
 					if (visited[head.destination] == 0)

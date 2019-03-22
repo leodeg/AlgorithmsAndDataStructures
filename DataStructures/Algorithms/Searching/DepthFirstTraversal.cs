@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataStructures.Graph.AdjacencyList;
+using DataStructures.Graphs;
 
 namespace DataStructures.Algorithms.Searching
 {
-	internal class DepthFirstTraversal
+	internal static class DepthFirstTraversal
 	{
-		public static void DFS_Stack (Graph.AdjacencyList.Graph graph)
+		public static void DFS_Stack (Graph graph)
 		{
 			int count = graph.Count;
-			int[] visited = new int[count];
 			int current;
 
+			int[] visited = new int[count];
 			Stack<int> stack = new Stack<int> ();
+
 			for (int i = 0; i < count; i++)
 			{
 				visited[i] = 0;
@@ -28,7 +29,7 @@ namespace DataStructures.Algorithms.Searching
 			{
 				current = stack.Pop ();
 
-				Graph.AdjacencyList.Graph.ANode head = graph.GetNode (current);
+				Graph.Node head = graph.GetNode (current);
 				while (head != null)
 				{
 					if (visited[head.destination] == 0)
@@ -41,9 +42,9 @@ namespace DataStructures.Algorithms.Searching
 			}
 		}
 
-		public static void DFS_Recursion (Graph.AdjacencyList.Graph graph, int index, int[] visited)
+		public static void DFS_Recursion (Graph graph, int index, int[] visited)
 		{
-			Graph.AdjacencyList.Graph.ANode head = graph.GetNode (index);
+			Graph.Node head = graph.GetNode (index);
 
 			while (head != null)
 			{

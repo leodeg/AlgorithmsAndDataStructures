@@ -11,14 +11,14 @@ namespace DataStructures.DataStructures.Tree
 		private T[] data;
 		private bool isMinHeap;
 
-		private PriorityQueue (bool minHeap = true)
+		public PriorityQueue (bool minHeap = true)
 		{
 			data = new T[Capacity];
 			size = 0;
 			isMinHeap = minHeap;
 		}
 
-		private PriorityQueue (T[] arr, bool minHeap = true)
+		public PriorityQueue (T[] arr, bool minHeap = true)
 		{
 			data = new T[arr.Length + 1];
 			size = arr.Length;
@@ -152,6 +152,11 @@ namespace DataStructures.DataStructures.Tree
 			}
 
 			return default(T);
+		}
+
+		public T Peek ()
+		{
+			return data[0];
 		}
 
 		public void Print ()

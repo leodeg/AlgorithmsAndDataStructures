@@ -49,8 +49,13 @@
     <Compile Include="Algorithms\HashProblem\RemoveDuplicates.cs" />
     <Compile Include="Algorithms\Searching\BreadthFirstTraversal.cs" />
     <Compile Include="Algorithms\Searching\DepthFirstTraversal.cs" />
-    <Compile Include="Algorithms\Sorting\BubbleSort.cs" />
+    <Compile Include="Algorithms\Sorting\BubbleSorting.cs" />
+    <Compile Include="Algorithms\Sorting\TopologicalSorting.cs" />
     <Compile Include="Algorithms\StackProblem\BalancedParenthesis.cs" />
+    <Compile Include="Algorithms\TreeAlgorithms\BellmanFordShortestPath.cs" />
+    <Compile Include="Algorithms\TreeAlgorithms\DijkstraAlgorithm.cs" />
+    <Compile Include="Algorithms\TreeAlgorithms\MinimumSpanningTree.cs" />
+    <Compile Include="Algorithms\TreeAlgorithms\ShortestPath.cs" />
     <Compile Include="DataStructures\Graph\AdjacencyList\Graph.cs" />
     <Compile Include="DataStructures\Hash\CountMap.cs" />
     <Compile Include="DataStructures\Hash\HashTable.cs" />
