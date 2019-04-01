@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataStructures.Graphs
+namespace DA.Graphs
 {
 	internal class Graph
 	{

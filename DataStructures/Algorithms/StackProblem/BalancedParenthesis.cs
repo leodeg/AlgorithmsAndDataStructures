@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructures.Algorithms.StackProblem
+namespace DA.Algorithms.StackProblem
 {
 	public static class BalancedParenthesis
 	{

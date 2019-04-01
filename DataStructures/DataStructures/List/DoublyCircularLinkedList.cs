@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructures.List
+namespace DA.List
 {
 	public class DoublyCircularLinkedList<T>
 	{

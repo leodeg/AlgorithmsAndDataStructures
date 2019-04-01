@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataStructures.Tree
+namespace DA.Tree
 {
 	public class BinaryTree
 	{

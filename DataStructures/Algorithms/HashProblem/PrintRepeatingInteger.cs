@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataStructures.Algorithms.HashProblem
+namespace DA.Algorithms.HashProblem
 {
 	internal static class PrintRepeatingInteger
 	{

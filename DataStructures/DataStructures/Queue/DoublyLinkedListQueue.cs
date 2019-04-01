@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataStructures.Queue
+namespace DA.Queue
 {
 	public class DoublyLinkedListQueue<T> : IQueue<T>
 	{

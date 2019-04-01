@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DataStructures.Stack
+namespace DA.Stack
 {
 	public class LinkedListStack<T>
 	{

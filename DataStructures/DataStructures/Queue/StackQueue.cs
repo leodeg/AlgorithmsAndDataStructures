@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataStructures.Queue
+namespace DA.Queue
 {
 	internal class StackQueue<T> : IQueue<T>
 	{

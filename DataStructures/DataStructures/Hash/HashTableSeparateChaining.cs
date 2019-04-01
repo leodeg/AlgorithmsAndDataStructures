@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataStructures.DataStructures.Hash
+namespace DA.DataStructures.Hash
 {
 	internal class HashTableSeparateChaining
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataStructures.List
+namespace DA.List
 {
 	/// <summary>
 	/// Handle a value and a link to the next element in list of type T.

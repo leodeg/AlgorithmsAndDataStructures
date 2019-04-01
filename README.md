@@ -40,8 +40,8 @@
   * [BubbleSort](DataStructures/Algorithms/Sorting/BubbleSorting.cs)
  
 #### Searching
-  * [Breadth First Traversal](DataStructures/Algorithms/Searching/BreadthFirstTraversal.cs)
-  * [Depth First Traversal](DataStructures/Algorithms/Searching/DepthFirstTraversal.cs)
+  * [Breadth First Traversal](DataStructures/Algorithms/Traversal/BreadthFirstTraversal.cs)
+  * [Depth First Traversal](DataStructures/Algorithms/Traversal/DepthFirstTraversal.cs)
 
 #### Tree:
   * [Find Shortest Path in graph](DataStructures/Algorithms/TreeAlgorithms/ShortestPath.cs)

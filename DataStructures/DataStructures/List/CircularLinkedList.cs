@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataStructures.List
+namespace DA.List
 {
 	public class CircularLinkedList<T>
 	{

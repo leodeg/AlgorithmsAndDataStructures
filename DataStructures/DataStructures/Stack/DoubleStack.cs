@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DataStructures.DataStructures.Stack
+namespace DA.DataStructures.Stack
 {
 	internal class DoubleStack<T>
 	{

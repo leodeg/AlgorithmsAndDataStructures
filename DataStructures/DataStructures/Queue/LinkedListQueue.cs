@@ -1,4 +1,4 @@
-﻿namespace DataStructures.Queue
+﻿namespace DA.Queue
 {
 	public class LinkedListQueue<T> : IQueue<T>
 	{

@@ -7,7 +7,7 @@
     <ProjectGuid>{20E52F93-6C4F-4BEF-87F0-A94EFE497003}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataStructures</RootNamespace>
+    <RootNamespace>DA</RootNamespace>
     <AssemblyName>DataStructures</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -47,8 +47,9 @@
     <Compile Include="Algorithms\HashProblem\PrintFirstRepeatingNumber.cs" />
     <Compile Include="Algorithms\HashProblem\PrintRepeatingInteger.cs" />
     <Compile Include="Algorithms\HashProblem\RemoveDuplicates.cs" />
-    <Compile Include="Algorithms\Searching\BreadthFirstTraversal.cs" />
-    <Compile Include="Algorithms\Searching\DepthFirstTraversal.cs" />
+    <Compile Include="Algorithms\Strings\StringMatching.cs" />
+    <Compile Include="Algorithms\Traversal\BreadthFirstTraversal.cs" />
+    <Compile Include="Algorithms\Traversal\DepthFirstTraversal.cs" />
     <Compile Include="Algorithms\Sorting\BubbleSorting.cs" />
     <Compile Include="Algorithms\Sorting\TopologicalSorting.cs" />
     <Compile Include="Algorithms\StackProblem\BalancedParenthesis.cs" />

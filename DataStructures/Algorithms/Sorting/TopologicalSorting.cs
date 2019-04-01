@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataStructures.Graphs;
+using DA.Graphs;
 
-namespace DataStructures.Algorithms.Sorting
+namespace DA.Algorithms.Sorting
 {
 	static class TopologicalSorting
 	{
@@ -33,7 +33,6 @@ namespace DataStructures.Algorithms.Sorting
 		private static void TopologicalSortDFS (Graph graph, int index, int[] visited, Stack<int> stack)
 		{
 			Graph.Node head = graph.GetNode (index);
-
 			while (head != null)
 			{
 				if (visited[head.destination] == 0)
@@ -43,7 +42,6 @@ namespace DataStructures.Algorithms.Sorting
 				}
 				head = head.next;
 			}
-
 			stack.Push (index);
 		}
 	}

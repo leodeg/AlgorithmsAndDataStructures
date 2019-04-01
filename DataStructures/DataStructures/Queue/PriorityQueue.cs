@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace DataStructures.DataStructures.Tree
+namespace DA.DataStructures.Tree
 {
 	internal class PriorityQueue<T> : ICollection<T> where T : IComparable<T>
 	{

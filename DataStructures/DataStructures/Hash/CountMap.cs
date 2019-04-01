@@ -1,4 +1,4 @@
-﻿namespace DataStructures.DataStructures.Hash
+﻿namespace DA.DataStructures.Hash
 {
 	public class CountMap<T>
 	{

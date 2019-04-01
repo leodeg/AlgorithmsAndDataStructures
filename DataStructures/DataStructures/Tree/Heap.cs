@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DataStructures.Tree
+namespace DA.Tree
 {
 	internal class Heap
 	{

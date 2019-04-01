@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructures.DataStructures.Stack
+namespace DA.DataStructures.Stack
 {
 	internal class ArrayStack<T>
 	{

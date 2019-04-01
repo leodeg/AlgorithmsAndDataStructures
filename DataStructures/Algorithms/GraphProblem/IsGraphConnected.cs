@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataStructures.Algorithms.Searching;
+﻿using DA.Algorithms.Searching;
 
-namespace DataStructures.Algorithms.GraphProblem
+namespace DA.Algorithms.GraphProblem
 {
 	static class IsGraphConnected
 	{

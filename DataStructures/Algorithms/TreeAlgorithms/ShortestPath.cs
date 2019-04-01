@@ -1,21 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using DataStructures.Graphs;
+using DA.Graphs;
 
-namespace DataStructures.Algorithms.TreeAlgorithms
+namespace DA.Algorithms.TreeAlgorithms
 {
 	static class ShortestPath
 	{
 		public static void FindShortestPath (Graph graph, int source)
 		{
-			int current;
+			int currentIndex;
 			int count = graph.Count;
-
 			int[] distance = new int[count];
 			int[] path = new int[count];
 
 			Queue<int> queue = new Queue<int> ();
-
 			for (int i = 0; i < count; i++)
 			{
 				distance[i] = -1;
@@ -23,21 +21,20 @@ namespace DataStructures.Algorithms.TreeAlgorithms
 
 			queue.Enqueue (source);
 			distance[source] = 0;
-
 			while (queue.Count > 0)
 			{
-				current = queue.Dequeue ();
-				Graph.Node head = graph.GetNode (current);
+				currentIndex = queue.Dequeue ();
+				Graph.Node currentNode = graph.GetNode (currentIndex);
 
-				while (head != null)
+				while (currentNode != null)
 				{
-					if (distance[head.destination] == -1)
+					if (distance[currentNode.destination] == -1)
 					{
-						distance[head.destination] = distance[current] + 1;
-						path[head.destination] = current;
-						queue.Enqueue (head.destination);
+						distance[currentNode.destination] = distance[currentIndex] + 1;
+						path[currentNode.destination] = currentIndex;
+						queue.Enqueue (currentNode.destination);
 					}
-					head = head.next;
+					currentNode = currentNode.next;
 				}
 			}
 		}

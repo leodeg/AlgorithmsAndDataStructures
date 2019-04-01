@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using DataStructures.DataStructures.Tree;
-using DataStructures.Graphs;
+using DA.DataStructures.Tree;
+using DA.Graphs;
 
-namespace DataStructures.Algorithms.TreeAlgorithms
+namespace DA.Algorithms.TreeAlgorithms
 {
 	static class DijkstraAlgorithm
 	{

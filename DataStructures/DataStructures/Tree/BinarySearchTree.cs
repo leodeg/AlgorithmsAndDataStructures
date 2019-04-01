@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructures.Tree
+namespace DA.Tree
 {
 	internal class BinarySearchTree
 	{

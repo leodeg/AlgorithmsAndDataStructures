@@ -1,8 +1,8 @@
-﻿using DataStructures;
+﻿using DA;
 using NUnit.Framework;
 
 
-namespace DataStructures.UnitTests
+namespace DA.UnitTests
 {
 	[TestFixture]
 	public class LinkedListTests
