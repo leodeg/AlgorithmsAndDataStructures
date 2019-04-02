@@ -78,6 +78,7 @@
     <Compile Include="DataStructures\Tree\BNode.cs" />
     <Compile Include="DataStructures\Tree\Heap.cs" />
     <Compile Include="DataStructures\Queue\PriorityQueue.cs" />
+    <Compile Include="DataStructures\Tree\Trie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataStructures\Stack\LinkedListStack.cs" />
   </ItemGroup>

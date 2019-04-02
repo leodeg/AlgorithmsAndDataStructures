@@ -49,10 +49,9 @@ namespace DA.Algorithms.Strings
             return RobinKarpSearch (text.ToCharArray (), pattern.ToCharArray ());
         }
 
-        private static int RobinKarpSearch (char [] text, char [] pattern)
+        public static int RobinKarpSearch (char [] text, char [] pattern)
         {
             int charCounter = 0;
-            int textLength = text.Length;
             int patternLength = pattern.Length;
 
             int primeNumber = 101;
@@ -69,7 +68,7 @@ namespace DA.Algorithms.Strings
                 textHash = ((textHash << 1) + text [i]) % primeNumber;
             }
 
-            for (int i = 0; i <= (textLength - patternLength); i++)
+            for (int i = 0; i <= (text.Length - patternLength); i++)
             {
                 if (textHash == patternHash)
                 {
@@ -93,42 +92,70 @@ namespace DA.Algorithms.Strings
 
         #region Knuth-Morris-Pratt Search Algorithm
 
-        public static int KnuthMorrisPrattAlgorithm (string text, string pattern)
+        public static int KnuthMorrisPratt_Search (string text, string pattern)
         {
-            return KnuthMorrisPrattAlgorithm (text.ToCharArray (), pattern.ToCharArray ());
+            return KnuthMorrisPratt_Search (text.ToCharArray (), pattern.ToCharArray ());
         }
 
-        private static int KnuthMorrisPrattAlgorithm (char [] text, char [] pattern)
+        public static int KnuthMorrisPratt_Search (char [] text, char [] pattern)
         {
             int index = 0;
             int charCounter = 0;
-            int textLength = text.Length;
-            int patternLength = pattern.Length;
 
-            int [] shiftArray = new int [patternLength + 1];
-            KnuthMorrisPrattPreprocess (pattern, shiftArray);
+            int [] shiftArray = new int [pattern.Length + 1];
+            KnuthMorrisPratt_Preprocess (pattern, shiftArray);
 
-            while (index < textLength)
+            while (index < text.Length)
             {
-                while (charCounter >= 0 && text[index] != pattern[index])
+                while (charCounter >= 0 && text [index] != pattern [index])
                 {
                     charCounter = shiftArray [index];
                 }
 
                 ++index;
                 ++charCounter;
-                if (charCounter == patternLength)
-                    return index - patternLength;
+                if (charCounter == pattern.Length)
+                    return index - pattern.Length;
             }
             return -1;
         }
 
-        private static void KnuthMorrisPrattPreprocess (char [] pattern, int [] shiftArray)
+        public static int KnuthMorrisPratt_PatternCount (string text, string pattern)
         {
-            int patternLength = pattern.Length;
+            return KnuthMorrisPratt_PatternCount (text.ToCharArray (), pattern.ToCharArray ());
+        }
+
+        public static int KnuthMorrisPratt_PatternCount (char [] text, char [] pattern)
+        {
             int index = 0;
             int charCounter = 0;
+            int patternCounter = 0;
 
+            int [] shiftArray = new int [pattern.Length + 1];
+            KnuthMorrisPratt_Preprocess (pattern, shiftArray);
+
+            while (index < text.Length)
+            {
+                while (charCounter >= 0 && text [index] != pattern [index])
+                {
+                    charCounter = shiftArray [index];
+                }
+
+                ++index;
+                ++charCounter;
+                if (charCounter == pattern.Length)
+                {
+                    ++patternCounter;
+                    charCounter = shiftArray [charCounter];
+                }
+            }
+            return patternCounter;
+        }
+
+        private static void KnuthMorrisPratt_Preprocess (char [] pattern, int [] shiftArray)
+        {
+            int index = 0;
+            int charCounter = 0;
             shiftArray [index] = -1;
 
             while (index < charCounter)
@@ -142,7 +169,7 @@ namespace DA.Algorithms.Strings
                 shiftArray [index] = charCounter;
             }
         }
-        
+
         #endregion
     }
 }
