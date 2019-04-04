@@ -50,6 +50,7 @@
     <Compile Include="Algorithms\Strings\ASCIIToInteger.cs" />
     <Compile Include="Algorithms\Strings\CharactersOrderInAText.cs" />
     <Compile Include="Algorithms\Strings\KnuthMorrisPrattSearch.cs" />
+    <Compile Include="Algorithms\Strings\PalindromeString.cs" />
     <Compile Include="Algorithms\Strings\PermutationString.cs" />
     <Compile Include="Algorithms\Strings\RegularExpressionSearch.cs" />
     <Compile Include="Algorithms\Strings\RobinKarpStringSearch.cs" />

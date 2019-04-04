@@ -37,5 +37,22 @@
                 result[i] = ToLower (source[i]);
             return result.ToString ();
         }
+
+        public static char ReverseCases (char character)
+        {
+            if (character >= 97 && character <= (97 + 25))
+                character = (char)(character - 32);
+            else if (character >= 65 && character <= (65 + 25))
+                character = (char)(character + 32);
+            return character;
+        }
+
+        public static string ReverseCases (string source)
+        {
+            char[] result = new char[source.Length];
+            for (int i = 0; i < source.Length; i++)
+                result[i] = ReverseCases (source[i]);
+            return result.ToString ();
+        }
     }
 }
