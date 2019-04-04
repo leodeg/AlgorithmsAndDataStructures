@@ -47,7 +47,14 @@
     <Compile Include="Algorithms\HashProblem\PrintFirstRepeatingNumber.cs" />
     <Compile Include="Algorithms\HashProblem\PrintRepeatingInteger.cs" />
     <Compile Include="Algorithms\HashProblem\RemoveDuplicates.cs" />
-    <Compile Include="Algorithms\Strings\StringMatching.cs" />
+    <Compile Include="Algorithms\Strings\ASCIIToInteger.cs" />
+    <Compile Include="Algorithms\Strings\CharactersOrderInAText.cs" />
+    <Compile Include="Algorithms\Strings\KnuthMorrisPrattSearch.cs" />
+    <Compile Include="Algorithms\Strings\RegularExpressionSearch.cs" />
+    <Compile Include="Algorithms\Strings\RobinKarpStringSearch.cs" />
+    <Compile Include="Algorithms\Strings\BruteForceStringSearch.cs" />
+    <Compile Include="Algorithms\Strings\ToUpperOrLowerCase.cs" />
+    <Compile Include="Algorithms\Strings\UniqueCharacter.cs" />
     <Compile Include="Algorithms\Traversal\BreadthFirstTraversal.cs" />
     <Compile Include="Algorithms\Traversal\DepthFirstTraversal.cs" />
     <Compile Include="Algorithms\Sorting\BubbleSorting.cs" />
@@ -78,6 +85,7 @@
     <Compile Include="DataStructures\Tree\BNode.cs" />
     <Compile Include="DataStructures\Tree\Heap.cs" />
     <Compile Include="DataStructures\Queue\PriorityQueue.cs" />
+    <Compile Include="DataStructures\Tree\TernarySearchTrie.cs" />
     <Compile Include="DataStructures\Tree\Trie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataStructures\Stack\LinkedListStack.cs" />

@@ -3,29 +3,31 @@
 
 ### Data Structures
 
-#### Lists:
+#### List:
   * [Linked List](DataStructures/DataStructures/List/LinkedList.cs)
   * [Double-Linked List](DataStructures/DataStructures/List/DoublyLinkedList.cs)
   * [Circular-Linked List](DataStructures/DataStructures/List/CircularLinkedList.cs)
   * [Circular-Double-Linked List](DataStructures/DataStructures/List/DoublyCircularLinkedList.cs)
 
-#### Queues:
+#### Queue:
   * [Stack Queue](DataStructures/DataStructures/Queue/StackQueue.cs)
   * [Array Queue](DataStructures/DataStructures/Queue/ArrayQueue.cs)
   * [Priority Queue](DataStructures/DataStructures/Queue/PriorityQueue.cs)
   * [Linked List Queue](DataStructures/DataStructures/Queue/LinkedListQueue.cs)
   * [Double-Linked List Queue](DataStructures/DataStructures/Queue/DoublyLinkedListQueue.cs)
 
-#### Stacks:
+#### Stack:
   * [Array Stack](DataStructures/DataStructures/Stack/ArrayStack.cs)
   * [Double Stack](DataStructures/DataStructures/Stack/DoubleStack.cs)
   * [Linked List Stack](DataStructures/DataStructures/Stack/LinkedListStack.cs)
   * [Dynamic Array Stack](DataStructures/DataStructures/Stack/DynamicArrayStack.cs)
 
-#### Trees:
+#### Tree:
+  * [Trie](DataStructures/DataStructures/Tree/Trie.cs)
   * [Heap](DataStructures/DataStructures/Tree/Heap.cs)
   * [Binary Tree](DataStructures/DataStructures/Tree/BinaryTree.cs)
   * [Binary Search Tree](DataStructures/DataStructures/Tree/BinarySearchTree.cs)
+  * [Ternary Search Trie](DataStructures/DataStructures/Tree/TernarySearchTrie.cs)
 
 #### Hash:
   * [Count Map](DataStructures/DataStructures/Hash/CountMap.cs)
@@ -59,4 +61,12 @@
 
 #### Stack:
   * [Balanced parenthesis](DataStructures/Algorithms/StackProblem/BalancedParenthesis.cs)
-  
+
+#### String:
+  * [Brute Force Search](DataStructures/Algorithms/Strings/BruteForceStringSearch.cs)
+  * [Robin Karp Search](DataStructures/Algorithms/Strings/RobinKarpStringSearch.cs)
+  * [Knuth-Morris-Pratt Search](DataStructures/Algorithms/Strings/KnuthMorrisPrattSearch.cs)
+  * [Regular Expression Search](DataStructures/Algorithms/Strings/RegularExpressionSearch.cs)
+  * [Order of Characters in a Text](DataStructures/Algorithms/Strings/CharactersOrderInAText.cs) 
+  * [To Upper/Lower Case](DataStructures/Algorithms/Strings/ToUpperOrLowerCase.cs) 
+  * [Unique Characters](DataStructures/Algorithms/Strings/UniqueCharacter.cs) 
