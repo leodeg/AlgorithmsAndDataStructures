@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DA</RootNamespace>
-    <AssemblyName>DataStructures</AssemblyName>
+    <AssemblyName>AlgorithmsAndDataStructures</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -50,6 +50,7 @@
     <Compile Include="Algorithms\Strings\ASCIIToInteger.cs" />
     <Compile Include="Algorithms\Strings\CharactersOrderInAText.cs" />
     <Compile Include="Algorithms\Strings\KnuthMorrisPrattSearch.cs" />
+    <Compile Include="Algorithms\Strings\PermutationString.cs" />
     <Compile Include="Algorithms\Strings\RegularExpressionSearch.cs" />
     <Compile Include="Algorithms\Strings\RobinKarpStringSearch.cs" />
     <Compile Include="Algorithms\Strings\BruteForceStringSearch.cs" />

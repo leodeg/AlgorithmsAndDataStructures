@@ -118,7 +118,6 @@ namespace DA.Tree
 
 		private bool Search (BNode root, int value)
 		{
-			int max;
 			bool left;
 			bool right;
 

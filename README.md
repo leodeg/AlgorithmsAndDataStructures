@@ -70,3 +70,4 @@
   * [Order of Characters in a Text](DataStructures/Algorithms/Strings/CharactersOrderInAText.cs) 
   * [To Upper/Lower Case](DataStructures/Algorithms/Strings/ToUpperOrLowerCase.cs) 
   * [Unique Characters](DataStructures/Algorithms/Strings/UniqueCharacter.cs) 
+  * [Strings Permutation](DataStructures/Algorithms/Strings/PermutationString.cs) 

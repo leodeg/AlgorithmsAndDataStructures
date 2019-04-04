@@ -10,8 +10,8 @@
     <ProjectGuid>{56927BA1-2ECC-4519-A90C-E79AC13DADB8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataStructures.UnitTests</RootNamespace>
-    <AssemblyName>DataStructures.UnitTests</AssemblyName>
+    <RootNamespace>DA.UnitTests</RootNamespace>
+    <AssemblyName>AlgorithmsAndDataStructures.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
