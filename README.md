@@ -1,4 +1,4 @@
-## Algorithms and Data Structures
+## Algorithms and Data Structures via C#
 
 
 ### Data Structures
@@ -72,4 +72,7 @@
   * [Reverse Upper and Lower Cases](DataStructures/Algorithms/Strings/ToUpperOrLowerCase.cs) 
   * [Unique Characters](DataStructures/Algorithms/Strings/UniqueCharacter.cs) 
   * [Strings Permutation](DataStructures/Algorithms/Strings/PermutationString.cs) 
-  * [Strings Palindrome](DataStructures/Algorithms/Strings/PalindromeString.cs) 
+  * [Palindrome](DataStructures/Algorithms/Strings/PalindromeString.cs) 
+  * [Reverse characters in a string](DataStructures/Algorithms/Strings/StringReverse.cs) 
+  * [Reverse words in a string](DataStructures/Algorithms/Strings/StringReverse.cs) 
+  * [Strings Compare](DataStructures/Algorithms/Strings/StringCompare.cs)

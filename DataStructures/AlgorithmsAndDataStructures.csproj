@@ -55,6 +55,9 @@
     <Compile Include="Algorithms\Strings\RegularExpressionSearch.cs" />
     <Compile Include="Algorithms\Strings\RobinKarpStringSearch.cs" />
     <Compile Include="Algorithms\Strings\BruteForceStringSearch.cs" />
+    <Compile Include="Algorithms\Strings\StringCompare.cs" />
+    <Compile Include="Algorithms\Strings\StringDuplicate.cs" />
+    <Compile Include="Algorithms\Strings\StringReverse.cs" />
     <Compile Include="Algorithms\Strings\ToUpperOrLowerCase.cs" />
     <Compile Include="Algorithms\Strings\UniqueCharacter.cs" />
     <Compile Include="Algorithms\Traversal\BreadthFirstTraversal.cs" />
