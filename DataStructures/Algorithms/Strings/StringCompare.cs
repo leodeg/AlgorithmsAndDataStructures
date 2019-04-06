@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DA.Algorithms.Strings
+﻿namespace DA.Algorithms.Strings
 {
     public static class StringCompare
     {

@@ -40,6 +40,7 @@
 
 #### Sorting
   * [BubbleSort](DataStructures/Algorithms/Sorting/BubbleSorting.cs)
+  * [Selection Sort](DataStructures/Algorithms/Sorting/SelectionSort.cs)
  
 #### Searching
   * [Breadth First Traversal](DataStructures/Algorithms/Traversal/BreadthFirstTraversal.cs)

@@ -11,20 +11,17 @@
         {
             int index = 0;
             int charCounter = 0;
-            int textLength = text.Length;
-            int patternLength = pattern.Length;
-
-            while (index <= (textLength - patternLength))
+            while (index <= (text.Length - pattern.Length))
             {
                 charCounter = 0;
 
-                while (charCounter < patternLength
+                while (charCounter < pattern.Length
                     && pattern[charCounter] == text[index + charCounter])
                 {
                     charCounter++;
                 }
 
-                if (charCounter == patternLength)
+                if (charCounter == pattern.Length)
                 {
                     return index;
                 }
