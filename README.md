@@ -77,3 +77,7 @@
   * [Reverse characters in a string](DataStructures/Algorithms/Strings/StringReverse.cs) 
   * [Reverse words in a string](DataStructures/Algorithms/Strings/StringReverse.cs) 
   * [Strings Compare](DataStructures/Algorithms/Strings/StringCompare.cs)
+
+#### Popular Problems:
+  * [Tower of Hanoi](DataStructures/Algorithms/PopularProblems/TowerOfHanoi.cs)
+  * [N-Queens Permutation](DataStructures/Algorithms/PopularProblems/NQueensPermutations.cs)
