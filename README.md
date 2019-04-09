@@ -43,10 +43,12 @@
   * [Selection Sort](DataStructures/Algorithms/Sorting/SelectionSort.cs)
  
 #### Searching
-  * [Breadth First Traversal](DataStructures/Algorithms/Traversal/BreadthFirstTraversal.cs)
-  * [Depth First Traversal](DataStructures/Algorithms/Traversal/DepthFirstTraversal.cs)
+  * [Linear Search](DataStructures/Algorithms/Search/LinearSearch.cs)
+  * [Binary Search](DataStructures/Algorithms/Search/BinarySearch.cs)
 
 #### Tree:
+  * [Breadth First Traversal](DataStructures/Algorithms/Traversal/BreadthFirstTraversal.cs)
+  * [Depth First Traversal](DataStructures/Algorithms/Traversal/DepthFirstTraversal.cs)
   * [Find Shortest Path in graph](DataStructures/Algorithms/TreeAlgorithms/ShortestPath.cs)
   * [Dijkstra Algorithm](DataStructures/Algorithms/TreeAlgorithms/DijkstraAlgorithm.cs)
   * [Prims Algorithm](DataStructures/Algorithms/TreeAlgorithms/MinimumSpanningTree.cs)
