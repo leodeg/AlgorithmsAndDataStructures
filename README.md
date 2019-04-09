@@ -1,5 +1,9 @@
 ## Algorithms and Data Structures via C#
 
+### Additional Resources
+ * [Problem Solving in Data Structures & Algorithms Using C#](https://www.amazon.com/Problem-Solving-Structures-Algorithms-Using/dp/1726789985/ref=sr_1_4?keywords=problem+solving+with+algorithms+and+data+structures+using&qid=1554740873&s=gateway&sr=8-4) [Book]
+ * [Grokking Algorithms](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/ref=sr_1_14?keywords=problem+solving+with+algorithms+and+data+structures+using&qid=1554740873&s=gateway&sr=8-14) [Book]
+ * [GeeksforGeeks](https://www.geeksforgeeks.org/) [Website]
 
 ### Data Structures
 
