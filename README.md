@@ -38,11 +38,11 @@
 
 ### Algorithms
 
-#### Sorting
+#### Sort:
   * [BubbleSort](DataStructures/Algorithms/Sorting/BubbleSorting.cs)
   * [Selection Sort](DataStructures/Algorithms/Sorting/SelectionSort.cs)
  
-#### Searching
+#### Search:
   * [Linear Search](DataStructures/Algorithms/Search/LinearSearch.cs)
   * [Binary Search](DataStructures/Algorithms/Search/BinarySearch.cs)
 
@@ -83,3 +83,4 @@
 #### Popular Problems:
   * [Tower of Hanoi](DataStructures/Algorithms/PopularProblems/TowerOfHanoi.cs)
   * [N-Queens Permutation](DataStructures/Algorithms/PopularProblems/NQueensPermutations.cs)
+  * [Print Repeating Elements](DataStructures/Algorithms/PopularProblems/PrintRepeating.cs)

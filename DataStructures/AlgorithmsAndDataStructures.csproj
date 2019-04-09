@@ -48,6 +48,7 @@
     <Compile Include="Algorithms\HashProblem\PrintRepeatingInteger.cs" />
     <Compile Include="Algorithms\HashProblem\RemoveDuplicates.cs" />
     <Compile Include="Algorithms\PopularProblems\NQueensPermutations.cs" />
+    <Compile Include="Algorithms\PopularProblems\PrintRepeating.cs" />
     <Compile Include="Algorithms\PopularProblems\TowerOfHanoi.cs" />
     <Compile Include="Algorithms\Search\BinarySearch.cs" />
     <Compile Include="Algorithms\Search\LinearSearch.cs" />

@@ -48,7 +48,8 @@ namespace DA.Algorithms.Search
         }
 
         /// <summary>
-        /// Recursively find value in a sorted collection and return true if a value exists, otherwise return false.
+        /// Recursively find value in a sorted collection 
+        /// and return true if a value exists, otherwise return false.
         /// </summary>
         /// 
         /// <typeparam name="T">base type of elements in an array</typeparam>
