@@ -43,8 +43,9 @@
 ### Algorithms
 
 #### Sort:
-  * [BubbleSort](DataStructures/Algorithms/Sorting/BubbleSorting.cs)
+  * [Bubble Sort](DataStructures/Algorithms/Sorting/BubbleSorting.cs)
   * [Selection Sort](DataStructures/Algorithms/Sorting/SelectionSort.cs)
+  * [Insertion Sort](DataStructures/Algorithms/Sorting/InsertionSorting.cs)
  
 #### Search:
   * [Linear Search](DataStructures/Algorithms/Search/LinearSearch.cs)

@@ -2,7 +2,7 @@
 using NUnit.Framework;
 
 
-namespace DA.UnitTests
+namespace DA.UnitTests.Algorithms
 {
     [TestFixture]
     public class LinearSearchTest
