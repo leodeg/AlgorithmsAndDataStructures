@@ -44,8 +44,10 @@
 
 #### Sort:
   * [Bubble Sort](DataStructures/Algorithms/Sorting/BubbleSorting.cs)
-  * [Selection Sort](DataStructures/Algorithms/Sorting/SelectionSort.cs)
+  * [Selection Sort](DataStructures/Algorithms/Sorting/SelectionSorting.cs)
   * [Insertion Sort](DataStructures/Algorithms/Sorting/InsertionSorting.cs)
+  * [Merge Sort](DataStructures/Algorithms/Sorting/MergeSorting.cs)
+  * [Topological Sort](DataStructures/Algorithms/Sorting/TopologicalSorting.cs)
  
 #### Search:
   * [Linear Search](DataStructures/Algorithms/Search/LinearSearch.cs)

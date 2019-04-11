@@ -53,7 +53,8 @@
     <Compile Include="Algorithms\Search\BinarySearch.cs" />
     <Compile Include="Algorithms\Search\LinearSearch.cs" />
     <Compile Include="Algorithms\Sorting\InsertionSorting.cs" />
-    <Compile Include="Algorithms\Sorting\SelectionSort.cs" />
+    <Compile Include="Algorithms\Sorting\MergeSorting.cs" />
+    <Compile Include="Algorithms\Sorting\SelectionSorting.cs" />
     <Compile Include="Algorithms\Strings\ASCIIToInteger.cs" />
     <Compile Include="Algorithms\Strings\CharactersOrderInAText.cs" />
     <Compile Include="Algorithms\Strings\KnuthMorrisPrattSearch.cs" />
