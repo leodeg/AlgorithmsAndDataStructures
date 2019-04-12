@@ -46,6 +46,9 @@
   * [Bubble Sort](DataStructures/Algorithms/Sorting/BubbleSorting.cs)
   * [Selection Sort](DataStructures/Algorithms/Sorting/SelectionSorting.cs)
   * [Insertion Sort](DataStructures/Algorithms/Sorting/InsertionSorting.cs)
+  * [Quick Sort](DataStructures/Algorithms/Sorting/QuickSorting.cs)
+  * [Quick Selection](DataStructures/Algorithms/Sorting/QuickSelection.cs)
+  * [Bucket Sort](DataStructures/Algorithms/Sorting/BucketSorting.cs)
   * [Merge Sort](DataStructures/Algorithms/Sorting/MergeSorting.cs)
   * [Topological Sort](DataStructures/Algorithms/Sorting/TopologicalSorting.cs)
  
