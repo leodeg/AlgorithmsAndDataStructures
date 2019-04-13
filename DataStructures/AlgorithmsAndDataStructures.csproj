@@ -55,6 +55,7 @@
     <Compile Include="Algorithms\Sorting\BucketSorting.cs" />
     <Compile Include="Algorithms\Sorting\InsertionSorting.cs" />
     <Compile Include="Algorithms\Sorting\MergeSorting.cs" />
+    <Compile Include="Algorithms\Sorting\PartitionZeroOne.cs" />
     <Compile Include="Algorithms\Sorting\QuickSelection.cs" />
     <Compile Include="Algorithms\Sorting\QuickSorting.cs" />
     <Compile Include="Algorithms\Sorting\SelectionSorting.cs" />

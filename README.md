@@ -94,3 +94,5 @@
   * [Tower of Hanoi](DataStructures/Algorithms/PopularProblems/TowerOfHanoi.cs)
   * [N-Queens Permutation](DataStructures/Algorithms/PopularProblems/NQueensPermutations.cs)
   * [Print Repeating Elements](DataStructures/Algorithms/PopularProblems/PrintRepeating.cs)
+  * [Partition01](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
+  * [Partition012](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
