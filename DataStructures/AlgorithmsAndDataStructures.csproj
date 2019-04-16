@@ -52,6 +52,7 @@
     <Compile Include="Algorithms\PopularProblems\TowerOfHanoi.cs" />
     <Compile Include="Algorithms\Search\BinarySearch.cs" />
     <Compile Include="Algorithms\Search\LinearSearch.cs" />
+    <Compile Include="Algorithms\Sorting\ArrayReduction.cs" />
     <Compile Include="Algorithms\Sorting\BucketSorting.cs" />
     <Compile Include="Algorithms\Sorting\InsertionSorting.cs" />
     <Compile Include="Algorithms\Sorting\MergeSorting.cs" />

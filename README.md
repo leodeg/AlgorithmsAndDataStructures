@@ -98,3 +98,4 @@
   * [Separate even and odd numbers](DataStructures/Algorithms/Sorting/SeparateEvenAndOddNumbers.cs)
   * [Partition01](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
   * [Partition012](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
+  * [Array Reduction](DataStructures/Algorithms/Sorting/ArrayReduction.cs)
