@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\BinarySearchTest.cs" />
+    <Compile Include="Algorithms\SortByOrderTest.cs" />
     <Compile Include="Algorithms\MergeSortingTest.cs" />
     <Compile Include="Algorithms\PartitionZeroOneTest.cs" />
     <Compile Include="Algorithms\QuickSelectionTest.cs" />

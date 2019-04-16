@@ -59,6 +59,8 @@
     <Compile Include="Algorithms\Sorting\QuickSelection.cs" />
     <Compile Include="Algorithms\Sorting\QuickSorting.cs" />
     <Compile Include="Algorithms\Sorting\SelectionSorting.cs" />
+    <Compile Include="Algorithms\Sorting\SeparateEvenAndOddNumbers.cs" />
+    <Compile Include="Algorithms\Sorting\SortByOrder.cs" />
     <Compile Include="Algorithms\Strings\ASCIIToInteger.cs" />
     <Compile Include="Algorithms\Strings\CharactersOrderInAText.cs" />
     <Compile Include="Algorithms\Strings\KnuthMorrisPrattSearch.cs" />

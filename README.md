@@ -51,6 +51,7 @@
   * [Bucket Sort](DataStructures/Algorithms/Sorting/BucketSorting.cs)
   * [Merge Sort](DataStructures/Algorithms/Sorting/MergeSorting.cs)
   * [Topological Sort](DataStructures/Algorithms/Sorting/TopologicalSorting.cs)
+
  
 #### Search:
   * [Linear Search](DataStructures/Algorithms/Search/LinearSearch.cs)
@@ -94,5 +95,6 @@
   * [Tower of Hanoi](DataStructures/Algorithms/PopularProblems/TowerOfHanoi.cs)
   * [N-Queens Permutation](DataStructures/Algorithms/PopularProblems/NQueensPermutations.cs)
   * [Print Repeating Elements](DataStructures/Algorithms/PopularProblems/PrintRepeating.cs)
+  * [Separate even and odd numbers](DataStructures/Algorithms/Sorting/SeparateEvenAndOddNumbers.cs)
   * [Partition01](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
   * [Partition012](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
