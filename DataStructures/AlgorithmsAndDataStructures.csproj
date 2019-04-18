@@ -51,7 +51,10 @@
     <Compile Include="Algorithms\PopularProblems\PrintRepeating.cs" />
     <Compile Include="Algorithms\PopularProblems\TowerOfHanoi.cs" />
     <Compile Include="Algorithms\Search\BinarySearch.cs" />
+    <Compile Include="Algorithms\Search\FindMissingNumber.cs" />
+    <Compile Include="Algorithms\Search\FirstRepeatedElementInTheArray.cs" />
     <Compile Include="Algorithms\Search\LinearSearch.cs" />
+    <Compile Include="Algorithms\Search\RemoveDuplicates.cs" />
     <Compile Include="Algorithms\Sorting\ArrayReduction.cs" />
     <Compile Include="Algorithms\Sorting\BucketSorting.cs" />
     <Compile Include="Algorithms\Sorting\InsertionSorting.cs" />

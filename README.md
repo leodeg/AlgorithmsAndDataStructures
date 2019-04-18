@@ -56,6 +56,8 @@
 #### Search:
   * [Linear Search](DataStructures/Algorithms/Search/LinearSearch.cs)
   * [Binary Search](DataStructures/Algorithms/Search/BinarySearch.cs)
+  * [Find Missing Number](DataStructures/Algorithms/Search/FindMissingNumber.cs)
+  * [First Repeated Element in the Array](DataStructures/Algorithms/Search/FirstRepeatedElementInTheArray.cs)
 
 #### Tree:
   * [Breadth First Traversal](DataStructures/Algorithms/Traversal/BreadthFirstTraversal.cs)
