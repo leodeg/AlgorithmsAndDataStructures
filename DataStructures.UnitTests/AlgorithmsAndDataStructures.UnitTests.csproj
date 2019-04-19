@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\Search\BinarySearchTest.cs" />
+    <Compile Include="Algorithms\Search\FindMissingNumbersTest.cs" />
     <Compile Include="Algorithms\Search\FindMissingNumberTest.cs" />
     <Compile Include="Algorithms\Search\FirstRepeatedElementInTheArrayTest.cs" />
     <Compile Include="Algorithms\Sort\SortByOrderTest.cs" />
