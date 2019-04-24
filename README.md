@@ -108,3 +108,4 @@
   * [Find Sum of Pair Equal to Rest Array](DataStructures/Algorithms/Search/FindSumOfPairEqualToRestArray.cs)
   * [Triplets Sums](DataStructures/Algorithms/Search/ZeroSumTriplets.cs)
   * [Find Number of Triangles](DataStructures/Algorithms/Search/NumberOfTriangles.cs)
+  * [Find Majority Element in Array](DataStructures/Algorithms/Search/GetMajorityElementInArray.cs)  * 

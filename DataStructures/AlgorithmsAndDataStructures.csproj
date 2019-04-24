@@ -57,6 +57,7 @@
     <Compile Include="Algorithms\Search\FindPairNumber.cs" />
     <Compile Include="Algorithms\Search\FindSumOfPairEqualToRestArray.cs" />
     <Compile Include="Algorithms\Search\FirstRepeatedElementInTheArray.cs" />
+    <Compile Include="Algorithms\Search\GetMajorityElementInArray.cs" />
     <Compile Include="Algorithms\Search\LinearSearch.cs" />
     <Compile Include="Algorithms\Search\MinimumSumPair.cs" />
     <Compile Include="Algorithms\Search\NumberOfTriangles.cs" />
