@@ -57,12 +57,6 @@
 #### Search:
   * [Linear Search](DataStructures/Algorithms/Search/LinearSearch.cs)
   * [Binary Search](DataStructures/Algorithms/Search/BinarySearch.cs)
-  * [Find Missing Number(s)](DataStructures/Algorithms/Search/FindMissingNumber.cs)
-  * [First Repeated Element in the Array](DataStructures/Algorithms/Search/FirstRepeatedElementInTheArray.cs)
-  * [Find Pair in Array](DataStructures/Algorithms/Search/FindPairNumber.cs)
-  * [Minimum Pair Sum in Array](DataStructures/Algorithms/Search/MinimumSumPair.cs)
-  * [Find Closed Sum Pair](DataStructures/Algorithms/Search/FindClosestSumPair.cs)
-  * [Find Sum of Pair Equal to Rest Array](DataStructures/Algorithms/Search/FindSumOfPairEqualToRestArray.cs)
 
 #### Tree:
   * [Breadth First Traversal](DataStructures/Algorithms/Traversal/BreadthFirstTraversal.cs)
@@ -106,3 +100,11 @@
   * [Partition01](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
   * [Partition012](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
   * [Array Reduction](DataStructures/Algorithms/Sorting/ArrayReduction.cs)
+  * [Find Missing Number(s)](DataStructures/Algorithms/Search/FindMissingNumber.cs)
+  * [First Repeated Element in the Array](DataStructures/Algorithms/Search/FirstRepeatedElementInTheArray.cs)
+  * [Find Pair in Array](DataStructures/Algorithms/Search/FindPairNumber.cs)
+  * [Minimum Pair Sum in Array](DataStructures/Algorithms/Search/MinimumSumPair.cs)
+  * [Find Closed Sum Pair](DataStructures/Algorithms/Search/FindClosestSumPair.cs)
+  * [Find Sum of Pair Equal to Rest Array](DataStructures/Algorithms/Search/FindSumOfPairEqualToRestArray.cs)
+  * [Triplets Sums](DataStructures/Algorithms/Search/ZeroSumTriplets.cs)
+  * [Find Number of Triangles](DataStructures/Algorithms/Search/NumberOfTriangles.cs)
