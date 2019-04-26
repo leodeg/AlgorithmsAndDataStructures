@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DA.Algorithms.Search
 {
@@ -110,6 +106,37 @@ namespace DA.Algorithms.Search
             return (count > (array.Length / 2)) ? array[majorityIndex] : int.MinValue;
         }
 
+        /// <summary>
+        /// Find if the array has a majority element and find the majority element.
+        /// </summary>
+        public static bool IsMajority (int[] array)
+        {
+            int halfSize = array.Length / 2;
+            int majority = array[halfSize];
+
+            int firstIndex = FirstIndex (array, 0, array.Length - 1, majority);
+            bool isIndexInRange = (firstIndex + halfSize) <= (array.Length - 1);
+            bool isEqualToMajority = array[firstIndex + halfSize] == majority;
+
+            return isIndexInRange && isEqualToMajority;
+        }
+
+        /// <summary>
+        /// Find if the array has a majority element and find the majority element.
+        /// </summary>
+        public static bool IsMajority (int[] array, out int majorityElement)
+        {
+            int halfSize = array.Length / 2;
+            int majority = array[halfSize];
+
+            int firstIndex = FirstIndex (array, 0, array.Length - 1, majority);
+            bool isIndexInRange = (firstIndex + halfSize) <= (array.Length - 1);
+            bool isEqualToMajority = array[firstIndex + halfSize] == majority;
+
+            majorityElement = majority;
+            return isIndexInRange && isEqualToMajority;
+        }
+
         public static int FirstIndex (int[] array, int value, int low, int high)
         {
             int middle = 0;
@@ -130,18 +157,6 @@ namespace DA.Algorithms.Search
             {
                 return FirstIndex (array, value, low, middle - 1);
             }
-        }
-
-        public static bool IsMajority (int[] array)
-        {
-            int halfSize = array.Length / 2;
-            int majority = array[halfSize];
-
-            int firstIndex = FirstIndex (array, 0, array.Length - 1, majority);
-            bool isIndexInRange = (firstIndex + halfSize) <= (array.Length - 1);
-            bool isEqualToMajority = array[firstIndex + halfSize] == majority;
-
-            return isIndexInRange && isEqualToMajority;
         }
     }
 }
