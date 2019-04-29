@@ -4,6 +4,7 @@
  * [Problem Solving in Data Structures & Algorithms Using C#](https://www.amazon.com/Problem-Solving-Structures-Algorithms-Using/dp/1726789985/ref=sr_1_4?keywords=problem+solving+with+algorithms+and+data+structures+using&qid=1554740873&s=gateway&sr=8-4) [Book]
  * [Grokking Algorithms](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/ref=sr_1_14?keywords=problem+solving+with+algorithms+and+data+structures+using&qid=1554740873&s=gateway&sr=8-14) [Book]
  * [GeeksforGeeks](https://www.geeksforgeeks.org/) [Website]
+ * [MyCodeSchool](https://www.youtube.com/user/mycodeschool/featured) [Youtube]
 
 
 
@@ -92,6 +93,20 @@
   * [Reverse words in a string](DataStructures/Algorithms/Strings/StringReverse.cs) 
   * [Strings Compare](DataStructures/Algorithms/Strings/StringCompare.cs)
 
+#### Search Problems:
+  * [Find Missing Number(s)](DataStructures/Algorithms/Search/Problems/FindMissingNumber.cs)
+  * [First Repeated Element in the Array](DataStructures/Algorithms/Search/Problems/FirstRepeatedElementInTheArray.cs)
+  * [Find Pair in Array](DataStructures/Algorithms/Search/Problems/FindPairNumber.cs)
+  * [Minimum Pair Sum in Array](DataStructures/Algorithms/Search/Problems/MinimumSumPair.cs)
+  * [Find Closed Sum Pair](DataStructures/Algorithms/Search/Problems/FindClosestSumPair.cs)
+  * [Find Sum of Pair Equal to Rest Array](DataStructures/Algorithms/Search/Problems/FindSumOfPairEqualToRestArray.cs)
+  * [Triplets Sums](DataStructures/Algorithms/Search/Problems/ZeroSumTriplets.cs)
+  * [Find Number of Triangles](DataStructures/Algorithms/Search/Problems/NumberOfTriangles.cs)
+  * [Find Majority Element in Array](DataStructures/Algorithms/Search/Problems/GetMajorityElementInArray.cs)
+  * [Find a Median of an Array](DataStructures/Algorithms/Search/Problems/FindAMedianOfAnArray.cs)   
+  * [Find a first value 1 in a list with 01 values](DataStructures/Algorithms/Search/Problems/Search01List.cs) 
+  * [Find Max In Rotated Array](DataStructures/Algorithms/Search/Problems/FindMaxInRotatedArray.cs) 
+
 #### Popular Problems:
   * [Tower of Hanoi](DataStructures/Algorithms/PopularProblems/TowerOfHanoi.cs)
   * [N-Queens Permutation](DataStructures/Algorithms/PopularProblems/NQueensPermutations.cs)
@@ -100,12 +115,3 @@
   * [Partition01](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
   * [Partition012](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
   * [Array Reduction](DataStructures/Algorithms/Sorting/ArrayReduction.cs)
-  * [Find Missing Number(s)](DataStructures/Algorithms/Search/FindMissingNumber.cs)
-  * [First Repeated Element in the Array](DataStructures/Algorithms/Search/FirstRepeatedElementInTheArray.cs)
-  * [Find Pair in Array](DataStructures/Algorithms/Search/FindPairNumber.cs)
-  * [Minimum Pair Sum in Array](DataStructures/Algorithms/Search/MinimumSumPair.cs)
-  * [Find Closed Sum Pair](DataStructures/Algorithms/Search/FindClosestSumPair.cs)
-  * [Find Sum of Pair Equal to Rest Array](DataStructures/Algorithms/Search/FindSumOfPairEqualToRestArray.cs)
-  * [Triplets Sums](DataStructures/Algorithms/Search/ZeroSumTriplets.cs)
-  * [Find Number of Triangles](DataStructures/Algorithms/Search/NumberOfTriangles.cs)
-  * [Find Majority Element in Array](DataStructures/Algorithms/Search/GetMajorityElementInArray.cs)  * 
