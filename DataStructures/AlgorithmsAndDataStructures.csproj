@@ -51,6 +51,7 @@
     <Compile Include="Algorithms\PopularProblems\PrintRepeating.cs" />
     <Compile Include="Algorithms\PopularProblems\TowerOfHanoi.cs" />
     <Compile Include="Algorithms\Search\BinarySearch.cs" />
+    <Compile Include="Algorithms\Search\Problems\ArithmeticProgression.cs" />
     <Compile Include="Algorithms\Search\Problems\FindAMedianOfAnArray.cs" />
     <Compile Include="Algorithms\Search\Problems\FindClosestSumPair.cs" />
     <Compile Include="Algorithms\Search\Problems\FindMaxInRotatedArray.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Algorithms\Search\Problems\OddCountElements.cs" />
     <Compile Include="Algorithms\Search\Problems\RemoveDuplicates.cs" />
     <Compile Include="Algorithms\Search\Problems\Search01List.cs" />
+    <Compile Include="Algorithms\Search\Problems\SearchIn2DList.cs" />
     <Compile Include="Algorithms\Search\Problems\SearchInSortedRotatedList.cs" />
     <Compile Include="Algorithms\Search\Problems\ShuffleList.cs" />
     <Compile Include="Algorithms\Search\Problems\ZeroSumTriplets.cs" />

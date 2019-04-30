@@ -109,6 +109,8 @@
   * [Search in Sorted Rotated List](DataStructures/Algorithms/Search/Problems/SearchInSortedRotatedList.cs) 
   * [Shuffle List](DataStructures/Algorithms/Search/Problems/ShuffleList.cs) 
   * [Permutation List](DataStructures/Algorithms/Search/Problems/ListPermutation.cs) 
+  * [Search in 2 dimensional Array](DataStructures/Algorithms/Search/Problems/SearchIn2DList.cs) 
+  * [Arithmetic Progression](DataStructures/Algorithms/Search/Problems/ArithmeticProgression.cs) 
 
 #### Popular Problems:
   * [Tower of Hanoi](DataStructures/Algorithms/PopularProblems/TowerOfHanoi.cs)
