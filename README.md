@@ -106,6 +106,9 @@
   * [Find a Median of an Array](DataStructures/Algorithms/Search/Problems/FindAMedianOfAnArray.cs)   
   * [Find a first value 1 in a list with 01 values](DataStructures/Algorithms/Search/Problems/Search01List.cs) 
   * [Find Max In Rotated Array](DataStructures/Algorithms/Search/Problems/FindMaxInRotatedArray.cs) 
+  * [Search in Sorted Rotated List](DataStructures/Algorithms/Search/Problems/SearchInSortedRotatedList.cs) 
+  * [Shuffle List](DataStructures/Algorithms/Search/Problems/ShuffleList.cs) 
+  * [Permutation List](DataStructures/Algorithms/Search/Problems/ListPermutation.cs) 
 
 #### Popular Problems:
   * [Tower of Hanoi](DataStructures/Algorithms/PopularProblems/TowerOfHanoi.cs)

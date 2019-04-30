@@ -62,12 +62,15 @@
     <Compile Include="Algorithms\Search\Problems\FirstRepeatedElementInTheArray.cs" />
     <Compile Include="Algorithms\Search\Problems\GetMajorityElementInArray.cs" />
     <Compile Include="Algorithms\Search\LinearSearch.cs" />
+    <Compile Include="Algorithms\Search\Problems\ListPermutation.cs" />
     <Compile Include="Algorithms\Search\Problems\MinimumSumPair.cs" />
     <Compile Include="Algorithms\Search\Problems\NumberOfTriangles.cs" />
     <Compile Include="Algorithms\Search\Problems\OccurrenceCounts.cs" />
     <Compile Include="Algorithms\Search\Problems\OddCountElements.cs" />
     <Compile Include="Algorithms\Search\Problems\RemoveDuplicates.cs" />
     <Compile Include="Algorithms\Search\Problems\Search01List.cs" />
+    <Compile Include="Algorithms\Search\Problems\SearchInSortedRotatedList.cs" />
+    <Compile Include="Algorithms\Search\Problems\ShuffleList.cs" />
     <Compile Include="Algorithms\Search\Problems\ZeroSumTriplets.cs" />
     <Compile Include="Algorithms\Sorting\ArrayReduction.cs" />
     <Compile Include="Algorithms\Sorting\BucketSorting.cs" />

@@ -58,6 +58,7 @@
     <Compile Include="Algorithms\Search\FindMissingNumbersTest.cs" />
     <Compile Include="Algorithms\Search\FindMissingNumberTest.cs" />
     <Compile Include="Algorithms\Search\FirstRepeatedElementInTheArrayTest.cs" />
+    <Compile Include="Algorithms\Search\ShuffleListTest.cs" />
     <Compile Include="Algorithms\Sort\SortByOrderTest.cs" />
     <Compile Include="Algorithms\Sort\MergeSortingTest.cs" />
     <Compile Include="Algorithms\Sort\PartitionZeroOneTest.cs" />
