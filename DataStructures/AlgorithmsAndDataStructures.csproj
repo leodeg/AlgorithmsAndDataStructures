@@ -64,6 +64,7 @@
     <Compile Include="Algorithms\Search\Problems\FindSecondLargestNumber.cs" />
     <Compile Include="Algorithms\Search\Problems\FindSumOfPairEqualToRestArray.cs" />
     <Compile Include="Algorithms\Search\Problems\FirstRepeatedElementInTheArray.cs" />
+    <Compile Include="Algorithms\Search\Problems\FrequencyCount.cs" />
     <Compile Include="Algorithms\Search\Problems\GetMajorityElementInArray.cs" />
     <Compile Include="Algorithms\Search\LinearSearch.cs" />
     <Compile Include="Algorithms\Search\Problems\ListPermutation.cs" />
