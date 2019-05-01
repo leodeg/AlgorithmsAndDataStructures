@@ -52,8 +52,11 @@
     <Compile Include="Algorithms\PopularProblems\TowerOfHanoi.cs" />
     <Compile Include="Algorithms\Search\BinarySearch.cs" />
     <Compile Include="Algorithms\Search\Problems\ArithmeticProgression.cs" />
+    <Compile Include="Algorithms\Search\Problems\EquilibriumIndex.cs" />
+    <Compile Include="Algorithms\Search\Problems\DuplicateKDistance.cs" />
     <Compile Include="Algorithms\Search\Problems\FindAMedianOfAnArray.cs" />
     <Compile Include="Algorithms\Search\Problems\FindClosestSumPair.cs" />
+    <Compile Include="Algorithms\Search\Problems\FindFloorCeil.cs" />
     <Compile Include="Algorithms\Search\Problems\FindMaxInRotatedArray.cs" />
     <Compile Include="Algorithms\Search\Problems\FindMinimumDifferencePair.cs" />
     <Compile Include="Algorithms\Search\Problems\FindMissingNumber.cs" />

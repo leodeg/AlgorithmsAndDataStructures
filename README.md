@@ -104,13 +104,16 @@
   * [Find Number of Triangles](DataStructures/Algorithms/Search/Problems/NumberOfTriangles.cs)
   * [Find Majority Element in Array](DataStructures/Algorithms/Search/Problems/GetMajorityElementInArray.cs)
   * [Find a Median of an Array](DataStructures/Algorithms/Search/Problems/FindAMedianOfAnArray.cs)   
-  * [Find a first value 1 in a list with 01 values](DataStructures/Algorithms/Search/Problems/Search01List.cs) 
+  * [Find a First Value 1 in a List With 01 Values](DataStructures/Algorithms/Search/Problems/Search01List.cs) 
   * [Find Max In Rotated Array](DataStructures/Algorithms/Search/Problems/FindMaxInRotatedArray.cs) 
   * [Search in Sorted Rotated List](DataStructures/Algorithms/Search/Problems/SearchInSortedRotatedList.cs) 
   * [Shuffle List](DataStructures/Algorithms/Search/Problems/ShuffleList.cs) 
   * [Permutation List](DataStructures/Algorithms/Search/Problems/ListPermutation.cs) 
-  * [Search in 2 dimensional Array](DataStructures/Algorithms/Search/Problems/SearchIn2DList.cs) 
+  * [Search in 2 Dimensional Array](DataStructures/Algorithms/Search/Problems/SearchIn2DList.cs) 
   * [Arithmetic Progression](DataStructures/Algorithms/Search/Problems/ArithmeticProgression.cs) 
+  * [Find Duplicate in Range](DataStructures/Algorithms/Search/Problems/DuplicateKDistance.cs) 
+  * [Equilibrium Index of an Array](DataStructures/Algorithms/Search/Problems/EquilibriumIndex.cs) 
+  * [Find Floor/Ceil in Array](DataStructures/Algorithms/Search/Problems/FindFloorCeil.cs) 
 
 #### Popular Problems:
   * [Tower of Hanoi](DataStructures/Algorithms/PopularProblems/TowerOfHanoi.cs)
