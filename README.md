@@ -114,6 +114,8 @@
   * [Find Duplicate in Range](DataStructures/Algorithms/Search/Problems/DuplicateKDistance.cs) 
   * [Equilibrium Index of an Array](DataStructures/Algorithms/Search/Problems/EquilibriumIndex.cs) 
   * [Find Floor/Ceil in Array](DataStructures/Algorithms/Search/Problems/FindFloorCeil.cs) 
+  * [K Largest Element](DataStructures/Algorithms/Search/Problems/KLargestElement.cs) 
+  * [Fix Point](DataStructures/Algorithms/Search/Problems/FindFixPoint.cs) 
 
 #### Popular Problems:
   * [Tower of Hanoi](DataStructures/Algorithms/PopularProblems/TowerOfHanoi.cs)
