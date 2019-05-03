@@ -70,6 +70,7 @@
     <Compile Include="Algorithms\Search\LinearSearch.cs" />
     <Compile Include="Algorithms\Search\Problems\KLargestElement.cs" />
     <Compile Include="Algorithms\Search\Problems\ListPermutation.cs" />
+    <Compile Include="Algorithms\Search\Problems\MaxContiguousSubarraySum.cs" />
     <Compile Include="Algorithms\Search\Problems\MinimumSumPair.cs" />
     <Compile Include="Algorithms\Search\Problems\NumberOfTriangles.cs" />
     <Compile Include="Algorithms\Search\Problems\OccurrenceCounts.cs" />
