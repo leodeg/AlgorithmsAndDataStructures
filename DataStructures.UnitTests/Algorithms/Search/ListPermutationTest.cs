@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
-using DA.Algorithms.Search;
+using DA.Algorithms.Problems;
+
 
 namespace DA.UnitTests.Algorithms
 {

@@ -1,6 +1,5 @@
-﻿using DA.Algorithms.Sorting;
-using NUnit.Framework;
-using System;
+﻿using NUnit.Framework;
+using DA.Algorithms.Problems;
 
 namespace DA.UnitTests.Algorithms
 {

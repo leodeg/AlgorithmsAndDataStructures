@@ -1,7 +1,6 @@
-﻿using DA.Algorithms;
+﻿using System.Collections.Generic;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
+using DA.Algorithms.Problems;
 
 namespace DA.UnitTests.Algorithms
 {

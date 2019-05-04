@@ -1,6 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
-using DA.Algorithms;
+using DA.Algorithms.Problems;
 
 namespace DA.UnitTests.Algorithms
 {
