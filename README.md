@@ -1,10 +1,10 @@
 ## Algorithms and Data Structures via C#
 
 ### Additional Resources
- * [Problem Solving in Data Structures & Algorithms Using C#](https://www.amazon.com/Problem-Solving-Structures-Algorithms-Using/dp/1726789985/ref=sr_1_4?keywords=problem+solving+with+algorithms+and+data+structures+using&qid=1554740873&s=gateway&sr=8-4) [Book]
- * [Grokking Algorithms](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/ref=sr_1_14?keywords=problem+solving+with+algorithms+and+data+structures+using&qid=1554740873&s=gateway&sr=8-14) [Book]
  * [GeeksforGeeks](https://www.geeksforgeeks.org/) [Website]
  * [MyCodeSchool](https://www.youtube.com/user/mycodeschool/featured) [Youtube]
+ * [Grokking Algorithms](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230/ref=sr_1_14?keywords=problem+solving+with+algorithms+and+data+structures+using&qid=1554740873&s=gateway&sr=8-14) [Book]
+ * [Problem Solving in Data Structures & Algorithms Using C#](https://www.amazon.com/Problem-Solving-Structures-Algorithms-Using/dp/1726789985/ref=sr_1_4?keywords=problem+solving+with+algorithms+and+data+structures+using&qid=1554740873&s=gateway&sr=8-4) [Book]
 
 
 
@@ -81,48 +81,47 @@
 #### String:
   * [Palindrome](DataStructures/Algorithms/Strings/PalindromeString.cs) 
   * [Strings Compare](DataStructures/Algorithms/Strings/StringCompare.cs)
-  * [Unique Characters](DataStructures/Algorithms/Strings/UniqueCharacter.cs) 
   * [Robin Karp Search](DataStructures/Algorithms/Strings/RobinKarpStringSearch.cs)
+  * [Unique Characters](DataStructures/Algorithms/Strings/UniqueCharacter.cs) 
   * [Brute Force Search](DataStructures/Algorithms/Strings/BruteForceStringSearch.cs)
   * [Strings Permutation](DataStructures/Algorithms/Strings/PermutationString.cs) 
   * [To Upper/Lower Case](DataStructures/Algorithms/Strings/ToUpperOrLowerCase.cs)
   * [Reverse words in a string](DataStructures/Algorithms/Strings/StringReverse.cs) 
-  * [Knuth-Morris-Pratt Search](DataStructures/Algorithms/Strings/KnuthMorrisPrattSearch.cs)
   * [Regular Expression Search](DataStructures/Algorithms/Strings/RegularExpressionSearch.cs)
+  * [Knuth-Morris-Pratt Search](DataStructures/Algorithms/Strings/KnuthMorrisPrattSearch.cs)
   * [Order of Characters in a Text](DataStructures/Algorithms/Strings/CharactersOrderInAText.cs) 
   * [Reverse characters in a string](DataStructures/Algorithms/Strings/StringReverse.cs) 
   * [Reverse Upper and Lower Cases](DataStructures/Algorithms/Strings/ToUpperOrLowerCase.cs) 
 
-#### Search Problems:
-  * [Fix Point](DataStructures/Algorithms/Search/Problems/FindFixPoint.cs) 
-  * [Shuffle List](DataStructures/Algorithms/Search/Problems/ShuffleList.cs) 
-  * [Triplets Sums](DataStructures/Algorithms/Search/Problems/ZeroSumTriplets.cs)
-  * [Permutation List](DataStructures/Algorithms/Search/Problems/ListPermutation.cs) 
-  * [Find Pair in Array](DataStructures/Algorithms/Search/Problems/FindPairNumber.cs)
-  * [K Largest Element](DataStructures/Algorithms/Search/Problems/KLargestElement.cs) 
-  * [Find Closed Sum Pair](DataStructures/Algorithms/Search/Problems/FindClosestSumPair.cs)
-  * [Arithmetic Progression](DataStructures/Algorithms/Search/Problems/ArithmeticProgression.cs) 
-  * [Find Floor/Ceil in Array](DataStructures/Algorithms/Search/Problems/FindFloorCeil.cs) 
-  * [Find Missing Number(s)](DataStructures/Algorithms/Search/Problems/FindMissingNumber.cs)
-  * [Find Duplicate in Range](DataStructures/Algorithms/Search/Problems/DuplicateKDistance.cs) 
-  * [Find Number of Triangles](DataStructures/Algorithms/Search/Problems/NumberOfTriangles.cs)
-  * [Find a Median of an Array](DataStructures/Algorithms/Search/Problems/FindAMedianOfAnArray.cs)   
-  * [Find Max In Rotated Array](DataStructures/Algorithms/Search/Problems/FindMaxInRotatedArray.cs) 
-  * [Minimum Pair Sum in Array](DataStructures/Algorithms/Search/Problems/MinimumSumPair.cs)
-  * [Search in Sorted Rotated List](DataStructures/Algorithms/Search/Problems/SearchInSortedRotatedList.cs) 
-  * [Equilibrium Index of an Array](DataStructures/Algorithms/Search/Problems/EquilibriumIndex.cs) 
-  * [Search in 2 Dimensional Array](DataStructures/Algorithms/Search/Problems/SearchIn2DList.cs) 
-  * [Find Majority Element in Array](DataStructures/Algorithms/Search/Problems/GetMajorityElementInArray.cs)
-  * [Max Contiguous Subarray Sum](DataStructures/Algorithms/Search/Problems/MaxContiguousSubarraySum.cs) 
-  * [First Repeated Element in the Array](DataStructures/Algorithms/Search/Problems/FirstRepeatedElementInTheArray.cs)
-  * [Find Sum of Pair Equal to Rest Array](DataStructures/Algorithms/Search/Problems/FindSumOfPairEqualToRestArray.cs)
-  * [Find a First Value 1 in a List With 01 Values](DataStructures/Algorithms/Search/Problems/Search01List.cs) 
+#### Problems:
+  * [Fix Point](DataStructures/Algorithms/Problems/FindFixPoint.cs) 
+  * [Shuffle List](DataStructures/Algorithms/Problems/ShuffleList.cs) 
+  * [Partition01](DataStructures/Algorithms/Problems/PartitionZeroOne.cs)
+  * [Partition012](DataStructures/Algorithms/Problems/PartitionZeroOne.cs)
+  * [Triplets Sums](DataStructures/Algorithms/Problems/ZeroSumTriplets.cs)
+  * [Tower of Hanoi](DataStructures/Algorithms/Problems/TowerOfHanoi.cs)
+  * [Array Reduction](DataStructures/Algorithms/Problems/ArrayReduction.cs)
+  * [Permutation List](DataStructures/Algorithms/Problems/ListPermutation.cs) 
+  * [Find Pair in Array](DataStructures/Algorithms/Problems/FindPairNumber.cs)
+  * [K Largest Element](DataStructures/Algorithms/Problems/KLargestElement.cs) 
+  * [Find Closed Sum Pair](DataStructures/Algorithms/Problems/FindClosestSumPair.cs)
+  * [Arithmetic Progression](DataStructures/Algorithms/Problems/ArithmeticProgression.cs) 
+  * [Find Floor/Ceil in Array](DataStructures/Algorithms/Problems/FindFloorCeil.cs) 
+  * [N-Queens Permutation](DataStructures/Algorithms/Problems/NQueensPermutations.cs)
+  * [Find Duplicate in Range](DataStructures/Algorithms/Problems/DuplicateKDistance.cs) 
+  * [Find Missing Number(s)](DataStructures/Algorithms/Problems/FindMissingNumber.cs)
+  * [Print Repeating Elements](DataStructures/Algorithms/Problems/PrintRepeating.cs)
+  * [Find Number of Triangles](DataStructures/Algorithms/Problems/NumberOfTriangles.cs)
+  * [Find a Median of an Array](DataStructures/Algorithms/Problems/FindAMedianOfAnArray.cs)   
+  * [Find Max In Rotated Array](DataStructures/Algorithms/Problems/FindMaxInRotatedArray.cs) 
+  * [Minimum Pair Sum in Array](DataStructures/Algorithms/Problems/MinimumSumPair.cs)
+  * [Search in Sorted Rotated List](DataStructures/Algorithms/Problems/SearchInSortedRotatedList.cs) 
+  * [Equilibrium Index of an Array](DataStructures/Algorithms/Problems/EquilibriumIndex.cs) 
+  * [Search in 2 Dimensional Array](DataStructures/Algorithms/Problems/SearchIn2DList.cs) 
+  * [Find Majority Element in Array](DataStructures/Algorithms/Problems/GetMajorityElementInArray.cs)
+  * [Max Contiguous Subarray Sum](DataStructures/Algorithms/Problems/MaxContiguousSubarraySum.cs) 
+  * [Separate even and odd numbers](DataStructures/Algorithms/Problems/SeparateEvenAndOddNumbers.cs)
+  * [First Repeated Element in the Array](DataStructures/Algorithms/Problems/FirstRepeatedElementInTheArray.cs)
+  * [Find Sum of Pair Equal to Rest Array](DataStructures/Algorithms/Problems/FindSumOfPairEqualToRestArray.cs)
+  * [Find a First Value 1 in a List With 01 Values](DataStructures/Algorithms/Problems/Search01List.cs) 
 
-#### Popular Problems:
-  * [Partition01](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
-  * [Partition012](DataStructures/Algorithms/Sorting/PartitionZeroOne.cs)
-  * [Tower of Hanoi](DataStructures/Algorithms/PopularProblems/TowerOfHanoi.cs)
-  * [Array Reduction](DataStructures/Algorithms/Sorting/ArrayReduction.cs)
-  * [N-Queens Permutation](DataStructures/Algorithms/PopularProblems/NQueensPermutations.cs)
-  * [Print Repeating Elements](DataStructures/Algorithms/PopularProblems/PrintRepeating.cs)
-  * [Separate even and odd numbers](DataStructures/Algorithms/Sorting/SeparateEvenAndOddNumbers.cs)
