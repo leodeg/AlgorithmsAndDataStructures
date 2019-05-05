@@ -69,6 +69,7 @@
     <Compile Include="Algorithms\Sort\BucketSortingTest.cs" />
     <Compile Include="Algorithms\Sort\SelectionSortingTest.cs" />
     <Compile Include="Algorithms\Sort\InsertionSortingTest.cs" />
+    <Compile Include="DataStructures\SortedLinkedListTest.cs" />
     <Compile Include="DataStructures\LinkedListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Algorithms\Search\LinearSearchTest.cs" />
