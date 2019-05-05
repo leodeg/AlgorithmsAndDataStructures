@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace DA.List
 {
@@ -37,7 +38,7 @@ namespace DA.List
 
         public LinkedList ()
         {
-            Head = new Node<T> (default (T));
+            Head = null;
         }
 
         #region Properties
@@ -45,7 +46,7 @@ namespace DA.List
         private Node<T> Head { get; set; }
 
         /// <summary>
-        /// Return total number of elements in the list.
+        /// Total number of elements.
         /// </summary>
         public int Count { get; private set; }
 
@@ -55,18 +56,15 @@ namespace DA.List
         public bool IsEmpty { get { return Count == 0; } }
 
         /// <summary>
-        /// Return copy of the first element in the list.
+        /// Return first element.
         /// </summary>
         public Node<T> FirstElement { get { return Head; } }
 
         /// <summary>
-        /// Return copy of the last element in the list.
+        /// Return last element.
         /// </summary>
         public Node<T> LastElement { get { return GetLast (); } }
 
-        /// <summary>
-        /// Allows to use array syntax to work with list values.
-        /// </summary>
         public T this[int index]
         {
             get { return GetNodeAt (index).Value; }
@@ -99,19 +97,21 @@ namespace DA.List
             if (index < 0 || index > Count - 1)
                 throw new ArgumentOutOfRangeException ();
 
-            if (index == 0)
-                return Head;
+            if (Head == null)
+                return null;
 
-            Node<T> temp = Head;
+            Node<T> current = Head;
             int count = 0;
 
-            while (temp != null && count <= index)
+            while (current != null)
             {
-                temp = temp.Next;
+                if (count == index)
+                    return current;
+                current = current.Next;
                 ++count;
             }
 
-            return temp;
+            return null;
         }
 
         /// <summary>
@@ -175,14 +175,7 @@ namespace DA.List
                 throw new ArgumentOutOfRangeException ();
 
             Node<T> node = new Node<T> (value);
-
-            Node<T> temp = Head;
-            int counter = 0;
-            while (temp != null && counter <= index)
-            {
-                temp = temp.Next;
-                ++counter;
-            }
+            Node<T> temp = GetNodeAt (index);
 
             node.Next = temp.Next;
             temp.Next = node;
@@ -254,17 +247,17 @@ namespace DA.List
         {
             Node<T> previous = null;
             Node<T> current = Head;
-            Node<T> temp = null;
+            Node<T> next;
 
             while (current != null)
             {
-                temp = current.Next; // Save to move one
-                current.Next = previous; // Save and link previous value
-                previous = current; // Save current value
-                current = temp; // Move to next value
+                next = current.Next;
+                current.Next = previous;
+                previous = current;
+                current = next;
             }
 
-            Head = previous; // Change head to last element
+            Head = previous;
         }
 
         /// <summary>

@@ -15,7 +15,11 @@ namespace DA.UnitTests.DataStructures
             list.AddFront (3);
             list.AddFront (4);
 
+            Assert.AreEqual (4, list.Count);
             Assert.AreEqual (4, list[0]);
+            Assert.AreEqual (3, list[1]);
+            Assert.AreEqual (2, list[2]);
+            Assert.AreEqual (1, list[3]);
         }
 
         [Test]
@@ -64,6 +68,22 @@ namespace DA.UnitTests.DataStructures
             Assert.IsTrue (list.Remove ("Jeki"));
             Assert.AreEqual (2, list.Count);
             Assert.AreEqual ("Judi", list[0]);
+        }
+
+        [Test]
+        public void Reverse_WhenCalled_ReverseList ()
+        {
+            LinkedList<int> list = new LinkedList<int> ();
+            list.AddFront (4);
+            list.AddFront (3);
+            list.AddFront (2);
+            list.AddFront (1);
+
+            //list.Reverse ();
+            Assert.AreEqual (1, list[0]);
+            Assert.AreEqual (2, list[1]);
+            Assert.AreEqual (3, list[2]);
+            Assert.AreEqual (4, list[3]);
         }
     }
 }
