@@ -161,8 +161,15 @@ namespace DA.List
         public void AddLast (T value)
         {
             Node<T> node = new Node<T> (value);
-            if (Head == null) Head = node;
-            else GetLast ().Next = node;
+            if (Head == null)
+            {
+                Head = node;
+            }
+            else
+            {
+                GetLast ().Next = node;
+            }
+
             ++Count;
         }
 
@@ -258,6 +265,35 @@ namespace DA.List
             }
 
             Head = previous;
+        }
+
+        /// <summary>
+        /// Reverse list via recursion
+        /// </summary>
+        public void ReverseRecursively ()
+        {
+            Head = ReverseRecursively (Head, null);
+        }
+
+        /// <summary>
+        /// Revers recursively implementation
+        /// </summary>
+        private Node<T> ReverseRecursively (Node<T> nextNode, Node<T> previousNode)
+        {
+            if (nextNode == null)
+            {
+                return null;
+            }
+
+            if (nextNode.Next == null)
+            {
+                nextNode.Next = previousNode;
+                return nextNode;
+            }
+
+            Node<T> returnNode = ReverseRecursively (nextNode.Next, nextNode);
+            nextNode.Next = previousNode;
+            return returnNode;
         }
 
         /// <summary>

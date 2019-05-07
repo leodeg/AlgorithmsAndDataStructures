@@ -79,11 +79,27 @@ namespace DA.UnitTests.DataStructures
             list.AddFront (2);
             list.AddFront (1);
 
-            //list.Reverse ();
-            Assert.AreEqual (1, list[0]);
-            Assert.AreEqual (2, list[1]);
-            Assert.AreEqual (3, list[2]);
-            Assert.AreEqual (4, list[3]);
+            list.Reverse ();
+            Assert.AreEqual (4, list[0]);
+            Assert.AreEqual (3, list[1]);
+            Assert.AreEqual (2, list[2]);
+            Assert.AreEqual (1, list[3]);
+        }
+
+        [Test]
+        public void ReverseRecursively_WhenCalled_ReverseListViaRecursion ()
+        {
+            LinkedList<int> list = new LinkedList<int> ();
+            list.AddFront (4);
+            list.AddFront (3);
+            list.AddFront (2);
+            list.AddFront (1);
+
+            list.ReverseRecursively ();
+            Assert.AreEqual (4, list[0]);
+            Assert.AreEqual (3, list[1]);
+            Assert.AreEqual (2, list[2]);
+            Assert.AreEqual (1, list[3]);
         }
     }
 }

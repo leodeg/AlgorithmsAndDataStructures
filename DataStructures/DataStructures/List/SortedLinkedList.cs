@@ -176,7 +176,53 @@ namespace DA.List
         }
 
         /// <summary>
+        /// Remove all elements that is equal to value from list.
+        /// <para>Time Complexity - O(n)</para>
+        /// </summary>
+        /// <exception cref="System.InvalidOperationException" />
+        /// <param name="value">Values that need delete from list</param>
+        public void RemoveAll (T value)
+        {
+            if (value.Equals (null))
+            {
+                throw new System.ArgumentNullException ();
+            }
+
+            if (head == null)
+            {
+                throw new System.InvalidOperationException ("List is empty");
+            }
+
+            Node<T> currentNode = head;
+            Node<T> nextNode;
+
+            while (currentNode != null && currentNode.Value.Equals (value))
+            {
+                head = currentNode.Next;
+                currentNode = head;
+                --Count;
+            }
+
+            while (currentNode != null)
+            {
+                nextNode = currentNode.Next;
+
+                if (nextNode != null && nextNode.Value.Equals (value))
+                {
+                    currentNode.Next = nextNode.Next;
+                    --Count;
+                }
+                else
+                {
+                    currentNode = nextNode;
+                }
+            }
+
+        }
+
+        /// <summary>
         /// Remove first element from list.
+        /// <para>Time Complexity - O(1)</para>
         /// </summary>
         /// <exception cref="System.InvalidOperationException" />
         public void RemoveFirst ()
@@ -192,6 +238,7 @@ namespace DA.List
 
         /// <summary>
         /// Remove last element from list.
+        /// <para>Time Complexity - O(n)</para>
         /// </summary>
         /// <exception cref="System.InvalidOperationException" />
         public void RemoveLast ()
@@ -209,6 +256,42 @@ namespace DA.List
 
             current.Next = null;
             --Count;
+        }
+
+        /// <summary>
+        /// Remove duplicates elements from list.
+        /// <para>Time Complexity - O(n)</para>
+        /// </summary>
+        /// <exception cref="System.InvalidOperationException" />
+        public void RemoveDuplicates ()
+        {
+            if (head == null)
+            {
+                throw new InvalidOperationException ("List is empty!");
+            }
+
+            Node<T> current = head;
+            while (current != null)
+            {
+                if (current.Next != null && current.Value.Equals(current.Next.Value))
+                {
+                    current.Next = current.Next.Next;
+                    --Count;
+                }
+                else
+                {
+                    current = current.Next;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Delete all elements from list.
+        /// </summary>
+        public void Clear ()
+        {
+            head = null;
+            Count = 0;
         }
 
         /// <summary>

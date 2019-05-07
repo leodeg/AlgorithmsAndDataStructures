@@ -104,5 +104,48 @@ namespace DA.UnitTests.DataStructures
         {
             Assert.Throws<System.InvalidOperationException> (() => integerList.RemoveLast ());
         }
+
+        [Test]
+        public void RemoveAll_ElementsExists_DeleteElements ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+            integerList.Insert (2);
+            integerList.Insert (2);
+            integerList.Insert (3);
+
+            integerList.RemoveAll (2);
+
+            Assert.AreEqual (2, integerList.Count);
+            Assert.AreEqual (1, integerList[0]);
+            Assert.AreEqual (3, integerList[1]);
+        }
+
+        [Test]
+        public void Clear_WhenCalled_DeleteAllElementsFromList ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+
+            integerList.Clear ();
+            Assert.AreEqual (0, integerList.Count);
+        }
+
+        [Test]
+        public void RemoveDuplicates_ElementsExists_DeleteDuplicateElements ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+            integerList.Insert (2);
+            integerList.Insert (2);
+            integerList.Insert (3);
+
+            integerList.RemoveDuplicates ();
+
+            Assert.AreEqual (3, integerList.Count);
+            Assert.AreEqual (1, integerList[0]);
+            Assert.AreEqual (2, integerList[1]);
+            Assert.AreEqual (3, integerList[2]);
+        }
     }
 }
