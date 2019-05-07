@@ -6,7 +6,14 @@ namespace DA.List
     {
         public class Node<T>
         {
+            /// <summary>
+            /// Current value
+            /// </summary>
             public T Value { get; set; }
+
+            /// <summary>
+            /// Link to next element in current list
+            /// </summary>
             public Node<T> Next { get; set; }
 
             public Node (T value)
@@ -22,13 +29,15 @@ namespace DA.List
             }
         }
 
+        /// <summary>
+        /// Link to the first element at list.
+        /// </summary>
         Node<T> head;
-        int count;
 
         public SortedLinkedList ()
         {
             head = null;
-            count = 0;
+            Count = 0;
         }
 
         public T this[int index]
@@ -40,16 +49,27 @@ namespace DA.List
         /// <summary>
         /// Total amount of elements in list.
         /// </summary>
-        public int Count { get { return count; } }
+        public int Count { get; private set; }
+
+        /// <summary>
+        /// Check if list contains any element
+        /// </summary>
+        /// 
+        /// <returns>
+        /// Returns true if list is empty, otherwise return false.
+        /// </returns>
+        public bool IsEmpty { get { return Count <= 0; } }
 
         /// <summary>
         /// Return node at index position.
+        /// <para>Time Complexity - O(n)</para>
         /// </summary>
+        /// 
         /// <exception cref="System.ArgumentNullException" />
         /// <exception cref="System.InvalidOperationException" />
         private Node<T> GetNode (int index)
         {
-            if (index < 0 || index > count - 1)
+            if (index < 0 || index > Count - 1)
             {
                 throw new System.ArgumentOutOfRangeException ();
             }
@@ -77,7 +97,9 @@ namespace DA.List
 
         /// <summary>
         /// Insert value in sorted order.
+        /// <para>Time Complexity - O(n)</para>
         /// </summary>
+        /// 
         /// <exception cref="System.ArgumentNullException" />
         /// <param name="value">Value to insert to list.</param>
         public void Insert (T value)
@@ -94,7 +116,7 @@ namespace DA.List
             {
                 node.Next = head;
                 head = node;
-                ++count;
+                ++Count;
                 return;
             }
 
@@ -105,11 +127,12 @@ namespace DA.List
 
             node.Next = current.Next;
             current.Next = node;
-            ++count;
+            ++Count;
         }
 
         /// <summary>
         /// Remove element from list.
+        /// <para>Time Complexity - O(n)</para>
         /// </summary>
         /// 
         /// <exception cref="System.ArgumentNullException" />
@@ -134,7 +157,7 @@ namespace DA.List
             if (head.Value.Equals (value))
             {
                 head = head.Next;
-                --count;
+                --Count;
                 return true;
             }
 
@@ -148,8 +171,81 @@ namespace DA.List
             }
 
             previous.Next = current.Next;
-            --count;
+            --Count;
             return true;
         }
+
+        /// <summary>
+        /// Remove first element from list.
+        /// </summary>
+        /// <exception cref="System.InvalidOperationException" />
+        public void RemoveFirst ()
+        {
+            if (head == null)
+            {
+                throw new InvalidOperationException ("List is empty!");
+            }
+
+            head = head.Next;
+            --Count;
+        }
+
+        /// <summary>
+        /// Remove last element from list.
+        /// </summary>
+        /// <exception cref="System.InvalidOperationException" />
+        public void RemoveLast ()
+        {
+            if (head == null)
+            {
+                throw new InvalidOperationException ("List is empty!");
+            }
+
+            Node<T> current = head;
+            while (current.Next.Next != null)
+            {
+                current = current.Next;
+            }
+
+            current.Next = null;
+            --Count;
+        }
+
+        /// <summary>
+        /// Check if the data exists in list.
+        /// <para>Time Complexity - O(n)</para>
+        /// </summary>
+        /// 
+        /// <exception cref="System.ArgumentNullException" />
+        /// <param name="data">Value to find</param>
+        /// 
+        /// <returns>
+        /// Returns true if the data exists, otherwise return false.
+        /// </returns>
+        public bool IsExist (T data)
+        {
+            if (data.Equals (null))
+            {
+                throw new System.ArgumentNullException ();
+            }
+
+            if (head.Value.Equals (data))
+            {
+                return true;
+            }
+
+            Node<T> temp = head;
+            while (temp != null)
+            {
+                if (temp.Value.Equals (data))
+                {
+                    return true;
+                }
+                temp = temp.Next;
+            }
+            return false;
+        }
+
+
     }
 }
