@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace DA.List
 {
-    public class SortedLinkedList<T> where T : IComparable<T>
+    public class SortedLinkedList<T> : IEnumerator<T> where T : IComparable<T>
     {
         public class Node<T>
         {
@@ -33,6 +35,8 @@ namespace DA.List
         /// Link to the first element at list.
         /// </summary>
         Node<T> head;
+
+        Node<T> current;
 
         public SortedLinkedList ()
         {
@@ -273,7 +277,7 @@ namespace DA.List
             Node<T> current = head;
             while (current != null)
             {
-                if (current.Next != null && current.Value.Equals(current.Next.Value))
+                if (current.Next != null && current.Value.Equals (current.Next.Value))
                 {
                     current.Next = current.Next.Next;
                     --Count;
@@ -329,6 +333,41 @@ namespace DA.List
             return false;
         }
 
+        #region IEnumerator
 
+        public T Current => current.Value;
+
+        object IEnumerator.Current => current.Value;
+
+        public IEnumerator<T> GetEnumerator ()
+        {
+            return this;
+        }
+
+        public void Dispose ()
+        {
+            Dispose ();
+        }
+
+        public bool MoveNext ()
+        {
+            if (current == null)
+            {
+                current = head;
+                return true;
+            }
+
+            current = current.Next;
+            if (current.Next != null)
+                return true;
+            return false;
+        }
+
+        public void Reset ()
+        {
+            current = head;
+        }
+
+        #endregion
     }
 }

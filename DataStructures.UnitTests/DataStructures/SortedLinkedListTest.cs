@@ -1,6 +1,7 @@
 ﻿using DA.List;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 
 namespace DA.UnitTests.DataStructures
 {
@@ -146,6 +147,24 @@ namespace DA.UnitTests.DataStructures
             Assert.AreEqual (1, integerList[0]);
             Assert.AreEqual (2, integerList[1]);
             Assert.AreEqual (3, integerList[2]);
+        }
+
+        [Test]
+        public void IEnumerator_WhenCalled_TraverseList ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+            integerList.Insert (3);
+            integerList.Insert (4);
+            integerList.Insert (5);
+
+            int counter = 1;
+            IEnumerator<int> enumerator = integerList.GetEnumerator ();
+            while (enumerator.MoveNext ())
+            {
+                Assert.AreEqual (counter, enumerator.Current);
+                ++counter;
+            }
         }
     }
 }
