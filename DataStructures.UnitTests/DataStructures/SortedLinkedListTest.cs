@@ -8,7 +8,7 @@ namespace DA.UnitTests.DataStructures
     [TestFixture]
     public class SortedLinkedListTest
     {
-        SortedLinkedList<int> integerList;
+        private SortedLinkedList<int> integerList;
 
         [SetUp]
         public void Setup ()
@@ -55,9 +55,9 @@ namespace DA.UnitTests.DataStructures
             integerList.Insert (3);
             integerList.Insert (2);
 
-            Assert.IsTrue (integerList.IsExist(4));
-            Assert.IsTrue (integerList.IsExist(3));
-            Assert.IsTrue (integerList.IsExist(2));
+            Assert.IsTrue (integerList.IsExist (4));
+            Assert.IsTrue (integerList.IsExist (3));
+            Assert.IsTrue (integerList.IsExist (2));
         }
 
         [Test]

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 
 namespace DA.List
 {
@@ -34,9 +35,8 @@ namespace DA.List
         /// <summary>
         /// Link to the first element at list.
         /// </summary>
-        Node<T> head;
-
-        Node<T> current;
+        private Node<T> head;
+        private Node<T> current;
 
         public SortedLinkedList ()
         {
@@ -180,7 +180,7 @@ namespace DA.List
         }
 
         /// <summary>
-        /// Remove all elements that is equal to value from list.
+        /// Remove all elements from list that is equal to value.
         /// <para>Time Complexity - O(n)</para>
         /// </summary>
         /// <exception cref="System.InvalidOperationException" />
@@ -331,6 +331,78 @@ namespace DA.List
                 temp = temp.Next;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Print list to console.
+        /// <para>Time Complexity - O(n)</para>
+        /// </summary>
+        /// <exception cref="System.InvalidOperationException" />
+        public void Print ()
+        {
+            if (head == null)
+            {
+                throw new InvalidOperationException ("List is empty!");
+            }
+
+            Node<T> current = head;
+            while (current != null)
+            {
+                Console.Write (current.Value + " ");
+                current = current.Next;
+            }
+        }
+
+        /// <summary>
+        /// Return a copy of current list.
+        /// <para>Time Complexity - O(n)</para>
+        /// </summary>
+        public SortedLinkedList<T> Copy ()
+        {
+            Node<T> headNode;
+            Node<T> tailNode;
+            Node<T> tempNode;
+            Node<T> current = head;
+
+            if (current == null)
+                return null;
+
+            headNode = new Node<T> (current.Value);
+            tailNode = headNode;
+            current = current.Next;
+
+            while (current != null)
+            {
+                tempNode = new Node<T> (current.Value);
+                tailNode.Next = tempNode;
+                tailNode = tempNode;
+                current = current.Next;
+            }
+
+            SortedLinkedList<T> newList = new SortedLinkedList<T> ();
+            newList.head = headNode;
+            return newList;
+        }
+
+        public bool CompareTo (SortedLinkedList<T> other)
+        {
+            return CompareTo (head, other.head);
+        }
+
+        private bool CompareTo (Node<T> currentHead, Node<T> otherHead)
+        {
+            if (currentHead == null && otherHead == null)
+            {
+                return true;
+            }
+            else if ((currentHead == null) || (otherHead == null) || (!currentHead.Value.Equals (otherHead.Value)))
+            {
+                return false;
+            }
+            else
+            {
+                return CompareTo (currentHead.Next, otherHead.Next);
+            }
         }
 
         #region IEnumerator
