@@ -299,6 +299,37 @@ namespace DA.List
         }
 
         /// <summary>
+        /// Return value at index.
+        /// <para>Time Complexity - O(n)</para>
+        /// </summary>
+        /// 
+        /// <exception cref="System.IndexOutOfRangeException" />
+        /// <param name="index">Position of wanted value</param>
+        /// 
+        /// <returns>
+        /// Returns value or null.
+        /// </returns>
+        public T GetValue (int index)
+        {
+            if (index < 0 && index > Count - 1)
+                throw new System.IndexOutOfRangeException ();
+
+            if (index == 0)
+                return head.Value;
+
+            int indexCount = 0;
+            Node<T> current = head;
+
+            while (current != null && indexCount < index)
+            {
+                ++indexCount;
+                current = current.Next;
+            }
+
+            return current.Value;
+        }
+
+        /// <summary>
         /// Check if the data exists in list.
         /// <para>Time Complexity - O(n)</para>
         /// </summary>
@@ -384,12 +415,61 @@ namespace DA.List
             return newList;
         }
 
+        /// <summary>
+        /// Compare current list to other list.
+        /// <para>Time Complexity - O(n)</para>
+        /// </summary>
+        /// 
+        /// <param name="other">Second list to compare</param>
+        /// 
+        /// <returns>
+        /// Returns true if lists is equal or null, otherwise return false.
+        /// </returns>
         public bool CompareTo (SortedLinkedList<T> other)
         {
-            return CompareTo (head, other.head);
+            Node<T> current = head;
+            Node<T> currentOther = other.head;
+
+            while (current != null && currentOther != null)
+            {
+                if (!current.Value.Equals (currentOther.Value))
+                    return false;
+                current = current.Next;
+                currentOther = currentOther.Next;
+            }
+
+            if (current == null && currentOther == null)
+                return true;
+            return false;
         }
 
-        private bool CompareTo (Node<T> currentHead, Node<T> otherHead)
+        /// <summary>
+        /// Recursively compare current list to other list.
+        /// <para>Time Complexity - O(n)</para>
+        /// </summary>
+        /// 
+        /// <param name="other">Second list to compare</param>
+        /// 
+        /// <returns>
+        /// Returns true if lists is equal or null, otherwise return false.
+        /// </returns>
+        public bool CompareToRecursively (SortedLinkedList<T> other)
+        {
+            return CompareToRecursively (head, other.head);
+        }
+
+        /// <summary>
+        /// Recursively compare current list to other list.
+        /// <para>Time Complexity - O(n)</para>
+        /// </summary>
+        /// 
+        /// <param name="currentHead">First node of current list</param>
+        /// <param name="otherHead">First node of other list</param>
+        /// 
+        /// <returns>
+        /// Returns true if lists is equal or null, otherwise return false.
+        /// </returns>
+        private bool CompareToRecursively (Node<T> currentHead, Node<T> otherHead)
         {
             if (currentHead == null && otherHead == null)
             {
@@ -401,26 +481,62 @@ namespace DA.List
             }
             else
             {
-                return CompareTo (currentHead.Next, otherHead.Next);
+                return CompareToRecursively (currentHead.Next, otherHead.Next);
             }
+        }
+
+        /// <summary>
+        /// Compute length of the current list.
+        /// <para>Time Complexity - O(n)</para>
+        /// </summary>
+        public int GetCount ()
+        {
+            if (head == null)
+                return 0;
+
+            Node<T> current = head;
+            int counter = 0;
+
+            while (current != null)
+            {
+                ++counter;
+                current = current.Next;
+            }
+
+            return counter;
         }
 
         #region IEnumerator
 
+        /// <summary>
+        /// Current enumerated value.
+        /// </summary>
         public T Current => current.Value;
 
+        /// <summary>
+        /// Current enumerated value.
+        /// </summary>
         object IEnumerator.Current => current.Value;
 
+        /// <summary>
+        /// Return enumerator of list.
+        /// </summary>
         public IEnumerator<T> GetEnumerator ()
         {
             return this;
         }
 
+        /// <summary>
+        /// Release resources.
+        /// </summary>
         public void Dispose ()
         {
             Dispose ();
         }
 
+        /// <summary>
+        /// Check if loop can go to next element.
+        /// </summary>
         public bool MoveNext ()
         {
             if (current == null)
@@ -435,6 +551,9 @@ namespace DA.List
             return false;
         }
 
+        /// <summary>
+        /// Reset current value to first value in the list.
+        /// </summary>
         public void Reset ()
         {
             current = head;

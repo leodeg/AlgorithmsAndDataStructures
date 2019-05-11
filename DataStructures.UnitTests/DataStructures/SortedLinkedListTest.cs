@@ -166,5 +166,104 @@ namespace DA.UnitTests.DataStructures
                 ++counter;
             }
         }
+
+        [Test]
+        public void CompareTo_ListsIsEqual_ReturnTrue ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+            integerList.Insert (3);
+
+            SortedLinkedList<int> otherList = new SortedLinkedList<int> ();
+            otherList.Insert (1);
+            otherList.Insert (2);
+            otherList.Insert (3);
+
+            Assert.IsTrue (integerList.CompareTo (otherList));
+        }
+
+        [Test]
+        public void CompareTo_ListsIsNotEqual_ReturnFalse ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+            integerList.Insert (3);
+
+            SortedLinkedList<int> otherList = new SortedLinkedList<int> ();
+            otherList.Insert (1);
+            otherList.Insert (2);
+            otherList.Insert (4);
+
+            Assert.IsFalse (integerList.CompareTo (otherList));
+        }
+
+        [Test]
+        public void CompareTo_BothListsIsNull_ReturnTrue ()
+        {
+            SortedLinkedList<int> otherList = new SortedLinkedList<int> ();
+            Assert.IsTrue (integerList.CompareTo (otherList));
+        }
+
+        [Test]
+        public void CompareToRecursively_ListsIsEqual_ReturnTrue ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+            integerList.Insert (3);
+
+            SortedLinkedList<int> otherList = new SortedLinkedList<int> ();
+            otherList.Insert (1);
+            otherList.Insert (2);
+            otherList.Insert (3);
+
+            Assert.IsTrue (integerList.CompareToRecursively (otherList));
+        }
+
+        [Test]
+        public void CompareToRecursively_ListsIsNotEqual_ReturnFalse ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+            integerList.Insert (3);
+
+            SortedLinkedList<int> otherList = new SortedLinkedList<int> ();
+            otherList.Insert (1);
+            otherList.Insert (2);
+            otherList.Insert (4);
+
+            Assert.IsFalse (integerList.CompareToRecursively (otherList));
+        }
+
+        [Test]
+        public void CompareToRecursively_BothListsIsNull_ReturnTrue ()
+        {
+            SortedLinkedList<int> otherList = new SortedLinkedList<int> ();
+            Assert.IsTrue (integerList.CompareToRecursively (otherList));
+        }
+
+        [Test]
+        public void GetCount_ComputeLengthOfList_ReturnListLength ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+            integerList.Insert (3);
+
+            Assert.AreEqual (3, integerList.GetCount ());
+
+            integerList.Clear ();
+            Assert.AreEqual (0, integerList.GetCount ());
+        }
+
+        [Test]
+        public void GetValue_WhenCalled_ReturnValue ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+            integerList.Insert (3);
+
+            Assert.AreEqual (1, integerList.GetValue (0));
+            Assert.AreEqual (2, integerList.GetValue (1));
+            Assert.AreEqual (3, integerList.GetValue (2));
+        }
     }
 }
