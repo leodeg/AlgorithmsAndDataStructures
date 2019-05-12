@@ -323,6 +323,151 @@ namespace DA.List
             }
         }
 
+        /// <summary>
+        /// Detect if there is a loop in the linked list.
+        /// <para>Time Complexity - O(n)</para>
+        /// </summary>
+        /// 
+        /// <param name="list"></param>
+        /// 
+        /// <returns>
+        /// Returns true if loop is detected, otherwise return false.
+        /// </returns>
+        public static bool LoopDetect (LinkedList<T> list)
+        {
+            if (list == null)
+            {
+                return false;
+            }
+
+            Node<T> slowPointer;
+            Node<T> fastPointer;
+
+            slowPointer = fastPointer = list.Head;
+            while (fastPointer.Next != null && fastPointer.Next.Next != null)
+            {
+                slowPointer = slowPointer.Next;
+                fastPointer = fastPointer.Next.Next;
+                if (slowPointer == fastPointer)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Delete loop from list if so exist.
+        /// </summary>
+        public static void RemoveLoop (LinkedList<T> list)
+        {
+            Node<T> loopPoint = LoopPointDetect (list);
+            if (list == null) return;
+
+            Node<T> firstPointer = list.Head;
+            if (loopPoint == list.Head)
+            {
+                while (firstPointer.Next != list.Head)
+                {
+                    firstPointer = firstPointer.Next;
+                }
+                firstPointer.Next = null;
+                return;
+            }
+
+            Node<T> secondPointer = loopPoint;
+            while (firstPointer.Next != secondPointer.Next)
+            {
+                firstPointer = firstPointer.Next;
+                secondPointer = secondPointer.Next;
+            }
+            secondPointer.Next = null;
+        }
+
+        /// <summary>
+        /// Find point of loop.
+        /// </summary>
+        /// 
+        /// <returns>
+        /// Returns reference to looped value.
+        /// </returns>
+        private static Node<T> LoopPointDetect (LinkedList<T> list)
+        {
+            Node<T> slowPointer;
+            Node<T> fastPointer;
+
+            slowPointer = fastPointer = list.Head;
+            while (fastPointer.Next != null && fastPointer.Next.Next != null)
+            {
+                slowPointer = slowPointer.Next;
+                fastPointer = fastPointer.Next.Next;
+                if (slowPointer == fastPointer)
+                {
+                    return slowPointer;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Find intersection point in given two lists.
+        /// </summary>
+        /// 
+        /// <returns>
+        /// Returns intersection value or null.
+        /// </returns>
+        public static T FindIntersactionValue (LinkedList<T> first, LinkedList<T> second)
+        {
+            Node<T> firstHead = first.Head;
+            Node<T> secondHead = second.Head;
+
+            int firstCount = 0;
+            int secondCount = 0;
+
+            Node<T> tempFirstHead = firstHead;
+            Node<T> tempSecondHead = secondHead;
+
+            while (tempFirstHead != null)
+            {
+                ++firstCount;
+                tempFirstHead = tempFirstHead.Next;
+            }
+
+            while (tempSecondHead != null)
+            {
+                ++secondCount;
+                tempSecondHead = tempSecondHead.Next;
+            }
+
+            int difference;
+
+            if (firstCount < secondCount)
+            {
+                Node<T> temp = firstHead;
+                firstHead = secondHead;
+                secondHead = temp;
+                difference = secondCount - firstCount;
+            }
+            else
+            {
+                difference = firstCount - secondCount;
+            }
+
+            for (; difference > 0; difference--)
+            {
+                firstHead = firstHead.Next;
+            }
+
+            while (firstHead != secondHead)
+            {
+                firstHead = firstHead.Next;
+                secondHead = secondHead.Next;
+            }
+
+            return firstHead.Value;
+        }
+
         #endregion
     }
 }

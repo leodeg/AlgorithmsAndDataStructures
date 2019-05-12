@@ -12,6 +12,7 @@
 
 #### List:
   * [Linked List](DataStructures/DataStructures/List/LinkedList.cs)
+  * [Sorted Linked List](DataStructures/DataStructures/List/SortedLinkedList.cs)
   * [Double-Linked List](DataStructures/DataStructures/List/DoublyLinkedList.cs)
   * [Circular-Linked List](DataStructures/DataStructures/List/CircularLinkedList.cs)
   * [Circular-Double-Linked List](DataStructures/DataStructures/List/DoublyCircularLinkedList.cs)

@@ -265,5 +265,28 @@ namespace DA.UnitTests.DataStructures
             Assert.AreEqual (2, integerList.GetValue (1));
             Assert.AreEqual (3, integerList.GetValue (2));
         }
+
+        [Test]
+        public void GetLastValue_WhenCalled_ReturnLastValue ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+            integerList.Insert (3);
+
+            Assert.AreEqual (3, integerList.GetLastValue ());
+        }
+
+        [Test]
+        public void GetValueFromEnd_WhenCalled_ReturnLastValue ()
+        {
+            integerList.Insert (1);
+            integerList.Insert (2);
+            integerList.Insert (3);
+            integerList.Insert (4);
+            integerList.Insert (5);
+            integerList.Insert (6);
+
+            Assert.AreEqual (1, integerList.GetValueFromEnd (5));
+        }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DA.List
 {
@@ -323,6 +322,58 @@ namespace DA.List
             while (current != null && indexCount < index)
             {
                 ++indexCount;
+                current = current.Next;
+            }
+
+            return current.Value;
+        }
+
+        /// <summary>
+        /// Get last value from the list.
+        /// </summary>
+        /// 
+        /// <returns>
+        /// Returns a last element of the list or null.
+        /// </returns>
+        public T GetLastValue ()
+        {
+            if (head == null)
+            {
+                throw new System.InvalidOperationException ("List is empty");
+            }
+
+            Node<T> current = head;
+            while (current.Next != null)
+                current = current.Next;
+            return current.Value;
+        }
+
+        /// <summary>
+        /// Get Nth value from the end of the list.
+        /// </summary>
+        /// 
+        /// <exception cref="System.InvalidOperationException" />
+        /// <exception cref="System.IndexOutOfRangeException" />
+        /// <param name="index">Position of wanted value from end of list</param>
+        /// 
+        /// <returns>
+        /// Returns value or null.
+        /// </returns>
+        public T GetValueFromEnd (int index)
+        {
+            if (head == null)
+                throw new System.InvalidOperationException ("List is empty");
+
+            int targetIndex = Count - 1 - index;
+            if (targetIndex < 0 || targetIndex > Count - 1)
+                throw new System.IndexOutOfRangeException ();
+
+            Node<T> current = head;
+            int currentIndex = 0;
+
+            while (current != null && currentIndex < targetIndex)
+            {
+                ++currentIndex;
                 current = current.Next;
             }
 
